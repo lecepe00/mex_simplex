@@ -19,13 +19,13 @@
 
 - [Práctica 2 Segunda Parte](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany)
 
-## Reporte Escrito:
+## Trabajo Escrito:
 
-- 
+- [Trabajo Escrito](https://github.com/lecepe00/mex_simplex/blob/main/documentation/Trabajo_escrito.pdf)
 
 ## Presentación:
 
-- 
+- [Presentacion_mex](https://github.com/lecepe00/mex_simplex/blob/main/documentation/Presentacion_mex.pdf)
 
 ## Implementación
 
