@@ -15,13 +15,16 @@
 
 - En el directorio AWS_screenshots se encuentra nuestra evidencia de uso de AWS.
 
+- Para probar nuestro paquete puedes hacer uso del siguiente botón de binder, éste contiene el paquete `mex` que desarrollamos [aquí](https://github.com/lecepe00/mex_simplex.git): 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lecepe00/mex_simplex.git/main?urlpath=lab)
+
 ## Avances:
 
 - [Práctica 2 Segunda Parte](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany)
 
 ## Trabajo Escrito:
 
-- [Trabajo Escrito](https://github.com/lecepe00/mex_simplex/blob/main/documentation/Trabajo_escrito.pdf)
+- [Trabajo Escrito](https://htmlpreview.github.io/?https://github.com/lecepe00/mex_simplex/blob/main/documentation/Reporte_equipo_1_proyecto_final.html)
 
 ## Presentación:
 
