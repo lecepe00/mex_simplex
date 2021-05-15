@@ -14826,7 +14826,7 @@ Uninstalling mex-0.2:
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
@@ -14838,6 +14838,32 @@ Uninstalling mex-0.2:
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><span class="ansi-yellow-fg">  WARNING: The script kernprof is installed in &#39;/home/miuser/.local/bin&#39; which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span>
+<span class="ansi-yellow-fg">  WARNING: The script mprof is installed in &#39;/home/miuser/.local/bin&#39; which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span>
+<span class="ansi-yellow-fg">WARNING: You are using pip version 20.2.1; however, version 21.1.1 is available.
+You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upgrade pip&#39; command.</span>
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15098,17 +15124,16 @@ Uninstalling mex-0.2:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">precision</span> %.4f
-<span class="k">assert</span> <span class="n">max_obj</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="n">max_approx</span><span class="p">),</span> <span class="s2">&quot;El valor aproximado es incorrecto&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">max_obj</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="n">max_approx</span><span class="p">),</span> <span class="s2">&quot;El valor aproximado es incorrecto&quot;</span>
 <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">coeff_obj</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="n">coeff_approx</span><span class="p">,</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">),</span> <span class="s2">&quot;El valor de los coeficientes aproximados es incorrecto&quot;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor objetivo obtenido con scipy es: &quot;</span><span class="p">,</span> <span class="n">max_obj</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor aproximado obtenido con mex es: &quot;</span><span class="p">,</span> <span class="n">max_approx</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Los coeficientes objetivos obtenidos con scipy son: &quot;</span><span class="p">,</span> <span class="n">coeff_obj</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Los coeficientes aproximados obtenidos con mex son: &quot;</span><span class="p">,</span> <span class="n">coeff_approx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor objetivo obtenido con scipy es: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">max_obj</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">El valor aproximado obtenido con mex es: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">max_approx</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Los coeficientes objetivos obtenidos con scipy son: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">coeff_obj</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Los coeficientes aproximados obtenidos con mex son: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">coeff_approx</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15128,17 +15153,17 @@ Uninstalling mex-0.2:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>El valor objetivo obtenido con scipy es:  7.644647466669042
-El valor aproximado obtenido con mex es:  7.644647288586908
-Los coeficientes objetivos obtenidos con scipy son:  [1.55767398e-10 2.13986131e-11 6.52653843e-11 2.03972271e-11
- 2.20073205e-11 2.25421843e-11 2.95498944e-11 8.33451409e-11
- 2.67709780e-11 2.57420289e-11 3.53108097e-11 2.45435519e-11
- 3.71518342e-11 2.84650310e-10 1.08315701e-02 1.01059266e-01
- 9.41232462e-12 3.40871440e-11 3.18768339e-10 2.14072463e-11]
-Los coeficientes aproximados obtenidos con mex son:  [0.         0.         0.         0.         0.         0.
- 0.         0.         0.         0.         0.         0.
- 0.         0.         0.01083157 0.10105926 0.         0.
- 0.         0.        ]
+<pre>El valor objetivo obtenido con scipy es:  7.6446
+
+El valor aproximado obtenido con mex es:  7.6446
+
+Los coeficientes objetivos obtenidos con scipy son: 
+ [0.     0.     0.     0.     0.     0.     0.     0.     0.     0.
+ 0.     0.     0.     0.     0.0108 0.1011 0.     0.     0.     0.    ]
+
+Los coeficientes aproximados obtenidos con mex son: 
+ [0.     0.     0.     0.     0.     0.     0.     0.     0.     0.
+ 0.     0.     0.     0.     0.0108 0.1011 0.     0.     0.     0.    ]
 </pre>
 </div>
 </div>
@@ -15147,34 +15172,20 @@ Los coeficientes aproximados obtenidos con mex son:  [0.         0.         0.  
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="5.--Comentarios-y-conclusiones">5.  Comentarios y conclusiones<a class="anchor-link" href="#5.--Comentarios-y-conclusiones">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>En éste proyecto se ha estudiado el uso del método símplex para la resolución de problemas de programación lineal (<em>LP</em>), por medio del desarrollo y la implementación del paquete <code>mex</code>.</p>
+<p>Como alternativas para la resolución de problemas de programación lineal, similares a los estudiados en éste proyecto, se tienen por ejemplo los métodos por puntos interiores, como el método primal-dual de barrera logarítmica, también estudiado en la materia de Optimización Avanzada.</p>
+<p>La principal diferencia entre los métodos de puntos interiores y el método símplex es que, como su nombre lo indica, comienzan en un punto interior de la región factible, y en cada iteración se van aproximando a los puntos óptimos en el límite.  Cada iteración de los métodos de puntos interiores es costosa de calcular (más costosa de calcular que en el método símplex), sin embargo, para problemas de gran escala no se requieren muchas más iteraciones respecto a un problema de pequeña escala.  Cabe aclarar que los métodos de puntos interiores quedan fuera del alcance de este proyecto.</p>
+<p>Hasta el momento se ha implementado exitosamente el paquete <code>mex</code> en problemas de pequeña y mediana escala (de hasta 20 variables y 30 restricciones).  Se está trabajando en la ingesta y creación automática de matrices, para implementar el paquete en problemas de gran escala (de cientos o miles de variables y restricciones).  Esta será la última iteración de la implementación del paquete <code>mex</code>, a reportarse en la presentación final del proyecto.</p>
 
-     </div>
 </div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
