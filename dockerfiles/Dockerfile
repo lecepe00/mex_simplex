@@ -28,6 +28,7 @@ RUN jupyter notebook --generate-config && \
 RUN pip install $PIP_PACKAGES_KALE --upgrade
 RUN jupyter labextension install kubeflow-kale-labextension
 
+RUN pip install Cython
 RUN pip install --quiet "git+https://github.com/lecepe00/mex_simplex.git#egg=mex&subdirectory=src"
 RUN pip install matplotlib
 RUN pip install scipy
