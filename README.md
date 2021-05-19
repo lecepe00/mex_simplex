@@ -11,11 +11,11 @@
 | Eduardo Moreno | Eduardo-Moreno| 000151280 |
 | Leonardo Ceja | lecepe00| 000197818 |
 
-- La documentación de nuestro paquete ***`mex`*** la puedes encontrar [aquí](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-2-segunda-parte-caroacostatovany/).
+- La documentación de nuestro paquete ***`mex`*** la puedes encontrar aquí: [![Documentation](https://img.shields.io/badge/sphinx-documentation-blue)](https://lecepe00.github.io/mex_simplex/)
 
 - En el directorio AWS_screenshots se encuentra nuestra evidencia de uso de AWS.
 
-- Para probar nuestro paquete puedes hacer uso del siguiente botón de binder, éste contiene el paquete `mex` que desarrollamos [aquí](https://github.com/lecepe00/mex_simplex.git): 
+- Para probar nuestro paquete puedes hacer uso del siguiente botón de binder, éste contiene el paquete `mex`: 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lecepe00/mex_simplex.git/main?urlpath=lab)
 
 ## Avances:
