@@ -1,0 +1,6 @@
+﻿mex.mex\_c.general\_c.convert\_min
+==================================
+
+.. currentmodule:: mex.mex_c.general_c
+
+.. autofunction:: convert_min

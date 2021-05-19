@@ -1,0 +1,6 @@
+﻿mex.simplex.simplex\_networks.find\_pivot\_col
+==============================================
+
+.. currentmodule:: mex.simplex.simplex_networks
+
+.. autofunction:: find_pivot_col

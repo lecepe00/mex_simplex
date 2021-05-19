@@ -1,0 +1,36 @@
+mex.simplex.simplex\_networks
+=============================
+
+.. automodule:: mex.simplex.simplex_networks
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      create_matrix
+      find_negative_col
+      find_negative_row
+      find_pivot_col
+      find_pivot_row
+      pivot
+      pivots_col
+      pivots_row
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

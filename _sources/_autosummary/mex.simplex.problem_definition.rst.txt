@@ -1,0 +1,34 @@
+mex.simplex.problem\_definition
+===============================
+
+.. automodule:: mex.simplex.problem_definition
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      add_cons
+      add_obj
+      constrain
+      maxz
+      minz
+      obj
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

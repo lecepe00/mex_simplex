@@ -1,0 +1,6 @@
+﻿mex.simplex.simplex\_networks.create\_matrix
+============================================
+
+.. currentmodule:: mex.simplex.simplex_networks
+
+.. autofunction:: create_matrix

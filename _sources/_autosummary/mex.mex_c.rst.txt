@@ -1,0 +1,40 @@
+﻿mex.mex\_c
+==========
+
+.. automodule:: mex.mex_c
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   mex.mex_c.general_c
+   mex.mex_c.maximizer_class_c
+   mex.mex_c.minimizer_class_c
+   mex.mex_c.problem_definition_c
+   mex.mex_c.setup_general_c
+   mex.mex_c.setup_maximizer_c
+   mex.mex_c.setup_minimizer_c
+   mex.mex_c.setup_problemdefinition_c
+   mex.mex_c.setup_simplexnetworks_c
+   mex.mex_c.simplex_networks_c
+

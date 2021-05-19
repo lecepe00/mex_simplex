@@ -1,0 +1,6 @@
+﻿mex.simplex.problem\_definition.add\_cons
+=========================================
+
+.. currentmodule:: mex.simplex.problem_definition
+
+.. autofunction:: add_cons

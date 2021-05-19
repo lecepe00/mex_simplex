@@ -1,0 +1,6 @@
+﻿mex.simplex.problem\_definition.maxz
+====================================
+
+.. currentmodule:: mex.simplex.problem_definition
+
+.. autofunction:: maxz

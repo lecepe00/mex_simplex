@@ -1,0 +1,6 @@
+﻿mex.simplex.problem\_definition.add\_obj
+========================================
+
+.. currentmodule:: mex.simplex.problem_definition
+
+.. autofunction:: add_obj

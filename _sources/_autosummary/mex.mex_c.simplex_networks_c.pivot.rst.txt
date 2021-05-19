@@ -1,0 +1,6 @@
+﻿mex.mex\_c.simplex\_networks\_c.pivot
+=====================================
+
+.. currentmodule:: mex.mex_c.simplex_networks_c
+
+.. autofunction:: pivot

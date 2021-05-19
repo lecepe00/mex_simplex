@@ -1,0 +1,33 @@
+mex.mex\_c.general\_c
+=====================
+
+.. automodule:: mex.mex_c.general_c
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      convert
+      convert_min
+      gen_var
+      generate_tableau
+      generates_matrix
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

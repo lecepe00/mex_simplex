@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mex.simplex.simplex_networks &#8212; mex 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.simplex.simplex_networks</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mex.simplex.simplex_networks">
+<span id="mex-simplex-simplex-networks"></span><h1>mex.simplex.simplex_networks<a class="headerlink" href="#module-mex.simplex.simplex_networks" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="mex.simplex.simplex_networks.create_matrix.html#mex.simplex.simplex_networks.create_matrix" title="mex.simplex.simplex_networks.create_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_matrix</span></code></a>(variables, constraints)</p></td>
+<td><p>Creates a matrix with enough rows for each constraint plus the objective function and enough columns for all the variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mex.simplex.simplex_networks.find_negative_col.html#mex.simplex.simplex_networks.find_negative_col" title="mex.simplex.simplex_networks.find_negative_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_negative_col</span></code></a>(matrix)</p></td>
+<td><p>Finds location of negative values in right column.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mex.simplex.simplex_networks.find_negative_row.html#mex.simplex.simplex_networks.find_negative_row" title="mex.simplex.simplex_networks.find_negative_row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_negative_row</span></code></a>(matrix)</p></td>
+<td><p>Finds location of negative values in bottom row.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mex.simplex.simplex_networks.find_pivot_col.html#mex.simplex.simplex_networks.find_pivot_col" title="mex.simplex.simplex_networks.find_pivot_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_pivot_col</span></code></a>(matrix)</p></td>
+<td><p>Finds pivot element corresponding to a negative value in right column.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mex.simplex.simplex_networks.find_pivot_row.html#mex.simplex.simplex_networks.find_pivot_row" title="mex.simplex.simplex_networks.find_pivot_row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_pivot_row</span></code></a>(matrix)</p></td>
+<td><p>Finds pivot element corresponding to a negative value in bottom row.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mex.simplex.simplex_networks.pivot.html#mex.simplex.simplex_networks.pivot" title="mex.simplex.simplex_networks.pivot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pivot</span></code></a>(row, col, matrix)</p></td>
+<td><p>Pivot about a value to remove negative in final column or row.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mex.simplex.simplex_networks.pivots_col.html#mex.simplex.simplex_networks.pivots_col" title="mex.simplex.simplex_networks.pivots_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pivots_col</span></code></a>(matrix)</p></td>
+<td><p>Checks to see if pivots are required due to negative values in right column, excluding the bottom value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mex.simplex.simplex_networks.pivots_row.html#mex.simplex.simplex_networks.pivots_row" title="mex.simplex.simplex_networks.pivots_row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pivots_row</span></code></a>(matrix)</p></td>
+<td><p>Checks to see if pivots are required due to negative values in bottom row, excluding the final value.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/mex.simplex.simplex_networks.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.simplex.simplex_networks</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, cecyar, lecepe00, eduardo-moreno, caroacostatovany.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

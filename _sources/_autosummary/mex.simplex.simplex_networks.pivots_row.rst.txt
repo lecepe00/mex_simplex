@@ -1,0 +1,6 @@
+﻿mex.simplex.simplex\_networks.pivots\_row
+=========================================
+
+.. currentmodule:: mex.simplex.simplex_networks
+
+.. autofunction:: pivots_row

@@ -1,0 +1,29 @@
+mex.simplex.maximizer\_class
+============================
+
+.. automodule:: mex.simplex.maximizer_class
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Maximizer
+   
+   
+
+   
+   
+   
+
+
+

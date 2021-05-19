@@ -1,0 +1,6 @@
+﻿mex.simplex.problem\_definition.convert\_min
+============================================
+
+.. currentmodule:: mex.simplex.problem_definition
+
+.. autofunction:: convert_min

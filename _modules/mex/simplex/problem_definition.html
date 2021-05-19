@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mex.simplex.problem_definition &#8212; mex 0.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mex 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.simplex.problem_definition</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for mex.simplex.problem_definition</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">mex.utils.general</span> <span class="kn">import</span> <span class="n">gen_var</span><span class="p">,</span> <span class="n">convert_min</span><span class="p">,</span> <span class="n">convert</span>
+<span class="kn">from</span> <span class="nn">mex.simplex.simplex_networks</span> <span class="kn">import</span> <span class="n">pivots_col</span><span class="p">,</span> <span class="n">find_pivot_col</span><span class="p">,</span> <span class="n">pivots_row</span><span class="p">,</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">find_pivot_row</span>
+
+
+<div class="viewcode-block" id="add_cons"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.add_cons.html#mex.simplex.problem_definition.add_cons">[docs]</a><span class="k">def</span> <span class="nf">add_cons</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all</span>
+<span class="sd">    0 elements. If this condition is not satisfied, our program will not allow the user to add additional constraints.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    </span>
+<span class="sd">        matrix (numpy array): matrix to be reviewed.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    </span>
+<span class="sd">        Flag (bool): True or False indicating whether 1+ constraints can be added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">add</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">lr</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lr</span><span class="p">):</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:])</span>
+        <span class="k">if</span> <span class="n">total</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="p">(</span><span class="n">lr</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">add</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">add</span></div>
+
+
+<div class="viewcode-block" id="constrain"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.constrain.html#mex.simplex.problem_definition.constrain">[docs]</a><span class="k">def</span> <span class="nf">constrain</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">eq</span><span class="p">,</span> <span class="n">memory_prof</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds constraints to the problem.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        matrix (numpy array): matrix defined with :mod:`create_matrix`.</span>
+<span class="sd">        eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*,</span>
+<span class="sd">        **E** for *equal to*.</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;1,L,4&#39;)     # x_1 &lt;= 4</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;0,2,L,12&#39;)  # 2x_2 &lt;= 12</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;3,2,G,18&#39;)  # 3x_1 + 2x_2 &gt;= 18</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="s1">&#39;E&#39;</span> <span class="ow">in</span> <span class="n">eq</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">add_cons</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+            <span class="c1">#lc = len(matrix[0, :])</span>
+            <span class="n">lr</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+            <span class="c1">#var = lc - lr - 1</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">lr</span><span class="p">:</span>
+                <span class="n">row_check</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">j</span><span class="p">,:]</span>
+                <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">row_check</span><span class="p">:</span>
+                    <span class="n">total</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="c1">#i**2</span>
+                <span class="k">if</span> <span class="n">total</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">row</span> <span class="o">=</span> <span class="n">row_check</span>
+                    <span class="k">break</span>
+                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+                
+            <span class="n">eq</span> <span class="o">=</span> <span class="n">convert</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+            <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="c1">#row[var+j] = 1</span>
+        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cannot add another constraint.&#39;</span><span class="p">)</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">add_cons</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+            <span class="n">lc</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+            <span class="n">lr</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+            <span class="n">var</span> <span class="o">=</span> <span class="n">lc</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">lr</span><span class="p">:</span>
+                <span class="n">row_check</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="p">:]</span>
+                <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">row_check</span><span class="p">:</span>
+                    <span class="n">total</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="c1">#i**2</span>
+                <span class="k">if</span> <span class="n">total</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">row</span> <span class="o">=</span> <span class="n">row_check</span>
+                    <span class="k">break</span>
+                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+                
+            <span class="n">eq</span> <span class="o">=</span> <span class="n">convert</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+            <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">row</span><span class="p">[</span><span class="n">var</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cannot add another constraint.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">memory_prof</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">matrix</span></div>
+
+
+<div class="viewcode-block" id="add_obj"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.add_obj.html#mex.simplex.problem_definition.add_obj">[docs]</a><span class="k">def</span> <span class="nf">add_obj</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Verifies if the objective function can be added.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    </span>
+<span class="sd">        matrix (numpy array): matrix to be reviewed.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    </span>
+<span class="sd">        Flag (bool): True or False indicating whether objective function can be added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">add</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">lr</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lr</span><span class="p">):</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:])</span>
+        <span class="k">if</span> <span class="n">total</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="p">(</span><span class="n">lr</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">add</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="n">add</span></div>
+
+
+<div class="viewcode-block" id="obj"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.obj.html#mex.simplex.problem_definition.obj">[docs]</a><span class="k">def</span> <span class="nf">obj</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">eq</span><span class="p">,</span><span class="n">memory_prof</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds the objective function to the problem matrix.</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">        Objective function must be added **after** constraints have been input.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    </span>
+<span class="sd">        matrix (numpy array): matrix defined with :mod:`create_matrix`.</span>
+<span class="sd">        </span>
+<span class="sd">        eq (string): coefficients of objective function.</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;1,L,4&#39;)     # x_1 &lt;= 4</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;0,2,L,12&#39;)  # 2x_2 &lt;= 12</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;4,2,G,18&#39;)  # 4x_1 + 2x_2 &gt;= 18</span>
+<span class="sd">    &gt;&gt;&gt; obj(problem_matrix,&#39;3,5,0&#39;)           # 3x_1 + 5x_2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">if</span> <span class="n">add_obj</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+        <span class="n">eq</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">eq</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)]</span>
+        <span class="n">lr</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># len(matrix[:,0])</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">lr</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You must finish adding constraints before the objective function can be added.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">memory_prof</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">matrix</span></div>
+
+
+<div class="viewcode-block" id="maxz"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.maxz.html#mex.simplex.problem_definition.maxz">[docs]</a><span class="k">def</span> <span class="nf">maxz</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">aux</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,</span>
+<span class="sd">    pivots about it and continues the process until all negative elements have been removed from</span>
+<span class="sd">    the last column and row.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    </span>
+<span class="sd">        matrix (numpy array): problem matrix with constraints and objective function added.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    </span>
+<span class="sd">        *(dict)* A dictionary with Max and variables.</span>
+<span class="sd">        </span>
+<span class="sd">    &gt;&gt;&gt; problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;1,L,4&#39;)     # x_1 &lt;= 4</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;0,2,L,12&#39;)  # 2x_2 &lt;= 12</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;4,2,G,18&#39;)  # 4x_1 + 2x_2 &gt;= 18</span>
+<span class="sd">    &gt;&gt;&gt; obj(problem_matrix,&#39;3,5,0&#39;)           # 3x_1 + 5x_2</span>
+<span class="sd">    &gt;&gt;&gt; maxz(problem_matrix)</span>
+<span class="sd">    {&#39;x1&#39;: 4.0, &#39;x2&#39;: 6.0, &#39;max&#39;: 42.0}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">while</span> <span class="n">pivots_col</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+        <span class="n">tmp_pivot_col</span> <span class="o">=</span> <span class="n">find_pivot_col</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">tmp_pivot_col</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tmp_pivot_col</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">matrix</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">pivots_row</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+        <span class="n">tmp_pivot_row</span> <span class="o">=</span> <span class="n">find_pivot_row</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">tmp_pivot_row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tmp_pivot_row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">matrix</span><span class="p">)</span>
+    
+    <span class="n">lc</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+    <span class="n">lr</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="n">lc</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="n">gen_variables</span> <span class="o">=</span> <span class="n">gen_var</span><span class="p">(</span><span class="n">lc</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">col</span> <span class="o">==</span> <span class="n">m</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">val</span><span class="p">[</span><span class="n">gen_variables</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">loc</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val</span><span class="p">[</span><span class="n">gen_variables</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">val</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">val</span></div>
+
+
+<div class="viewcode-block" id="minz"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.minz.html#mex.simplex.problem_definition.minz">[docs]</a><span class="k">def</span> <span class="nf">minz</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">aux</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates minimization function. Determines if 1 extra pivot is required, locates the pivot element,</span>
+<span class="sd">    pivots about it and continues the process until all negative elements have been removed from </span>
+<span class="sd">    the last column and row.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    </span>
+<span class="sd">        matrix (numpy array): problem matrix with constraints and objective function added.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    </span>
+<span class="sd">        (dict) A dictionary with Min and variables.</span>
+<span class="sd">        </span>
+<span class="sd">    &gt;&gt;&gt; problem_matrix = create_matrix(2,4)   # 2 variables and 4 constraints</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;1,1,L,6&#39;)   # x_1 + x_2 &lt;= 6</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;-1,2,L,8&#39;)  # -x_1 + 2x_2 &lt;= 8</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;1,G,0&#39;)     # x_1 &gt;= 0</span>
+<span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;0,1,G,0&#39;)   # x_2 &gt;= 0</span>
+<span class="sd">    &gt;&gt;&gt; obj(problem_matrix,&#39;-1,-3,0&#39;)         # -x_1 - 3x_2</span>
+<span class="sd">    &gt;&gt;&gt; minz(problem_matrix)</span>
+<span class="sd">    {&#39;x1&#39;: 1.3333333333333333, &#39;x2&#39;: 4.666666666666667}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">matrix</span> <span class="o">=</span> <span class="n">convert_min</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">pivots_col</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+        <span class="n">pivot_col</span> <span class="o">=</span> <span class="n">find_pivot_col</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">pivot_col</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pivot_col</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">matrix</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">pivots_row</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+        <span class="n">pivot_row</span> <span class="o">=</span> <span class="n">find_pivot_row</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">pivot_row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pivot_row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">matrix</span><span class="p">)</span>
+
+    <span class="n">lc</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">lr</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="n">lc</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">gen_variables</span> <span class="o">=</span> <span class="n">gen_var</span><span class="p">(</span><span class="n">lc</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">col</span> <span class="o">==</span> <span class="n">m</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">val</span><span class="p">[</span><span class="n">gen_variables</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">loc</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val</span><span class="p">[</span><span class="n">gen_variables</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">val</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">aux</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">val</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mex 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.simplex.problem_definition</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, cecyar, lecepe00, eduardo-moreno, caroacostatovany.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

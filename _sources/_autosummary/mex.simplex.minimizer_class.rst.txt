@@ -1,0 +1,29 @@
+mex.simplex.minimizer\_class
+============================
+
+.. automodule:: mex.simplex.minimizer_class
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Minimizer
+   
+   
+
+   
+   
+   
+
+
+
