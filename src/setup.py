@@ -5,7 +5,7 @@ from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
 setup(name="mex",
-      version="0.3",
+      version="1.0",
       description=u"Paquete que resuelve metodo simplex",
       url="",
       author="cecyar, lecepe00, eduardo-moreno, caroacostatovany",
