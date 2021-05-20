@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mex.simplex.minimizer_class &#8212; mex 0.1 documentation</title>
+    <title>mex.simplex.minimizer_class &#8212; mex 1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     
@@ -26,7 +26,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">mex 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mex 1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">mex.simplex.minimizer_class</a></li> 
       </ul>
@@ -45,7 +45,23 @@
 
 
 <div class="viewcode-block" id="Minimizer"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.minimizer_class.Minimizer.html#mex.simplex.minimizer_class.Minimizer">[docs]</a><span class="k">class</span> <span class="nc">Minimizer</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Minimize the objective function&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Minimize the objective function</span>
+<span class="sd">    Args:</span>
+
+<span class="sd">        A (matrix):</span>
+<span class="sd">        b (vector):</span>
+<span class="sd">        c (vector):</span>
+
+<span class="sd">    &gt;&gt;&gt; A_min = [[1, 1], [-1, 2]]</span>
+<span class="sd">    &gt;&gt;&gt; b_min = [[6], [8]]</span>
+<span class="sd">    &gt;&gt;&gt; c_min = [[-1], [-3]]</span>
+
+<span class="sd">    &gt;&gt;&gt; minim = Minimizer(A_min_obj, b_min_obj, c_min_obj)</span>
+<span class="sd">    &gt;&gt;&gt; minim.solve()</span>
+<span class="sd">    &gt;&gt;&gt; min_approx = minim.get_min()</span>
+<span class="sd">    &gt;&gt;&gt; coeff_approx = minim.get_coeff()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="Minimizer.__init__"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.minimizer_class.Minimizer.html#mex.simplex.minimizer_class.Minimizer.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">A_matrix</span> <span class="o">=</span> <span class="n">A</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">b_vector</span> <span class="o">=</span> <span class="n">b</span>
@@ -55,17 +71,39 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span> <span class="o">=</span> <span class="kc">None</span></div>
 
     <span class="k">def</span> <span class="nf">add_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lowerbounds</span><span class="p">,</span> <span class="n">upperbounds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add constraints to current matrix.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">              lowerbounds (vector): lower bounds of the problem.</span>
+<span class="sd">              upperbounds (vector): upper bounds of the problem.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">matrix</span> <span class="o">=</span> <span class="n">generate_tableau</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A_matrix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_vector</span><span class="p">,</span> <span class="n">lowerbounds</span><span class="p">,</span> <span class="n">upperbounds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_vector</span><span class="p">,</span> <span class="n">compr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Solve the minimization problem.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">solve</span> <span class="o">=</span> <span class="n">minz</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matrix</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="n">solve</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">solve</span><span class="o">.</span><span class="n">values</span><span class="p">()))[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">get_min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obtain the approximated minimum value.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            min (value): Minimum value of the problem</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span>
 
     <span class="k">def</span> <span class="nf">get_coeff</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obtain the approximated coefficients per variable</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            coeff (dictionary): Dictionary of the approximated coefficients.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span></div>
 </pre></div>
 
@@ -98,7 +136,7 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">mex 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mex 1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">mex.simplex.minimizer_class</a></li> 
       </ul>

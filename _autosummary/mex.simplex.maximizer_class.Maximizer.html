@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mex.simplex.maximizer_class.Maximizer &#8212; mex 0.1 documentation</title>
+    <title>mex.simplex.maximizer_class.Maximizer &#8212; mex 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="../simplex/modules_autosummary.html" title="Simplex method Modules"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mex 1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../simplex/modules_autosummary.html" accesskey="U">Simplex method Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">mex.simplex.maximizer_class.Maximizer</a></li> 
       </ul>
@@ -50,7 +50,24 @@
 <dl class="py class">
 <dt id="mex.simplex.maximizer_class.Maximizer">
 <em class="property">class </em><code class="sig-prename descclassname">mex.simplex.maximizer_class.</code><code class="sig-name descname">Maximizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">A</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mex/simplex/maximizer_class.html#Maximizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mex.simplex.maximizer_class.Maximizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Maximize the objective function</p>
+<dd><p>Maximize the objective function
+:param A:
+:type A: matrix
+:param b:
+:type b: vector
+:param c:
+:type c: vector</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A_max</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b_max</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">18</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c_max</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">maxim</span> <span class="o">=</span> <span class="n">Maximizer</span><span class="p">(</span><span class="n">A_max</span><span class="p">,</span> <span class="n">b_max</span><span class="p">,</span> <span class="n">c_max</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">maxim</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">max_approx</span> <span class="o">=</span> <span class="n">maxim</span><span class="o">.</span><span class="n">get_max</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coeff_approx</span> <span class="o">=</span> <span class="n">maxim</span><span class="o">.</span><span class="n">get_coeff</span><span class="p">()</span>
+</pre></div>
+</div>
 <dl class="py method">
 <dt id="mex.simplex.maximizer_class.Maximizer.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">A</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mex/simplex/maximizer_class.html#Maximizer.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mex.simplex.maximizer_class.Maximizer.__init__" title="Permalink to this definition">¶</a></dt>
@@ -68,16 +85,16 @@
 <td><p>Initialize self.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_constraints</span></code>(lowerbounds, upperbounds)</p></td>
-<td><p></p></td>
+<td><p>Add constraints to current matrix.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_coeff</span></code>()</p></td>
-<td><p></p></td>
+<td><p>Obtain the approximated coefficients per variable</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_max</span></code>()</p></td>
-<td><p></p></td>
+<td><p>Obtain the approximated maximum value.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>()</p></td>
-<td><p></p></td>
+<td><p>Solve the maximization problem.</p></td>
 </tr>
 </tbody>
 </table>
@@ -134,7 +151,7 @@
         <li class="right" >
           <a href="../simplex/modules_autosummary.html" title="Simplex method Modules"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mex 1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../simplex/modules_autosummary.html" >Simplex method Modules</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">mex.simplex.maximizer_class.Maximizer</a></li> 
       </ul>
