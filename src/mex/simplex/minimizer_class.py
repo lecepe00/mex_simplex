@@ -7,6 +7,7 @@ from mex.utils.general import generates_matrix, generate_tableau
 class Minimizer():
     """
     Minimize the objective function
+
     Args:
 
         A (matrix):
@@ -38,7 +39,7 @@ class Minimizer():
 
         Args:
               lowerbounds (vector): lower bounds of the problem.
-              
+
               upperbounds (vector): upper bounds of the problem.
         """
         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)

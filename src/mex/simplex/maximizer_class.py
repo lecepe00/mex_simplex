@@ -7,6 +7,7 @@ from mex.utils.general import generates_matrix, generate_tableau
 class Maximizer():
     """
     Maximize the objective function
+
     Args:
 
         A (matrix):
