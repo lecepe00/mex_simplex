@@ -10,13 +10,15 @@ class Maximizer():
     Args:
 
         A (matrix):
+
         b (vector):
+
         c (vector):
 
     >>> A_max = [[1, 0], [0, 2], [3, 2]]
     >>> b_max = [[4], [12], [18]]
     >>> c_max = [[-3], [-5]]
-
+    >>>
     >>> maxim = Maximizer(A_max, b_max, c_max)
     >>> maxim.solve()
     >>> max_approx = maxim.get_max()
@@ -36,6 +38,7 @@ class Maximizer():
 
         Args:
               lowerbounds (vector): lower bounds of the problem.
+
               upperbounds (vector): upper bounds of the problem.
         """
         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)

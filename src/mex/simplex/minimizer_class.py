@@ -10,13 +10,15 @@ class Minimizer():
     Args:
 
         A (matrix):
+
         b (vector):
+
         c (vector):
 
     >>> A_min = [[1, 1], [-1, 2]]
     >>> b_min = [[6], [8]]
     >>> c_min = [[-1], [-3]]
-
+    >>>
     >>> minim = Minimizer(A_min_obj, b_min_obj, c_min_obj)
     >>> minim.solve()
     >>> min_approx = minim.get_min()
@@ -36,6 +38,7 @@ class Minimizer():
 
         Args:
               lowerbounds (vector): lower bounds of the problem.
+              
               upperbounds (vector): upper bounds of the problem.
         """
         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
