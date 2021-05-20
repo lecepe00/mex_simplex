@@ -14642,7 +14642,11 @@ $$  3x_1 + 2x_2 \leq 18 $$<ol>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre><span class="ansi-yellow-fg">WARNING: You are using pip version 20.2.1; however, version 21.1.1 is available.
+<pre><span class="ansi-yellow-fg">  WARNING: The script kernprof is installed in &#39;/home/miuser/.local/bin&#39; which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span>
+<span class="ansi-yellow-fg">  WARNING: The script mprof is installed in &#39;/home/miuser/.local/bin&#39; which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span>
+<span class="ansi-yellow-fg">WARNING: You are using pip version 20.2.1; however, version 21.1.1 is available.
 You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upgrade pip&#39; command.</span>
 </pre>
 </div>
@@ -15306,9 +15310,10 @@ Número de variables: 20
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time_scipy</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
 <span class="n">max_obj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">linprog</span><span class="p">(</span><span class="n">c_max_obj</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_max_obj</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_max_obj</span><span class="p">)</span><span class="o">.</span><span class="n">fun</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+<span class="n">secs_scipy</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time_scipy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todo el proceso tomó&quot;</span><span class="p">,</span><span class="n">secs_scipy</span><span class="p">,</span><span class="s2">&quot;segundos&quot;</span> <span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15328,7 +15333,7 @@ Número de variables: 20
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.050434800003131386
+<pre>Todo el proceso tomó 0.04308002100151498 segundos
 </pre>
 </div>
 </div>
@@ -15364,7 +15369,8 @@ Número de variables: 20
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
 <span class="n">matrix_max_approx</span> <span class="o">=</span> <span class="n">mex_g</span><span class="o">.</span><span class="n">generates_matrix</span><span class="p">(</span><span class="n">A_max_obj</span><span class="p">,</span> <span class="n">b_max_obj</span><span class="p">,</span> <span class="n">c_max_obj</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+<span class="n">secs_mex</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todo el proceso tomó&quot;</span><span class="p">,</span><span class="n">secs_mex</span><span class="p">,</span><span class="s2">&quot;segundos&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15384,7 +15390,7 @@ Número de variables: 20
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.00040779999835649505
+<pre>Todo el proceso tomó 0.0015897219964244869 segundos
 </pre>
 </div>
 </div>
@@ -15484,7 +15490,7 @@ Los coeficientes aproximados obtenidos con mex son:
 <li>R: El problema es regular, es decir, su primera y segunda derivadas existen y son continuas.</li>
 <li>2: grado de las derivadas más grandes proporcionadas analíticamente dentro de la descripción del problema.</li>
 <li>A: El problema es académico.</li>
-<li>N: La descripción del poblema no contiene variables internas explícitas.</li>
+<li>N: La descripción del problema no contiene variables internas explícitas.</li>
 </ul>
 
 </div>
@@ -15637,7 +15643,8 @@ Los coeficientes aproximados obtenidos con mex son:
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
 <span class="n">minim</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+<span class="n">secs_mex</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todo el proceso tomó&quot;</span><span class="p">,</span><span class="n">secs_mex</span><span class="p">,</span><span class="s2">&quot;segundos&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15657,7 +15664,7 @@ Los coeficientes aproximados obtenidos con mex son:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>93.05156120000174
+<pre>Todo el proceso tomó 110.79066195200357 segundos
 </pre>
 </div>
 </div>
@@ -15720,9 +15727,10 @@ Los coeficientes aproximados obtenidos con mex son:
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time_scipy</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
 <span class="n">min_obj</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c_min_obj</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_min_obj</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_min_obj</span><span class="p">)</span><span class="o">.</span><span class="n">fun</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+<span class="n">secs_scipy</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time_scipy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todo el proceso tomó&quot;</span><span class="p">,</span><span class="n">secs_scipy</span><span class="p">,</span><span class="s2">&quot;segundos&quot;</span> <span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15742,7 +15750,7 @@ Los coeficientes aproximados obtenidos con mex son:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>72.93183499999577
+<pre>Todo el proceso tomó 92.96342534699943 segundos
 </pre>
 </div>
 </div>
@@ -15779,8 +15787,8 @@ Los coeficientes aproximados obtenidos con mex son:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">min_obj</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="n">min_approx</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">),</span> <span class="s2">&quot;El valor aproximado es incorrecto&quot;</span>
 <span class="c1">#assert np.round(coeff_obj,3) == approx(coeff_approx, abs=1e+40), &quot;El valor de los coeficientes aproximados es incorrecto&quot;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor objetivo obtenido con scipy es: &quot;</span><span class="p">,</span> <span class="n">min_obj</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor aproximado obtenido con mex es: &quot;</span><span class="p">,</span> <span class="n">min_approx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor objetivo obtenido con scipy es: </span><span class="si">{0:.2g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_obj</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor aproximado obtenido con mex es: </span><span class="si">{0:.2g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_approx</span><span class="p">))</span>
 <span class="c1">#print(&quot;Los coeficientes objetivos obtenidos con scipy son: &quot;, coeff_obj)</span>
 <span class="c1">#print(&quot;Los coeficientes aproximados obtenidos con mex son: &quot;, coeff_approx)</span>
 </pre></div>
@@ -15802,8 +15810,8 @@ Los coeficientes aproximados obtenidos con mex son:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>El valor objetivo obtenido con scipy es:  -3.553890952290583e+35
-El valor aproximado obtenido con mex es:  -3.602879999999999e+35
+<pre>El valor objetivo obtenido con scipy es: -3.6e+35
+El valor aproximado obtenido con mex es: -3.6e+35
 </pre>
 </div>
 </div>
@@ -15913,9 +15921,10 @@ El valor aproximado obtenido con mex es:  -3.602879999999999e+35
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time_c</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
 <span class="n">minim_c</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+<span class="n">secs_mex_c</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time_c</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todo el proceso tomó&quot;</span><span class="p">,</span><span class="n">secs_mex_c</span><span class="p">,</span><span class="s2">&quot;segundos&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15935,7 +15944,7 @@ El valor aproximado obtenido con mex es:  -3.602879999999999e+35
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>33.99296740000136
+<pre>Todo el proceso tomó 81.64939518999745 segundos
 </pre>
 </div>
 </div>
@@ -15974,16 +15983,16 @@ El valor aproximado obtenido con mex es:  -3.602879999999999e+35
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">min_obj</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="n">min_approx_c</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">),</span> <span class="s2">&quot;El valor aproximado es incorrecto&quot;</span>
 <span class="c1">#assert np.round(coeff_obj,5) == approx(coeff_approx_c, abs=1e+8), &quot;El valor de los coeficientes aproximados es incorrecto&quot;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor objetivo obtenido con scipy es: &quot;</span><span class="p">,</span> <span class="n">min_obj</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor aproximado obtenido con mex es: &quot;</span><span class="p">,</span> <span class="n">min_approx_c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor objetivo obtenido con scipy es: </span><span class="si">{0:.2g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_obj</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor aproximado obtenido con mex es: </span><span class="si">{0:.2g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_approx_c</span><span class="p">))</span>
 <span class="c1">#print(&quot;Los coeficientes objetivos obtenidos con scipy son: &quot;, coeff_obj)</span>
-<span class="c1">#print(&quot;Los coeficientes aproximados obtenidos con mex son: &quot;, coeff_approx)</span>
+<span class="c1">#print(&quot;Los coeficientes aproximados obtenidos con mex son: &quot;, coeff_approx_c)</span>
 </pre></div>
 
      </div>
@@ -16003,8 +16012,88 @@ El valor aproximado obtenido con mex es:  -3.602879999999999e+35
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>El valor objetivo obtenido con scipy es:  -3.553890952290583e+35
-El valor aproximado obtenido con mex es:  -3.602879999999999e+35
+<pre>El valor objetivo obtenido con scipy es: -3.6e+35
+El valor aproximado obtenido con mex es: -3.6e+35
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Comparaci&#243;n-de-tiempos">Comparaci&#243;n de tiempos<a class="anchor-link" href="#Comparaci&#243;n-de-tiempos">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La resolución con el paquete mex base tomó </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">secs_mex</span><span class="p">),</span><span class="s2">&quot;segundos.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La resolución con el paquete mex con compilación a C tomó </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">secs_mex_c</span><span class="p">),</span><span class="s2">&quot;segundos.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La resolución con scipy tomó </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">secs_scipy</span><span class="p">),</span><span class="s2">&quot;segundos.&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>La resolución con el paquete mex base tomó 110.79 segundos.
+La resolución con el paquete mex con compilación a C tomó 81.65 segundos.
+La resolución con scipy tomó 92.96 segundos.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">secs_diff</span> <span class="o">=</span> <span class="n">secs_scipy</span> <span class="o">-</span> <span class="n">secs_mex_c</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡El paquete mex compilado a C necesitó </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">secs_diff</span><span class="p">),</span><span class="s2">&quot;segundos menos que el paquete scipy para la ejecución!&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>¡El paquete mex compilado a C necesitó 11.31 segundos menos que el paquete scipy para la ejecución!
 </pre>
 </div>
 </div>
@@ -16022,6 +16111,7 @@ El valor aproximado obtenido con mex es:  -3.602879999999999e+35
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>En este proyecto se ha estudiado el uso del método símplex para la resolución de problemas de programación lineal (<em>LP</em>), por medio del desarrollo y la implementación del paquete <code>mex</code>.</p>
+<p>La estructura del tableau es muy utilizada para resolver problemas lineales de pequeña escala (decenas, cientos y miles de variables), sin embargo, no es eficiente para problemas de mediana y/o grande escala.</p>
 <p>Como alternativas para la resolución de problemas de programación lineal, similares a los estudiados en este proyecto, se tienen por ejemplo los métodos por puntos interiores, como el método primal-dual de barrera logarítmica, también estudiado en la materia de Optimización Avanzada.</p>
 <p>La principal diferencia entre los métodos de puntos interiores y el método símplex es que, como su nombre lo indica, comienzan en un punto interior de la región factible, y en cada iteración se van aproximando a los puntos óptimos en el límite. Cada iteración de los métodos de puntos interiores es costosa de calcular (más costosa de calcular que en el método símplex), sin embargo, para problemas de gran escala no se requieren muchas más iteraciones respecto a un problema de pequeña escala. Cabe aclarar que los métodos de puntos interiores quedan fuera del alcance de este proyecto.</p>
 
