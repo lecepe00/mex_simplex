@@ -15,9 +15,7 @@ def convert_min(matrix):
         matrix (numpy array): matrix multiplied by -1.
     """
     
-    cdef int i
-    
-    matrix[-1, :-2] = -1*matrix[-1, :-2]
+    matrix[-1, :-2] = [-1*i for i in matrix[-1, :-2]]
     matrix[-1, -1] = -1*matrix[-1, -1]
     
     return matrix
@@ -29,8 +27,9 @@ def gen_var(lc, lr):
     
     Args:
     
-        lc : number of columns
-        lr : number of rows
+        lc : number of columns.
+        
+        lr : number of rows.
     
     Returns:
     
@@ -107,7 +106,7 @@ def generates_matrix(A_matrix, b_vector, c_vector):
     I = np.eye(nrow, nrow)
     
     # Crear nuevo vector de restricciones
-    b_new = np.concatenate([b_vector, np.array([0])], axis=0)
+    b_new = np.concatenate([b_vector, np.array([[0]])], axis=0)
 
     # Concatenar A_new, b_new de forma cbind
     A_new = np.c_[A_new, I, b_new]
@@ -121,14 +120,23 @@ def generate_tableau(A_matrix, b_vector, b_low, b_upp, c_vector, compr=True):
     min/max c^Tx
     Ax = b
     Concantenando renglones de A y juntando los limites de las restricciones (multiplicando por -1 donde sea necesario)
+    
     Args:
+        
         A_matrix (matrix):
+        
         b_vector (vector):
+        
         b_low (vector):
+        
         b_upp (vector):
+        
         c_vector (vector):
-        compr (boolean): default True
+        
+        compr (boolean): default True.
+    
     Returns:
+        
         A_new (matrix):
     """
 

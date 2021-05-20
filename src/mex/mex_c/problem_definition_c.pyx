@@ -182,7 +182,7 @@ def obj(matrix,eq,memory_prof=False):
 
     if memory_prof:
         return matrix
-
+    
 
 def maxz(matrix, aux=True):
     """
@@ -264,7 +264,6 @@ def minz(matrix, aux=True):
     """
 
     cdef int i
-    #cdef float s, m
     cdef long lc, lr, var
     
     matrix = convert_min(matrix)

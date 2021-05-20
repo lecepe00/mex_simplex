@@ -194,17 +194,18 @@ def find_pivot_row(matrix):
     return [index,neg]
 
 
+
 def pivot(row,col,matrix):
     """
     Pivot about a value to remove negative in final column or row.
     
     Args:
     
-        matrix (numpy array): matrix to be reviewed.
-        
         row (int): position to pivot.
         
         col (int): position to pivot.
+        
+        matrix (numpy array): matrix to be reviewed.
         
     Returns:
     
@@ -214,7 +215,7 @@ def pivot(row,col,matrix):
     cdef int i
     
     t = np.zeros(matrix.shape)
-    pr = matrix[row, :]  #original
+    pr = matrix[row, :]  
     n_col = len(matrix[:, col])
     tmp_matrix = matrix[row, col]
 

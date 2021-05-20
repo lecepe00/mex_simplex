@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "simplex_networks_c",
+        "name": "mex.mex_c.simplex_networks_c",
         "sources": [
             "simplex_networks_c.pyx"
         ]
     },
-    "module_name": "simplex_networks_c"
+    "module_name": "mex.mex_c.simplex_networks_c"
 }
 END: Cython Metadata */
 
@@ -616,8 +616,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__simplex_networks_c
-#define __PYX_HAVE_API__simplex_networks_c
+#define __PYX_HAVE__mex__mex_c__simplex_networks_c
+#define __PYX_HAVE_API__mex__mex_c__simplex_networks_c
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -831,63 +831,63 @@ static const char *__pyx_f[] = {
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col;
-struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr;
-struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row;
-struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr;
+struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col;
+struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr;
+struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row;
+struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr;
 
-/* "simplex_networks_c.pyx":125
+/* "mex/mex_c/simplex_networks_c.pyx":125
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds pivot element corresponding to a negative value in right column.
  */
-struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col {
+struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col {
   PyObject_HEAD
   PyObject *__pyx_v_total;
 };
 
 
-/* "simplex_networks_c.pyx":158
+/* "mex/mex_c/simplex_networks_c.pyx":158
  *         else:
  *             total.append(np.nan)  # placeholder, might need to update for large scale
  *     index = total.index(min(i for i in total if not np.isnan(i)))             # <<<<<<<<<<<<<<
  * 
  *     return [index, c]
  */
-struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr {
+struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr {
   PyObject_HEAD
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *__pyx_outer_scope;
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *__pyx_outer_scope;
   PyObject *__pyx_v_i;
   PyObject *__pyx_t_0;
   Py_ssize_t __pyx_t_1;
 };
 
 
-/* "simplex_networks_c.pyx":163
+/* "mex/mex_c/simplex_networks_c.pyx":163
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds pivot element corresponding to a negative value in bottom row.
  */
-struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row {
+struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row {
   PyObject_HEAD
   PyObject *__pyx_v_total;
 };
 
 
-/* "simplex_networks_c.pyx":192
+/* "mex/mex_c/simplex_networks_c.pyx":192
  *         else:
  *             total.append(np.nan) #placeholder, might need to update for large scale
  *     index = total.index(min(i for i in total if not np.isnan(i)))             # <<<<<<<<<<<<<<
  * 
  *     return [index,neg]
  */
-struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr {
+struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr {
   PyObject_HEAD
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *__pyx_outer_scope;
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *__pyx_outer_scope;
   PyObject *__pyx_v_i;
   PyObject *__pyx_t_0;
   Py_ssize_t __pyx_t_1;
@@ -1387,16 +1387,16 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'simplex_networks_c' */
-static PyTypeObject *__pyx_ptype_18simplex_networks_c___pyx_scope_struct__find_pivot_col = 0;
-static PyTypeObject *__pyx_ptype_18simplex_networks_c___pyx_scope_struct_1_genexpr = 0;
-static PyTypeObject *__pyx_ptype_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row = 0;
-static PyTypeObject *__pyx_ptype_18simplex_networks_c___pyx_scope_struct_3_genexpr = 0;
-#define __Pyx_MODULE_NAME "simplex_networks_c"
-extern int __pyx_module_is_main_simplex_networks_c;
-int __pyx_module_is_main_simplex_networks_c = 0;
+/* Module declarations from 'mex.mex_c.simplex_networks_c' */
+static PyTypeObject *__pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col = 0;
+static PyTypeObject *__pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr = 0;
+static PyTypeObject *__pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row = 0;
+static PyTypeObject *__pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr = 0;
+#define __Pyx_MODULE_NAME "mex.mex_c.simplex_networks_c"
+extern int __pyx_module_is_main_mex__mex_c__simplex_networks_c;
+int __pyx_module_is_main_mex__mex_c__simplex_networks_c = 0;
 
-/* Implementation of 'simplex_networks_c' */
+/* Implementation of 'mex.mex_c.simplex_networks_c' */
 static PyObject *__pyx_builtin_min;
 static PyObject *__pyx_builtin_zip;
 static PyObject *__pyx_builtin_range;
@@ -1452,9 +1452,9 @@ static const char __pyx_k_find_pivot_row[] = "find_pivot_row";
 static const char __pyx_k_find_negative_col[] = "find_negative_col";
 static const char __pyx_k_find_negative_row[] = "find_negative_row";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_simplex_networks_c[] = "simplex_networks_c";
 static const char __pyx_k_simplex_networks_c_pyx[] = "simplex_networks_c.pyx";
 static const char __pyx_k_Cannot_pivot_on_this_element[] = "Cannot pivot on this element";
+static const char __pyx_k_mex_mex_c_simplex_networks_c[] = "mex.mex_c.simplex_networks_c";
 static const char __pyx_k_find_pivot_col_locals_genexpr[] = "find_pivot_col.<locals>.genexpr";
 static const char __pyx_k_find_pivot_row_locals_genexpr[] = "find_pivot_row.<locals>.genexpr";
 static PyObject *__pyx_kp_u_Cannot_pivot_on_this_element;
@@ -1483,6 +1483,7 @@ static PyObject *__pyx_n_s_l;
 static PyObject *__pyx_n_s_m;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_matrix;
+static PyObject *__pyx_n_s_mex_mex_c_simplex_networks_c;
 static PyObject *__pyx_n_s_min;
 static PyObject *__pyx_n_s_n;
 static PyObject *__pyx_n_s_n_col;
@@ -1501,7 +1502,6 @@ static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_row;
 static PyObject *__pyx_n_s_send;
 static PyObject *__pyx_n_s_shape;
-static PyObject *__pyx_n_s_simplex_networks_c;
 static PyObject *__pyx_kp_s_simplex_networks_c_pyx;
 static PyObject *__pyx_n_s_t;
 static PyObject *__pyx_n_s_test;
@@ -1513,20 +1513,20 @@ static PyObject *__pyx_n_s_variables;
 static PyObject *__pyx_n_s_where;
 static PyObject *__pyx_n_s_zeros;
 static PyObject *__pyx_n_s_zip;
-static PyObject *__pyx_pf_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_variables, PyObject *__pyx_v_constraints); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_14find_pivot_col_genexpr(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_14find_pivot_row_genexpr(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_row, PyObject *__pyx_v_col, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_1_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_3_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_variables, PyObject *__pyx_v_constraints); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_14find_pivot_col_genexpr(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_14find_pivot_row_genexpr(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_row, PyObject *__pyx_v_col, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static __Pyx_CachedCFunction __pyx_umethod_PyList_Type_index = {0, &__pyx_n_s_index, 0, 0, 0};
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
@@ -1554,7 +1554,7 @@ static PyObject *__pyx_codeobj__18;
 static PyObject *__pyx_codeobj__20;
 /* Late includes */
 
-/* "simplex_networks_c.pyx":4
+/* "mex/mex_c/simplex_networks_c.pyx":4
  * 
  * 
  * def create_matrix(variables, constraints):             # <<<<<<<<<<<<<<
@@ -1563,10 +1563,10 @@ static PyObject *__pyx_codeobj__20;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_18simplex_networks_c_1create_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_18simplex_networks_c_create_matrix[] = "\n    Creates a matrix with enough rows for each constraint plus the objective function\n    and enough columns for all the variables.\n    \n    Args:\n    \n        variables (int): number of variables.\n        \n        constraints (int): number of constraints.\n    \n    Returns:\n    \n        matrix (numpy array): zero matrix.\n    ";
-static PyMethodDef __pyx_mdef_18simplex_networks_c_1create_matrix = {"create_matrix", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_18simplex_networks_c_1create_matrix, METH_VARARGS|METH_KEYWORDS, __pyx_doc_18simplex_networks_c_create_matrix};
-static PyObject *__pyx_pw_18simplex_networks_c_1create_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_1create_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3mex_5mex_c_18simplex_networks_c_create_matrix[] = "\n    Creates a matrix with enough rows for each constraint plus the objective function\n    and enough columns for all the variables.\n    \n    Args:\n    \n        variables (int): number of variables.\n        \n        constraints (int): number of constraints.\n    \n    Returns:\n    \n        matrix (numpy array): zero matrix.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_18simplex_networks_c_1create_matrix = {"create_matrix", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_3mex_5mex_c_18simplex_networks_c_1create_matrix, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3mex_5mex_c_18simplex_networks_c_create_matrix};
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_1create_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_variables = 0;
   PyObject *__pyx_v_constraints = 0;
   int __pyx_lineno = 0;
@@ -1617,18 +1617,18 @@ static PyObject *__pyx_pw_18simplex_networks_c_1create_matrix(PyObject *__pyx_se
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("create_matrix", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 4, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplex_networks_c.create_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.create_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_18simplex_networks_c_create_matrix(__pyx_self, __pyx_v_variables, __pyx_v_constraints);
+  __pyx_r = __pyx_pf_3mex_5mex_c_18simplex_networks_c_create_matrix(__pyx_self, __pyx_v_variables, __pyx_v_constraints);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_variables, PyObject *__pyx_v_constraints) {
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_variables, PyObject *__pyx_v_constraints) {
   PyObject *__pyx_v_matrix = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -1642,7 +1642,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("create_matrix", 0);
 
-  /* "simplex_networks_c.pyx":20
+  /* "mex/mex_c/simplex_networks_c.pyx":20
  *     """
  * 
  *     matrix = np.zeros((constraints + 1, variables + constraints + 2))             # <<<<<<<<<<<<<<
@@ -1688,7 +1688,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObj
   __pyx_v_matrix = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":22
+  /* "mex/mex_c/simplex_networks_c.pyx":22
  *     matrix = np.zeros((constraints + 1, variables + constraints + 2))
  * 
  *     return matrix             # <<<<<<<<<<<<<<
@@ -1700,7 +1700,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObj
   __pyx_r = __pyx_v_matrix;
   goto __pyx_L0;
 
-  /* "simplex_networks_c.pyx":4
+  /* "mex/mex_c/simplex_networks_c.pyx":4
  * 
  * 
  * def create_matrix(variables, constraints):             # <<<<<<<<<<<<<<
@@ -1715,7 +1715,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObj
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("simplex_networks_c.create_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.create_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_matrix);
@@ -1724,7 +1724,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObj
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":25
+/* "mex/mex_c/simplex_networks_c.pyx":25
  * 
  * 
  * def pivots_col(matrix):             # <<<<<<<<<<<<<<
@@ -1733,21 +1733,21 @@ static PyObject *__pyx_pf_18simplex_networks_c_create_matrix(CYTHON_UNUSED PyObj
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_18simplex_networks_c_3pivots_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static char __pyx_doc_18simplex_networks_c_2pivots_col[] = "\n    Checks to see if pivots are required due to negative values in right column,\n    excluding the bottom value.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        Flag (bool): True or False indicating whether a negative element was found.\n    ";
-static PyMethodDef __pyx_mdef_18simplex_networks_c_3pivots_col = {"pivots_col", (PyCFunction)__pyx_pw_18simplex_networks_c_3pivots_col, METH_O, __pyx_doc_18simplex_networks_c_2pivots_col};
-static PyObject *__pyx_pw_18simplex_networks_c_3pivots_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_3pivots_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_3mex_5mex_c_18simplex_networks_c_2pivots_col[] = "\n    Checks to see if pivots are required due to negative values in right column,\n    excluding the bottom value.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        Flag (bool): True or False indicating whether a negative element was found.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_18simplex_networks_c_3pivots_col = {"pivots_col", (PyCFunction)__pyx_pw_3mex_5mex_c_18simplex_networks_c_3pivots_col, METH_O, __pyx_doc_3mex_5mex_c_18simplex_networks_c_2pivots_col};
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_3pivots_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("pivots_col (wrapper)", 0);
-  __pyx_r = __pyx_pf_18simplex_networks_c_2pivots_col(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_3mex_5mex_c_18simplex_networks_c_2pivots_col(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   double __pyx_v_m;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -1760,7 +1760,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("pivots_col", 0);
 
-  /* "simplex_networks_c.pyx":41
+  /* "mex/mex_c/simplex_networks_c.pyx":41
  *     cdef double m
  * 
  *     m = min(matrix[:-1, -1])             # <<<<<<<<<<<<<<
@@ -1776,7 +1776,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_m = __pyx_t_3;
 
-  /* "simplex_networks_c.pyx":42
+  /* "mex/mex_c/simplex_networks_c.pyx":42
  * 
  *     m = min(matrix[:-1, -1])
  *     if m >= 0:             # <<<<<<<<<<<<<<
@@ -1786,7 +1786,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
   __pyx_t_4 = ((__pyx_v_m >= 0.0) != 0);
   if (__pyx_t_4) {
 
-    /* "simplex_networks_c.pyx":43
+    /* "mex/mex_c/simplex_networks_c.pyx":43
  *     m = min(matrix[:-1, -1])
  *     if m >= 0:
  *         return False             # <<<<<<<<<<<<<<
@@ -1798,7 +1798,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
     __pyx_r = Py_False;
     goto __pyx_L0;
 
-    /* "simplex_networks_c.pyx":42
+    /* "mex/mex_c/simplex_networks_c.pyx":42
  * 
  *     m = min(matrix[:-1, -1])
  *     if m >= 0:             # <<<<<<<<<<<<<<
@@ -1807,7 +1807,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "simplex_networks_c.pyx":45
+  /* "mex/mex_c/simplex_networks_c.pyx":45
  *         return False
  *     else:
  *         return True             # <<<<<<<<<<<<<<
@@ -1821,7 +1821,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
     goto __pyx_L0;
   }
 
-  /* "simplex_networks_c.pyx":25
+  /* "mex/mex_c/simplex_networks_c.pyx":25
  * 
  * 
  * def pivots_col(matrix):             # <<<<<<<<<<<<<<
@@ -1833,7 +1833,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("simplex_networks_c.pivots_col", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.pivots_col", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1841,7 +1841,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":48
+/* "mex/mex_c/simplex_networks_c.pyx":48
  * 
  * 
  * def pivots_row(matrix):             # <<<<<<<<<<<<<<
@@ -1850,21 +1850,21 @@ static PyObject *__pyx_pf_18simplex_networks_c_2pivots_col(CYTHON_UNUSED PyObjec
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_18simplex_networks_c_5pivots_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static char __pyx_doc_18simplex_networks_c_4pivots_row[] = "\n    Checks to see if pivots are required due to negative values in bottom row, \n    excluding the final value.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        Flag (bool): True or False indicating whether a negative element was found.\n    ";
-static PyMethodDef __pyx_mdef_18simplex_networks_c_5pivots_row = {"pivots_row", (PyCFunction)__pyx_pw_18simplex_networks_c_5pivots_row, METH_O, __pyx_doc_18simplex_networks_c_4pivots_row};
-static PyObject *__pyx_pw_18simplex_networks_c_5pivots_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_5pivots_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_3mex_5mex_c_18simplex_networks_c_4pivots_row[] = "\n    Checks to see if pivots are required due to negative values in bottom row, \n    excluding the final value.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        Flag (bool): True or False indicating whether a negative element was found.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_18simplex_networks_c_5pivots_row = {"pivots_row", (PyCFunction)__pyx_pw_3mex_5mex_c_18simplex_networks_c_5pivots_row, METH_O, __pyx_doc_3mex_5mex_c_18simplex_networks_c_4pivots_row};
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_5pivots_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("pivots_row (wrapper)", 0);
-  __pyx_r = __pyx_pf_18simplex_networks_c_4pivots_row(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_3mex_5mex_c_18simplex_networks_c_4pivots_row(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   int __pyx_v_l;
   double __pyx_v_m;
   PyObject *__pyx_r = NULL;
@@ -1879,7 +1879,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("pivots_row", 0);
 
-  /* "simplex_networks_c.pyx":65
+  /* "mex/mex_c/simplex_networks_c.pyx":65
  *     cdef double m
  * 
  *     l = matrix.shape[0]             # <<<<<<<<<<<<<<
@@ -1895,7 +1895,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_l = __pyx_t_3;
 
-  /* "simplex_networks_c.pyx":66
+  /* "mex/mex_c/simplex_networks_c.pyx":66
  * 
  *     l = matrix.shape[0]
  *     m = min(matrix[l-1, :-1])             # <<<<<<<<<<<<<<
@@ -1922,7 +1922,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_m = __pyx_t_4;
 
-  /* "simplex_networks_c.pyx":67
+  /* "mex/mex_c/simplex_networks_c.pyx":67
  *     l = matrix.shape[0]
  *     m = min(matrix[l-1, :-1])
  *     if m >= 0:             # <<<<<<<<<<<<<<
@@ -1932,7 +1932,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
   __pyx_t_5 = ((__pyx_v_m >= 0.0) != 0);
   if (__pyx_t_5) {
 
-    /* "simplex_networks_c.pyx":68
+    /* "mex/mex_c/simplex_networks_c.pyx":68
  *     m = min(matrix[l-1, :-1])
  *     if m >= 0:
  *         return False             # <<<<<<<<<<<<<<
@@ -1944,7 +1944,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
     __pyx_r = Py_False;
     goto __pyx_L0;
 
-    /* "simplex_networks_c.pyx":67
+    /* "mex/mex_c/simplex_networks_c.pyx":67
  *     l = matrix.shape[0]
  *     m = min(matrix[l-1, :-1])
  *     if m >= 0:             # <<<<<<<<<<<<<<
@@ -1953,7 +1953,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "simplex_networks_c.pyx":70
+  /* "mex/mex_c/simplex_networks_c.pyx":70
  *         return False
  *     else:
  *         return True             # <<<<<<<<<<<<<<
@@ -1967,7 +1967,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
     goto __pyx_L0;
   }
 
-  /* "simplex_networks_c.pyx":48
+  /* "mex/mex_c/simplex_networks_c.pyx":48
  * 
  * 
  * def pivots_row(matrix):             # <<<<<<<<<<<<<<
@@ -1979,7 +1979,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("simplex_networks_c.pivots_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.pivots_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1987,7 +1987,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":73
+/* "mex/mex_c/simplex_networks_c.pyx":73
  * 
  * 
  * def find_negative_col(matrix):             # <<<<<<<<<<<<<<
@@ -1996,21 +1996,21 @@ static PyObject *__pyx_pf_18simplex_networks_c_4pivots_row(CYTHON_UNUSED PyObjec
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_18simplex_networks_c_7find_negative_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static char __pyx_doc_18simplex_networks_c_6find_negative_col[] = "\n    Finds location of negative values in right column.\n    \n    Args:\n        \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        n (int): index of negative value in right column.\n    ";
-static PyMethodDef __pyx_mdef_18simplex_networks_c_7find_negative_col = {"find_negative_col", (PyCFunction)__pyx_pw_18simplex_networks_c_7find_negative_col, METH_O, __pyx_doc_18simplex_networks_c_6find_negative_col};
-static PyObject *__pyx_pw_18simplex_networks_c_7find_negative_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_7find_negative_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_3mex_5mex_c_18simplex_networks_c_6find_negative_col[] = "\n    Finds location of negative values in right column.\n    \n    Args:\n        \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        n (int): index of negative value in right column.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_18simplex_networks_c_7find_negative_col = {"find_negative_col", (PyCFunction)__pyx_pw_3mex_5mex_c_18simplex_networks_c_7find_negative_col, METH_O, __pyx_doc_3mex_5mex_c_18simplex_networks_c_6find_negative_col};
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_7find_negative_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("find_negative_col (wrapper)", 0);
-  __pyx_r = __pyx_pf_18simplex_networks_c_6find_negative_col(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_3mex_5mex_c_18simplex_networks_c_6find_negative_col(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   int __pyx_v_l;
   double __pyx_v_m;
   PyObject *__pyx_v_n = NULL;
@@ -2029,7 +2029,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_negative_col", 0);
 
-  /* "simplex_networks_c.pyx":89
+  /* "mex/mex_c/simplex_networks_c.pyx":89
  *     cdef double m
  * 
  *     l = matrix.shape[1]             # <<<<<<<<<<<<<<
@@ -2045,7 +2045,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_l = __pyx_t_3;
 
-  /* "simplex_networks_c.pyx":90
+  /* "mex/mex_c/simplex_networks_c.pyx":90
  * 
  *     l = matrix.shape[1]
  *     m = min(matrix[:-1, l-1])             # <<<<<<<<<<<<<<
@@ -2072,7 +2072,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_m = __pyx_t_4;
 
-  /* "simplex_networks_c.pyx":91
+  /* "mex/mex_c/simplex_networks_c.pyx":91
  *     l = matrix.shape[1]
  *     m = min(matrix[:-1, l-1])
  *     if m <= 0:             # <<<<<<<<<<<<<<
@@ -2082,7 +2082,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
   __pyx_t_5 = ((__pyx_v_m <= 0.0) != 0);
   if (__pyx_t_5) {
 
-    /* "simplex_networks_c.pyx":92
+    /* "mex/mex_c/simplex_networks_c.pyx":92
  *     m = min(matrix[:-1, l-1])
  *     if m <= 0:
  *         n = np.where(matrix[:-1, l-1] == m)[0][0]             # <<<<<<<<<<<<<<
@@ -2137,7 +2137,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
     __pyx_v_n = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "simplex_networks_c.pyx":91
+    /* "mex/mex_c/simplex_networks_c.pyx":91
  *     l = matrix.shape[1]
  *     m = min(matrix[:-1, l-1])
  *     if m <= 0:             # <<<<<<<<<<<<<<
@@ -2147,7 +2147,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
     goto __pyx_L3;
   }
 
-  /* "simplex_networks_c.pyx":94
+  /* "mex/mex_c/simplex_networks_c.pyx":94
  *         n = np.where(matrix[:-1, l-1] == m)[0][0]
  *     else:
  *         n = None             # <<<<<<<<<<<<<<
@@ -2160,7 +2160,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
   }
   __pyx_L3:;
 
-  /* "simplex_networks_c.pyx":96
+  /* "mex/mex_c/simplex_networks_c.pyx":96
  *         n = None
  * 
  *     return n             # <<<<<<<<<<<<<<
@@ -2172,7 +2172,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
   __pyx_r = __pyx_v_n;
   goto __pyx_L0;
 
-  /* "simplex_networks_c.pyx":73
+  /* "mex/mex_c/simplex_networks_c.pyx":73
  * 
  * 
  * def find_negative_col(matrix):             # <<<<<<<<<<<<<<
@@ -2187,7 +2187,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("simplex_networks_c.find_negative_col", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.find_negative_col", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_n);
@@ -2196,7 +2196,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":99
+/* "mex/mex_c/simplex_networks_c.pyx":99
  * 
  * 
  * def find_negative_row(matrix):             # <<<<<<<<<<<<<<
@@ -2205,21 +2205,21 @@ static PyObject *__pyx_pf_18simplex_networks_c_6find_negative_col(CYTHON_UNUSED 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_18simplex_networks_c_9find_negative_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static char __pyx_doc_18simplex_networks_c_8find_negative_row[] = "\n    Finds location of negative values in bottom row.\n    \n    Args:\n        \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        n (int): index of negative value in bottom row.\n    ";
-static PyMethodDef __pyx_mdef_18simplex_networks_c_9find_negative_row = {"find_negative_row", (PyCFunction)__pyx_pw_18simplex_networks_c_9find_negative_row, METH_O, __pyx_doc_18simplex_networks_c_8find_negative_row};
-static PyObject *__pyx_pw_18simplex_networks_c_9find_negative_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_9find_negative_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_3mex_5mex_c_18simplex_networks_c_8find_negative_row[] = "\n    Finds location of negative values in bottom row.\n    \n    Args:\n        \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        n (int): index of negative value in bottom row.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_18simplex_networks_c_9find_negative_row = {"find_negative_row", (PyCFunction)__pyx_pw_3mex_5mex_c_18simplex_networks_c_9find_negative_row, METH_O, __pyx_doc_3mex_5mex_c_18simplex_networks_c_8find_negative_row};
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_9find_negative_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("find_negative_row (wrapper)", 0);
-  __pyx_r = __pyx_pf_18simplex_networks_c_8find_negative_row(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_3mex_5mex_c_18simplex_networks_c_8find_negative_row(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   int __pyx_v_l;
   double __pyx_v_m;
   PyObject *__pyx_v_n = NULL;
@@ -2238,7 +2238,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_negative_row", 0);
 
-  /* "simplex_networks_c.pyx":115
+  /* "mex/mex_c/simplex_networks_c.pyx":115
  *     cdef double m
  * 
  *     l = matrix.shape[0]             # <<<<<<<<<<<<<<
@@ -2254,7 +2254,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_l = __pyx_t_3;
 
-  /* "simplex_networks_c.pyx":116
+  /* "mex/mex_c/simplex_networks_c.pyx":116
  * 
  *     l = matrix.shape[0]
  *     m = min(matrix[l-1,:-1])             # <<<<<<<<<<<<<<
@@ -2281,7 +2281,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_m = __pyx_t_4;
 
-  /* "simplex_networks_c.pyx":117
+  /* "mex/mex_c/simplex_networks_c.pyx":117
  *     l = matrix.shape[0]
  *     m = min(matrix[l-1,:-1])
  *     if m <= 0:             # <<<<<<<<<<<<<<
@@ -2291,7 +2291,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
   __pyx_t_5 = ((__pyx_v_m <= 0.0) != 0);
   if (__pyx_t_5) {
 
-    /* "simplex_networks_c.pyx":118
+    /* "mex/mex_c/simplex_networks_c.pyx":118
  *     m = min(matrix[l-1,:-1])
  *     if m <= 0:
  *         n = np.where(matrix[l-1, :-1] == m)[0][0]             # <<<<<<<<<<<<<<
@@ -2346,7 +2346,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
     __pyx_v_n = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "simplex_networks_c.pyx":117
+    /* "mex/mex_c/simplex_networks_c.pyx":117
  *     l = matrix.shape[0]
  *     m = min(matrix[l-1,:-1])
  *     if m <= 0:             # <<<<<<<<<<<<<<
@@ -2356,7 +2356,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
     goto __pyx_L3;
   }
 
-  /* "simplex_networks_c.pyx":120
+  /* "mex/mex_c/simplex_networks_c.pyx":120
  *         n = np.where(matrix[l-1, :-1] == m)[0][0]
  *     else:
  *         n = None             # <<<<<<<<<<<<<<
@@ -2369,7 +2369,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
   }
   __pyx_L3:;
 
-  /* "simplex_networks_c.pyx":122
+  /* "mex/mex_c/simplex_networks_c.pyx":122
  *         n = None
  * 
  *     return n             # <<<<<<<<<<<<<<
@@ -2381,7 +2381,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
   __pyx_r = __pyx_v_n;
   goto __pyx_L0;
 
-  /* "simplex_networks_c.pyx":99
+  /* "mex/mex_c/simplex_networks_c.pyx":99
  * 
  * 
  * def find_negative_row(matrix):             # <<<<<<<<<<<<<<
@@ -2396,7 +2396,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("simplex_networks_c.find_negative_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.find_negative_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_n);
@@ -2405,7 +2405,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":125
+/* "mex/mex_c/simplex_networks_c.pyx":125
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
@@ -2414,22 +2414,22 @@ static PyObject *__pyx_pf_18simplex_networks_c_8find_negative_row(CYTHON_UNUSED 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_18simplex_networks_c_11find_pivot_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static char __pyx_doc_18simplex_networks_c_10find_pivot_col[] = "\n    Finds pivot element corresponding to a negative value in right column.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n        \n        index (int): index of most negative value.\n        \n        c (int): index smallest value on row.\n    ";
-static PyMethodDef __pyx_mdef_18simplex_networks_c_11find_pivot_col = {"find_pivot_col", (PyCFunction)__pyx_pw_18simplex_networks_c_11find_pivot_col, METH_O, __pyx_doc_18simplex_networks_c_10find_pivot_col};
-static PyObject *__pyx_pw_18simplex_networks_c_11find_pivot_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_11find_pivot_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_3mex_5mex_c_18simplex_networks_c_10find_pivot_col[] = "\n    Finds pivot element corresponding to a negative value in right column.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n        \n        index (int): index of most negative value.\n        \n        c (int): index smallest value on row.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_18simplex_networks_c_11find_pivot_col = {"find_pivot_col", (PyCFunction)__pyx_pw_3mex_5mex_c_18simplex_networks_c_11find_pivot_col, METH_O, __pyx_doc_3mex_5mex_c_18simplex_networks_c_10find_pivot_col};
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_11find_pivot_col(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("find_pivot_col (wrapper)", 0);
-  __pyx_r = __pyx_pf_18simplex_networks_c_10find_pivot_col(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_3mex_5mex_c_18simplex_networks_c_10find_pivot_col(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_col_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
+static PyObject *__pyx_gb_3mex_5mex_c_18simplex_networks_c_14find_pivot_col_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "simplex_networks_c.pyx":158
+/* "mex/mex_c/simplex_networks_c.pyx":158
  *         else:
  *             total.append(np.nan)  # placeholder, might need to update for large scale
  *     index = total.index(min(i for i in total if not np.isnan(i)))             # <<<<<<<<<<<<<<
@@ -2437,27 +2437,27 @@ static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_col_2generator(__pyx
  *     return [index, c]
  */
 
-static PyObject *__pyx_pf_18simplex_networks_c_14find_pivot_col_genexpr(PyObject *__pyx_self) {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *__pyx_cur_scope;
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_14find_pivot_col_genexpr(PyObject *__pyx_self) {
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("genexpr", 0);
-  __pyx_cur_scope = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *)__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_1_genexpr(__pyx_ptype_18simplex_networks_c___pyx_scope_struct_1_genexpr, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *)__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr(__pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
-    __pyx_cur_scope = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *)Py_None);
+    __pyx_cur_scope = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
     __PYX_ERR(0, 158, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
-  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *) __pyx_self;
+  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *) __pyx_self;
   __Pyx_INCREF(((PyObject *)__pyx_cur_scope->__pyx_outer_scope));
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_outer_scope);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_18simplex_networks_c_14find_pivot_col_2generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_find_pivot_col_locals_genexpr, __pyx_n_s_simplex_networks_c); if (unlikely(!gen)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_3mex_5mex_c_18simplex_networks_c_14find_pivot_col_2generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_find_pivot_col_locals_genexpr, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!gen)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -2465,7 +2465,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_14find_pivot_col_genexpr(PyObject
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("simplex_networks_c.find_pivot_col.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.find_pivot_col.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
   __Pyx_XGIVEREF(__pyx_r);
@@ -2473,9 +2473,9 @@ static PyObject *__pyx_pf_18simplex_networks_c_14find_pivot_col_genexpr(PyObject
   return __pyx_r;
 }
 
-static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_col_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value) /* generator body */
+static PyObject *__pyx_gb_3mex_5mex_c_18simplex_networks_c_14find_pivot_col_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value) /* generator body */
 {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *__pyx_cur_scope = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *)__pyx_generator->closure);
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *__pyx_cur_scope = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *)__pyx_generator->closure);
   PyObject *__pyx_r = NULL;
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
@@ -2582,7 +2582,7 @@ static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_col_2generator(__pyx
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":125
+/* "mex/mex_c/simplex_networks_c.pyx":125
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
@@ -2590,8 +2590,8 @@ static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_col_2generator(__pyx
  *     Finds pivot element corresponding to a negative value in right column.
  */
 
-static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *__pyx_cur_scope;
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *__pyx_cur_scope;
   int __pyx_v_c;
   int __pyx_v_index;
   double __pyx_v_m;
@@ -2620,16 +2620,16 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_pivot_col", 0);
-  __pyx_cur_scope = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)__pyx_tp_new_18simplex_networks_c___pyx_scope_struct__find_pivot_col(__pyx_ptype_18simplex_networks_c___pyx_scope_struct__find_pivot_col, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col(__pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
-    __pyx_cur_scope = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)Py_None);
+    __pyx_cur_scope = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)Py_None);
     __Pyx_INCREF(Py_None);
     __PYX_ERR(0, 125, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
 
-  /* "simplex_networks_c.pyx":143
+  /* "mex/mex_c/simplex_networks_c.pyx":143
  *     cdef double m, i, j
  * 
  *     total = []             # <<<<<<<<<<<<<<
@@ -2642,7 +2642,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __pyx_cur_scope->__pyx_v_total = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":144
+  /* "mex/mex_c/simplex_networks_c.pyx":144
  * 
  *     total = []
  *     neg = find_negative_col(matrix)             # <<<<<<<<<<<<<<
@@ -2669,7 +2669,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __pyx_v_neg = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":145
+  /* "mex/mex_c/simplex_networks_c.pyx":145
  *     total = []
  *     neg = find_negative_col(matrix)
  *     row = matrix[neg, :-1]             # <<<<<<<<<<<<<<
@@ -2690,7 +2690,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __pyx_v_row = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "simplex_networks_c.pyx":146
+  /* "mex/mex_c/simplex_networks_c.pyx":146
  *     neg = find_negative_col(matrix)
  *     row = matrix[neg, :-1]
  *     m = min(row)             # <<<<<<<<<<<<<<
@@ -2703,7 +2703,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_m = __pyx_t_4;
 
-  /* "simplex_networks_c.pyx":147
+  /* "mex/mex_c/simplex_networks_c.pyx":147
  *     row = matrix[neg, :-1]
  *     m = min(row)
  *     c = np.where(row == m)[0][0]             # <<<<<<<<<<<<<<
@@ -2745,7 +2745,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_c = __pyx_t_6;
 
-  /* "simplex_networks_c.pyx":148
+  /* "mex/mex_c/simplex_networks_c.pyx":148
  *     m = min(row)
  *     c = np.where(row == m)[0][0]
  *     col = matrix[:-1, c]             # <<<<<<<<<<<<<<
@@ -2768,7 +2768,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __pyx_v_col = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "simplex_networks_c.pyx":149
+  /* "mex/mex_c/simplex_networks_c.pyx":149
  *     c = np.where(row == m)[0][0]
  *     col = matrix[:-1, c]
  *     for i, j in zip(col, matrix[:-1, -1]):  # i for col with neg, j for right col             # <<<<<<<<<<<<<<
@@ -2881,7 +2881,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
     __pyx_v_i = __pyx_t_4;
     __pyx_v_j = __pyx_t_11;
 
-    /* "simplex_networks_c.pyx":150
+    /* "mex/mex_c/simplex_networks_c.pyx":150
  *     col = matrix[:-1, c]
  *     for i, j in zip(col, matrix[:-1, -1]):  # i for col with neg, j for right col
  *         if i != 0:             # <<<<<<<<<<<<<<
@@ -2891,7 +2891,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
     __pyx_t_12 = ((__pyx_v_i != 0.0) != 0);
     if (__pyx_t_12) {
 
-      /* "simplex_networks_c.pyx":151
+      /* "mex/mex_c/simplex_networks_c.pyx":151
  *     for i, j in zip(col, matrix[:-1, -1]):  # i for col with neg, j for right col
  *         if i != 0:
  *             tmp = j / i             # <<<<<<<<<<<<<<
@@ -2904,7 +2904,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
       }
       __pyx_v_tmp = (__pyx_v_j / __pyx_v_i);
 
-      /* "simplex_networks_c.pyx":152
+      /* "mex/mex_c/simplex_networks_c.pyx":152
  *         if i != 0:
  *             tmp = j / i
  *             if tmp > 0:             # <<<<<<<<<<<<<<
@@ -2914,7 +2914,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
       __pyx_t_12 = ((__pyx_v_tmp > 0.0) != 0);
       if (__pyx_t_12) {
 
-        /* "simplex_networks_c.pyx":153
+        /* "mex/mex_c/simplex_networks_c.pyx":153
  *             tmp = j / i
  *             if tmp > 0:
  *                 total.append(tmp)             # <<<<<<<<<<<<<<
@@ -2926,7 +2926,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
         __pyx_t_13 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_total, __pyx_t_2); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 153, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-        /* "simplex_networks_c.pyx":152
+        /* "mex/mex_c/simplex_networks_c.pyx":152
  *         if i != 0:
  *             tmp = j / i
  *             if tmp > 0:             # <<<<<<<<<<<<<<
@@ -2936,7 +2936,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
         goto __pyx_L8;
       }
 
-      /* "simplex_networks_c.pyx":155
+      /* "mex/mex_c/simplex_networks_c.pyx":155
  *                 total.append(tmp)
  *             else:
  *                 total.append(np.nan)             # <<<<<<<<<<<<<<
@@ -2954,7 +2954,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
       }
       __pyx_L8:;
 
-      /* "simplex_networks_c.pyx":150
+      /* "mex/mex_c/simplex_networks_c.pyx":150
  *     col = matrix[:-1, c]
  *     for i, j in zip(col, matrix[:-1, -1]):  # i for col with neg, j for right col
  *         if i != 0:             # <<<<<<<<<<<<<<
@@ -2964,7 +2964,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
       goto __pyx_L7;
     }
 
-    /* "simplex_networks_c.pyx":157
+    /* "mex/mex_c/simplex_networks_c.pyx":157
  *                 total.append(np.nan)
  *         else:
  *             total.append(np.nan)  # placeholder, might need to update for large scale             # <<<<<<<<<<<<<<
@@ -2982,7 +2982,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
     }
     __pyx_L7:;
 
-    /* "simplex_networks_c.pyx":149
+    /* "mex/mex_c/simplex_networks_c.pyx":149
  *     c = np.where(row == m)[0][0]
  *     col = matrix[:-1, c]
  *     for i, j in zip(col, matrix[:-1, -1]):  # i for col with neg, j for right col             # <<<<<<<<<<<<<<
@@ -2992,14 +2992,14 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "simplex_networks_c.pyx":158
+  /* "mex/mex_c/simplex_networks_c.pyx":158
  *         else:
  *             total.append(np.nan)  # placeholder, might need to update for large scale
  *     index = total.index(min(i for i in total if not np.isnan(i)))             # <<<<<<<<<<<<<<
  * 
  *     return [index, c]
  */
-  __pyx_t_3 = __pyx_pf_18simplex_networks_c_14find_pivot_col_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
+  __pyx_t_3 = __pyx_pf_3mex_5mex_c_18simplex_networks_c_14find_pivot_col_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -3011,7 +3011,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_index = __pyx_t_6;
 
-  /* "simplex_networks_c.pyx":160
+  /* "mex/mex_c/simplex_networks_c.pyx":160
  *     index = total.index(min(i for i in total if not np.isnan(i)))
  * 
  *     return [index, c]             # <<<<<<<<<<<<<<
@@ -3035,7 +3035,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "simplex_networks_c.pyx":125
+  /* "mex/mex_c/simplex_networks_c.pyx":125
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
@@ -3050,7 +3050,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("simplex_networks_c.find_pivot_col", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.find_pivot_col", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_neg);
@@ -3062,7 +3062,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":163
+/* "mex/mex_c/simplex_networks_c.pyx":163
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
@@ -3071,22 +3071,22 @@ static PyObject *__pyx_pf_18simplex_networks_c_10find_pivot_col(CYTHON_UNUSED Py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_18simplex_networks_c_13find_pivot_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static char __pyx_doc_18simplex_networks_c_12find_pivot_row[] = "\n    Finds pivot element corresponding to a negative value in bottom row.\n    \n    Args:\n        \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        index (int): index of most negative value.\n        \n        neg (int): index smallest value.\n    ";
-static PyMethodDef __pyx_mdef_18simplex_networks_c_13find_pivot_row = {"find_pivot_row", (PyCFunction)__pyx_pw_18simplex_networks_c_13find_pivot_row, METH_O, __pyx_doc_18simplex_networks_c_12find_pivot_row};
-static PyObject *__pyx_pw_18simplex_networks_c_13find_pivot_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_13find_pivot_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_3mex_5mex_c_18simplex_networks_c_12find_pivot_row[] = "\n    Finds pivot element corresponding to a negative value in bottom row.\n    \n    Args:\n        \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        index (int): index of most negative value.\n        \n        neg (int): index smallest value.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_18simplex_networks_c_13find_pivot_row = {"find_pivot_row", (PyCFunction)__pyx_pw_3mex_5mex_c_18simplex_networks_c_13find_pivot_row, METH_O, __pyx_doc_3mex_5mex_c_18simplex_networks_c_12find_pivot_row};
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_13find_pivot_row(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("find_pivot_row (wrapper)", 0);
-  __pyx_r = __pyx_pf_18simplex_networks_c_12find_pivot_row(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_3mex_5mex_c_18simplex_networks_c_12find_pivot_row(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_row_2generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
+static PyObject *__pyx_gb_3mex_5mex_c_18simplex_networks_c_14find_pivot_row_2generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "simplex_networks_c.pyx":192
+/* "mex/mex_c/simplex_networks_c.pyx":192
  *         else:
  *             total.append(np.nan) #placeholder, might need to update for large scale
  *     index = total.index(min(i for i in total if not np.isnan(i)))             # <<<<<<<<<<<<<<
@@ -3094,27 +3094,27 @@ static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_row_2generator1(__py
  *     return [index,neg]
  */
 
-static PyObject *__pyx_pf_18simplex_networks_c_14find_pivot_row_genexpr(PyObject *__pyx_self) {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *__pyx_cur_scope;
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_14find_pivot_row_genexpr(PyObject *__pyx_self) {
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("genexpr", 0);
-  __pyx_cur_scope = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *)__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_3_genexpr(__pyx_ptype_18simplex_networks_c___pyx_scope_struct_3_genexpr, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *)__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr(__pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
-    __pyx_cur_scope = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *)Py_None);
+    __pyx_cur_scope = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
     __PYX_ERR(0, 192, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
-  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *) __pyx_self;
+  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *) __pyx_self;
   __Pyx_INCREF(((PyObject *)__pyx_cur_scope->__pyx_outer_scope));
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_outer_scope);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_18simplex_networks_c_14find_pivot_row_2generator1, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_find_pivot_row_locals_genexpr, __pyx_n_s_simplex_networks_c); if (unlikely(!gen)) __PYX_ERR(0, 192, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_3mex_5mex_c_18simplex_networks_c_14find_pivot_row_2generator1, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_find_pivot_row_locals_genexpr, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!gen)) __PYX_ERR(0, 192, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -3122,7 +3122,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_14find_pivot_row_genexpr(PyObject
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("simplex_networks_c.find_pivot_row.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.find_pivot_row.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
   __Pyx_XGIVEREF(__pyx_r);
@@ -3130,9 +3130,9 @@ static PyObject *__pyx_pf_18simplex_networks_c_14find_pivot_row_genexpr(PyObject
   return __pyx_r;
 }
 
-static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_row_2generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value) /* generator body */
+static PyObject *__pyx_gb_3mex_5mex_c_18simplex_networks_c_14find_pivot_row_2generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value) /* generator body */
 {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *__pyx_cur_scope = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *)__pyx_generator->closure);
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *__pyx_cur_scope = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *)__pyx_generator->closure);
   PyObject *__pyx_r = NULL;
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
@@ -3239,7 +3239,7 @@ static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_row_2generator1(__py
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":163
+/* "mex/mex_c/simplex_networks_c.pyx":163
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
@@ -3247,8 +3247,8 @@ static PyObject *__pyx_gb_18simplex_networks_c_14find_pivot_row_2generator1(__py
  *     Finds pivot element corresponding to a negative value in bottom row.
  */
 
-static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *__pyx_cur_scope;
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *__pyx_cur_scope;
   double __pyx_v_i;
   double __pyx_v_j;
   int __pyx_v_index;
@@ -3273,16 +3273,16 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_pivot_row", 0);
-  __pyx_cur_scope = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(__pyx_ptype_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(__pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
-    __pyx_cur_scope = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)Py_None);
+    __pyx_cur_scope = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)Py_None);
     __Pyx_INCREF(Py_None);
     __PYX_ERR(0, 163, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
 
-  /* "simplex_networks_c.pyx":181
+  /* "mex/mex_c/simplex_networks_c.pyx":181
  *     cdef int index
  * 
  *     total = []             # <<<<<<<<<<<<<<
@@ -3295,7 +3295,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
   __pyx_cur_scope->__pyx_v_total = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":182
+  /* "mex/mex_c/simplex_networks_c.pyx":182
  * 
  *     total = []
  *     neg = find_negative_row(matrix)             # <<<<<<<<<<<<<<
@@ -3322,7 +3322,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
   __pyx_v_neg = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":183
+  /* "mex/mex_c/simplex_networks_c.pyx":183
  *     total = []
  *     neg = find_negative_row(matrix)
  *     for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):             # <<<<<<<<<<<<<<
@@ -3446,7 +3446,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
     __pyx_v_i = __pyx_t_9;
     __pyx_v_j = __pyx_t_10;
 
-    /* "simplex_networks_c.pyx":184
+    /* "mex/mex_c/simplex_networks_c.pyx":184
  *     neg = find_negative_row(matrix)
  *     for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
  *         if i != 0:             # <<<<<<<<<<<<<<
@@ -3456,7 +3456,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
     __pyx_t_11 = ((__pyx_v_i != 0.0) != 0);
     if (__pyx_t_11) {
 
-      /* "simplex_networks_c.pyx":185
+      /* "mex/mex_c/simplex_networks_c.pyx":185
  *     for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
  *         if i != 0:
  *             tmp = j/i             # <<<<<<<<<<<<<<
@@ -3469,7 +3469,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
       }
       __pyx_v_tmp = (__pyx_v_j / __pyx_v_i);
 
-      /* "simplex_networks_c.pyx":186
+      /* "mex/mex_c/simplex_networks_c.pyx":186
  *         if i != 0:
  *             tmp = j/i
  *             if tmp > 0:             # <<<<<<<<<<<<<<
@@ -3479,7 +3479,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
       __pyx_t_11 = ((__pyx_v_tmp > 0.0) != 0);
       if (__pyx_t_11) {
 
-        /* "simplex_networks_c.pyx":187
+        /* "mex/mex_c/simplex_networks_c.pyx":187
  *             tmp = j/i
  *             if tmp > 0:
  *                 total.append(tmp)             # <<<<<<<<<<<<<<
@@ -3491,7 +3491,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
         __pyx_t_12 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_total, __pyx_t_1); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 187, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "simplex_networks_c.pyx":186
+        /* "mex/mex_c/simplex_networks_c.pyx":186
  *         if i != 0:
  *             tmp = j/i
  *             if tmp > 0:             # <<<<<<<<<<<<<<
@@ -3501,7 +3501,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
         goto __pyx_L8;
       }
 
-      /* "simplex_networks_c.pyx":189
+      /* "mex/mex_c/simplex_networks_c.pyx":189
  *                 total.append(tmp)
  *             else:
  *                 total.append(np.nan)             # <<<<<<<<<<<<<<
@@ -3519,7 +3519,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
       }
       __pyx_L8:;
 
-      /* "simplex_networks_c.pyx":184
+      /* "mex/mex_c/simplex_networks_c.pyx":184
  *     neg = find_negative_row(matrix)
  *     for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
  *         if i != 0:             # <<<<<<<<<<<<<<
@@ -3529,7 +3529,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
       goto __pyx_L7;
     }
 
-    /* "simplex_networks_c.pyx":191
+    /* "mex/mex_c/simplex_networks_c.pyx":191
  *                 total.append(np.nan)
  *         else:
  *             total.append(np.nan) #placeholder, might need to update for large scale             # <<<<<<<<<<<<<<
@@ -3547,7 +3547,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
     }
     __pyx_L7:;
 
-    /* "simplex_networks_c.pyx":183
+    /* "mex/mex_c/simplex_networks_c.pyx":183
  *     total = []
  *     neg = find_negative_row(matrix)
  *     for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):             # <<<<<<<<<<<<<<
@@ -3557,14 +3557,14 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "simplex_networks_c.pyx":192
+  /* "mex/mex_c/simplex_networks_c.pyx":192
  *         else:
  *             total.append(np.nan) #placeholder, might need to update for large scale
  *     index = total.index(min(i for i in total if not np.isnan(i)))             # <<<<<<<<<<<<<<
  * 
  *     return [index,neg]
  */
-  __pyx_t_3 = __pyx_pf_18simplex_networks_c_14find_pivot_row_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_t_3 = __pyx_pf_3mex_5mex_c_18simplex_networks_c_14find_pivot_row_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -3576,7 +3576,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_index = __pyx_t_13;
 
-  /* "simplex_networks_c.pyx":194
+  /* "mex/mex_c/simplex_networks_c.pyx":194
  *     index = total.index(min(i for i in total if not np.isnan(i)))
  * 
  *     return [index,neg]             # <<<<<<<<<<<<<<
@@ -3598,7 +3598,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "simplex_networks_c.pyx":163
+  /* "mex/mex_c/simplex_networks_c.pyx":163
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
@@ -3613,7 +3613,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("simplex_networks_c.find_pivot_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.find_pivot_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_neg);
@@ -3623,7 +3623,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "simplex_networks_c.pyx":197
+/* "mex/mex_c/simplex_networks_c.pyx":198
  * 
  * 
  * def pivot(row,col,matrix):             # <<<<<<<<<<<<<<
@@ -3632,10 +3632,10 @@ static PyObject *__pyx_pf_18simplex_networks_c_12find_pivot_row(CYTHON_UNUSED Py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_18simplex_networks_c_15pivot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_18simplex_networks_c_14pivot[] = "\n    Pivot about a value to remove negative in final column or row.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n        \n        row (int): position to pivot.\n        \n        col (int): position to pivot.\n        \n    Returns:\n    \n        t (numpy array): updated matrix.\n    ";
-static PyMethodDef __pyx_mdef_18simplex_networks_c_15pivot = {"pivot", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_18simplex_networks_c_15pivot, METH_VARARGS|METH_KEYWORDS, __pyx_doc_18simplex_networks_c_14pivot};
-static PyObject *__pyx_pw_18simplex_networks_c_15pivot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_15pivot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3mex_5mex_c_18simplex_networks_c_14pivot[] = "\n    Pivot about a value to remove negative in final column or row.\n    \n    Args:\n    \n        row (int): position to pivot.\n        \n        col (int): position to pivot.\n        \n        matrix (numpy array): matrix to be reviewed.\n        \n    Returns:\n    \n        t (numpy array): updated matrix.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_18simplex_networks_c_15pivot = {"pivot", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_3mex_5mex_c_18simplex_networks_c_15pivot, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3mex_5mex_c_18simplex_networks_c_14pivot};
+static PyObject *__pyx_pw_3mex_5mex_c_18simplex_networks_c_15pivot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_row = 0;
   PyObject *__pyx_v_col = 0;
   PyObject *__pyx_v_matrix = 0;
@@ -3670,17 +3670,17 @@ static PyObject *__pyx_pw_18simplex_networks_c_15pivot(PyObject *__pyx_self, PyO
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_col)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, 1); __PYX_ERR(0, 197, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, 1); __PYX_ERR(0, 198, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_matrix)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, 2); __PYX_ERR(0, 197, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, 2); __PYX_ERR(0, 198, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pivot") < 0)) __PYX_ERR(0, 197, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pivot") < 0)) __PYX_ERR(0, 198, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -3695,20 +3695,20 @@ static PyObject *__pyx_pw_18simplex_networks_c_15pivot(PyObject *__pyx_self, PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 197, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 198, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplex_networks_c.pivot", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.pivot", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_18simplex_networks_c_14pivot(__pyx_self, __pyx_v_row, __pyx_v_col, __pyx_v_matrix);
+  __pyx_r = __pyx_pf_3mex_5mex_c_18simplex_networks_c_14pivot(__pyx_self, __pyx_v_row, __pyx_v_col, __pyx_v_matrix);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_row, PyObject *__pyx_v_col, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pf_3mex_5mex_c_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_row, PyObject *__pyx_v_col, PyObject *__pyx_v_matrix) {
   int __pyx_v_i;
   PyObject *__pyx_v_t = NULL;
   PyObject *__pyx_v_pr = NULL;
@@ -3733,19 +3733,19 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("pivot", 0);
 
-  /* "simplex_networks_c.pyx":216
+  /* "mex/mex_c/simplex_networks_c.pyx":217
  *     cdef int i
  * 
  *     t = np.zeros(matrix.shape)             # <<<<<<<<<<<<<<
- *     pr = matrix[row, :]  #original
+ *     pr = matrix[row, :]
  *     n_col = len(matrix[:, col])
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -3760,20 +3760,20 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_t = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":217
+  /* "mex/mex_c/simplex_networks_c.pyx":218
  * 
  *     t = np.zeros(matrix.shape)
- *     pr = matrix[row, :]  #original             # <<<<<<<<<<<<<<
+ *     pr = matrix[row, :]             # <<<<<<<<<<<<<<
  *     n_col = len(matrix[:, col])
  *     tmp_matrix = matrix[row, col]
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_row);
   __Pyx_GIVEREF(__pyx_v_row);
@@ -3781,20 +3781,20 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
   __Pyx_INCREF(__pyx_slice__3);
   __Pyx_GIVEREF(__pyx_slice__3);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_slice__3);
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_pr = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "simplex_networks_c.pyx":218
+  /* "mex/mex_c/simplex_networks_c.pyx":219
  *     t = np.zeros(matrix.shape)
- *     pr = matrix[row, :]  #original
+ *     pr = matrix[row, :]
  *     n_col = len(matrix[:, col])             # <<<<<<<<<<<<<<
  *     tmp_matrix = matrix[row, col]
  * 
  */
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_slice__3);
   __Pyx_GIVEREF(__pyx_slice__3);
@@ -3802,21 +3802,21 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
   __Pyx_INCREF(__pyx_v_col);
   __Pyx_GIVEREF(__pyx_v_col);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_col);
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_5 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_n_col = __pyx_t_5;
 
-  /* "simplex_networks_c.pyx":219
- *     pr = matrix[row, :]  #original
+  /* "mex/mex_c/simplex_networks_c.pyx":220
+ *     pr = matrix[row, :]
  *     n_col = len(matrix[:, col])
  *     tmp_matrix = matrix[row, col]             # <<<<<<<<<<<<<<
  * 
  *     if tmp_matrix != 0:
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_row);
   __Pyx_GIVEREF(__pyx_v_row);
@@ -3824,50 +3824,50 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
   __Pyx_INCREF(__pyx_v_col);
   __Pyx_GIVEREF(__pyx_v_col);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_col);
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_tmp_matrix = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "simplex_networks_c.pyx":221
+  /* "mex/mex_c/simplex_networks_c.pyx":222
  *     tmp_matrix = matrix[row, col]
  * 
  *     if tmp_matrix != 0:             # <<<<<<<<<<<<<<
  *         e = 1 / tmp_matrix
  *         r = pr * e
  */
-  __pyx_t_3 = __Pyx_PyInt_NeObjC(__pyx_v_tmp_matrix, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_NeObjC(__pyx_v_tmp_matrix, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_6) {
 
-    /* "simplex_networks_c.pyx":222
+    /* "mex/mex_c/simplex_networks_c.pyx":223
  * 
  *     if tmp_matrix != 0:
  *         e = 1 / tmp_matrix             # <<<<<<<<<<<<<<
  *         r = pr * e
  *         for i in range(n_col):
  */
-    __pyx_t_3 = __Pyx_PyNumber_Divide(__pyx_int_1, __pyx_v_tmp_matrix); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyNumber_Divide(__pyx_int_1, __pyx_v_tmp_matrix); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 223, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_v_e = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "simplex_networks_c.pyx":223
+    /* "mex/mex_c/simplex_networks_c.pyx":224
  *     if tmp_matrix != 0:
  *         e = 1 / tmp_matrix
  *         r = pr * e             # <<<<<<<<<<<<<<
  *         for i in range(n_col):
  *             if i != row:
  */
-    __pyx_t_3 = PyNumber_Multiply(__pyx_v_pr, __pyx_v_e); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 223, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_v_pr, __pyx_v_e); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 224, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_v_r = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "simplex_networks_c.pyx":224
+    /* "mex/mex_c/simplex_networks_c.pyx":225
  *         e = 1 / tmp_matrix
  *         r = pr * e
  *         for i in range(n_col):             # <<<<<<<<<<<<<<
@@ -3879,50 +3879,27 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
     for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
       __pyx_v_i = __pyx_t_8;
 
-      /* "simplex_networks_c.pyx":225
+      /* "mex/mex_c/simplex_networks_c.pyx":226
  *         r = pr * e
  *         for i in range(n_col):
  *             if i != row:             # <<<<<<<<<<<<<<
  *                 k = matrix[i, :]
  *                 c = matrix[i, col]
  */
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 225, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 226, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_v_row, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
+      __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_v_row, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 225, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 226, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (__pyx_t_6) {
 
-        /* "simplex_networks_c.pyx":226
+        /* "mex/mex_c/simplex_networks_c.pyx":227
  *         for i in range(n_col):
  *             if i != row:
  *                 k = matrix[i, :]             # <<<<<<<<<<<<<<
  *                 c = matrix[i, col]
  *                 t[i, :] = list(k - r * c)
- */
-        __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 226, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_GIVEREF(__pyx_t_1);
-        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
-        __Pyx_INCREF(__pyx_slice__3);
-        __Pyx_GIVEREF(__pyx_slice__3);
-        PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_slice__3);
-        __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_1);
-        __pyx_t_1 = 0;
-
-        /* "simplex_networks_c.pyx":227
- *             if i != row:
- *                 k = matrix[i, :]
- *                 c = matrix[i, col]             # <<<<<<<<<<<<<<
- *                 t[i, :] = list(k - r * c)
- * 
  */
         __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
@@ -3930,34 +3907,57 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_GIVEREF(__pyx_t_1);
         PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
+        __Pyx_INCREF(__pyx_slice__3);
+        __Pyx_GIVEREF(__pyx_slice__3);
+        PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_slice__3);
+        __pyx_t_1 = 0;
+        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_1);
+        __pyx_t_1 = 0;
+
+        /* "mex/mex_c/simplex_networks_c.pyx":228
+ *             if i != row:
+ *                 k = matrix[i, :]
+ *                 c = matrix[i, col]             # <<<<<<<<<<<<<<
+ *                 t[i, :] = list(k - r * c)
+ * 
+ */
+        __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_1);
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
         __Pyx_INCREF(__pyx_v_col);
         __Pyx_GIVEREF(__pyx_v_col);
         PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_col);
         __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_1);
         __pyx_t_1 = 0;
 
-        /* "simplex_networks_c.pyx":228
+        /* "mex/mex_c/simplex_networks_c.pyx":229
  *                 k = matrix[i, :]
  *                 c = matrix[i, col]
  *                 t[i, :] = list(k - r * c)             # <<<<<<<<<<<<<<
  * 
  *         t[row, :] = list(r)
  */
-        __pyx_t_1 = PyNumber_Multiply(__pyx_v_r, __pyx_v_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Multiply(__pyx_v_r, __pyx_v_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = PyNumber_Subtract(__pyx_v_k, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_3 = PyNumber_Subtract(__pyx_v_k, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 229, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3);
@@ -3965,11 +3965,11 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
         __Pyx_GIVEREF(__pyx_slice__3);
         PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_slice__3);
         __pyx_t_3 = 0;
-        if (unlikely(PyObject_SetItem(__pyx_v_t, __pyx_t_2, __pyx_t_1) < 0)) __PYX_ERR(0, 228, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_v_t, __pyx_t_2, __pyx_t_1) < 0)) __PYX_ERR(0, 229, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "simplex_networks_c.pyx":225
+        /* "mex/mex_c/simplex_networks_c.pyx":226
  *         r = pr * e
  *         for i in range(n_col):
  *             if i != row:             # <<<<<<<<<<<<<<
@@ -3979,16 +3979,16 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
       }
     }
 
-    /* "simplex_networks_c.pyx":230
+    /* "mex/mex_c/simplex_networks_c.pyx":231
  *                 t[i, :] = list(k - r * c)
  * 
  *         t[row, :] = list(r)             # <<<<<<<<<<<<<<
  *         return t
  *     else:
  */
-    __pyx_t_1 = PySequence_List(__pyx_v_r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+    __pyx_t_1 = PySequence_List(__pyx_v_r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_row);
     __Pyx_GIVEREF(__pyx_v_row);
@@ -3996,11 +3996,11 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
     __Pyx_INCREF(__pyx_slice__3);
     __Pyx_GIVEREF(__pyx_slice__3);
     PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_slice__3);
-    if (unlikely(PyObject_SetItem(__pyx_v_t, __pyx_t_2, __pyx_t_1) < 0)) __PYX_ERR(0, 230, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(__pyx_v_t, __pyx_t_2, __pyx_t_1) < 0)) __PYX_ERR(0, 231, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "simplex_networks_c.pyx":231
+    /* "mex/mex_c/simplex_networks_c.pyx":232
  * 
  *         t[row, :] = list(r)
  *         return t             # <<<<<<<<<<<<<<
@@ -4012,7 +4012,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
     __pyx_r = __pyx_v_t;
     goto __pyx_L0;
 
-    /* "simplex_networks_c.pyx":221
+    /* "mex/mex_c/simplex_networks_c.pyx":222
  *     tmp_matrix = matrix[row, col]
  * 
  *     if tmp_matrix != 0:             # <<<<<<<<<<<<<<
@@ -4021,18 +4021,18 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
  */
   }
 
-  /* "simplex_networks_c.pyx":233
+  /* "mex/mex_c/simplex_networks_c.pyx":234
  *         return t
  *     else:
  *         print('Cannot pivot on this element')             # <<<<<<<<<<<<<<
  */
   /*else*/ {
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "simplex_networks_c.pyx":197
+  /* "mex/mex_c/simplex_networks_c.pyx":198
  * 
  * 
  * def pivot(row,col,matrix):             # <<<<<<<<<<<<<<
@@ -4048,7 +4048,7 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("simplex_networks_c.pivot", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.simplex_networks_c.pivot", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_t);
@@ -4063,14 +4063,14 @@ static PyObject *__pyx_pf_18simplex_networks_c_14pivot(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-static struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *__pyx_freelist_18simplex_networks_c___pyx_scope_struct__find_pivot_col[8];
-static int __pyx_freecount_18simplex_networks_c___pyx_scope_struct__find_pivot_col = 0;
+static struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *__pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col[8];
+static int __pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col = 0;
 
-static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_18simplex_networks_c___pyx_scope_struct__find_pivot_col > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col)))) {
-    o = (PyObject*)__pyx_freelist_18simplex_networks_c___pyx_scope_struct__find_pivot_col[--__pyx_freecount_18simplex_networks_c___pyx_scope_struct__find_pivot_col];
-    memset(o, 0, sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col)))) {
+    o = (PyObject*)__pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col[--__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col];
+    memset(o, 0, sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -4080,41 +4080,41 @@ static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct__find_pivo
   return o;
 }
 
-static void __pyx_tp_dealloc_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyObject *o) {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)o;
+static void __pyx_tp_dealloc_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyObject *o) {
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_v_total);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_18simplex_networks_c___pyx_scope_struct__find_pivot_col < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col)))) {
-    __pyx_freelist_18simplex_networks_c___pyx_scope_struct__find_pivot_col[__pyx_freecount_18simplex_networks_c___pyx_scope_struct__find_pivot_col++] = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col)))) {
+    __pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col[__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col++] = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)o;
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)o;
   if (p->__pyx_v_total) {
     e = (*v)(p->__pyx_v_total, a); if (e) return e;
   }
   return 0;
 }
 
-static int __pyx_tp_clear_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyObject *o) {
+static int __pyx_tp_clear_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)o;
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col *)o;
   tmp = ((PyObject*)p->__pyx_v_total);
   p->__pyx_v_total = ((PyObject*)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
 
-static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct__find_pivot_col = {
+static PyTypeObject __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplex_networks_c.__pyx_scope_struct__find_pivot_col", /*tp_name*/
-  sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct__find_pivot_col), /*tp_basicsize*/
+  "mex.mex_c.simplex_networks_c.__pyx_scope_struct__find_pivot_col", /*tp_name*/
+  sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_18simplex_networks_c___pyx_scope_struct__find_pivot_col, /*tp_dealloc*/
+  __pyx_tp_dealloc_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -4141,8 +4141,8 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct__find_piv
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct__find_pivot_col, /*tp_traverse*/
-  __pyx_tp_clear_18simplex_networks_c___pyx_scope_struct__find_pivot_col, /*tp_clear*/
+  __pyx_tp_traverse_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col, /*tp_traverse*/
+  __pyx_tp_clear_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -4157,7 +4157,7 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct__find_piv
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_18simplex_networks_c___pyx_scope_struct__find_pivot_col, /*tp_new*/
+  __pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4178,14 +4178,14 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct__find_piv
   #endif
 };
 
-static struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *__pyx_freelist_18simplex_networks_c___pyx_scope_struct_1_genexpr[8];
-static int __pyx_freecount_18simplex_networks_c___pyx_scope_struct_1_genexpr = 0;
+static struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *__pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr[8];
+static int __pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr = 0;
 
-static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_1_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_18simplex_networks_c___pyx_scope_struct_1_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr)))) {
-    o = (PyObject*)__pyx_freelist_18simplex_networks_c___pyx_scope_struct_1_genexpr[--__pyx_freecount_18simplex_networks_c___pyx_scope_struct_1_genexpr];
-    memset(o, 0, sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr)))) {
+    o = (PyObject*)__pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr[--__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr];
+    memset(o, 0, sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -4195,22 +4195,22 @@ static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_1_genexpr(
   return o;
 }
 
-static void __pyx_tp_dealloc_18simplex_networks_c___pyx_scope_struct_1_genexpr(PyObject *o) {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *)o;
+static void __pyx_tp_dealloc_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr(PyObject *o) {
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_outer_scope);
   Py_CLEAR(p->__pyx_v_i);
   Py_CLEAR(p->__pyx_t_0);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_18simplex_networks_c___pyx_scope_struct_1_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr)))) {
-    __pyx_freelist_18simplex_networks_c___pyx_scope_struct_1_genexpr[__pyx_freecount_18simplex_networks_c___pyx_scope_struct_1_genexpr++] = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr)))) {
+    __pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr[__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr++] = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct_1_genexpr(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr *)o;
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr *)o;
   if (p->__pyx_outer_scope) {
     e = (*v)(((PyObject *)p->__pyx_outer_scope), a); if (e) return e;
   }
@@ -4223,12 +4223,12 @@ static int __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct_1_genexpr(P
   return 0;
 }
 
-static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr = {
+static PyTypeObject __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplex_networks_c.__pyx_scope_struct_1_genexpr", /*tp_name*/
-  sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_1_genexpr), /*tp_basicsize*/
+  "mex.mex_c.simplex_networks_c.__pyx_scope_struct_1_genexpr", /*tp_name*/
+  sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_18simplex_networks_c___pyx_scope_struct_1_genexpr, /*tp_dealloc*/
+  __pyx_tp_dealloc_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -4255,7 +4255,7 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct_1_genexpr, /*tp_traverse*/
+  __pyx_tp_traverse_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr, /*tp_traverse*/
   0, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
@@ -4271,7 +4271,7 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_18simplex_networks_c___pyx_scope_struct_1_genexpr, /*tp_new*/
+  __pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4292,14 +4292,14 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr
   #endif
 };
 
-static struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *__pyx_freelist_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row[8];
-static int __pyx_freecount_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row = 0;
+static struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *__pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row[8];
+static int __pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row = 0;
 
-static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row)))) {
-    o = (PyObject*)__pyx_freelist_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row[--__pyx_freecount_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row];
-    memset(o, 0, sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row)))) {
+    o = (PyObject*)__pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row[--__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row];
+    memset(o, 0, sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -4309,41 +4309,41 @@ static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_2_find_piv
   return o;
 }
 
-static void __pyx_tp_dealloc_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyObject *o) {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)o;
+static void __pyx_tp_dealloc_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyObject *o) {
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_v_total);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row)))) {
-    __pyx_freelist_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row[__pyx_freecount_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row++] = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row)))) {
+    __pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row[__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row++] = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)o;
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)o;
   if (p->__pyx_v_total) {
     e = (*v)(p->__pyx_v_total, a); if (e) return e;
   }
   return 0;
 }
 
-static int __pyx_tp_clear_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyObject *o) {
+static int __pyx_tp_clear_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)o;
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row *)o;
   tmp = ((PyObject*)p->__pyx_v_total);
   p->__pyx_v_total = ((PyObject*)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
 
-static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row = {
+static PyTypeObject __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplex_networks_c.__pyx_scope_struct_2_find_pivot_row", /*tp_name*/
-  sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row), /*tp_basicsize*/
+  "mex.mex_c.simplex_networks_c.__pyx_scope_struct_2_find_pivot_row", /*tp_name*/
+  sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, /*tp_dealloc*/
+  __pyx_tp_dealloc_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -4370,8 +4370,8 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pi
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, /*tp_traverse*/
-  __pyx_tp_clear_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, /*tp_clear*/
+  __pyx_tp_traverse_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, /*tp_traverse*/
+  __pyx_tp_clear_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -4386,7 +4386,7 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pi
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, /*tp_new*/
+  __pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4407,14 +4407,14 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pi
   #endif
 };
 
-static struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *__pyx_freelist_18simplex_networks_c___pyx_scope_struct_3_genexpr[8];
-static int __pyx_freecount_18simplex_networks_c___pyx_scope_struct_3_genexpr = 0;
+static struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *__pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr[8];
+static int __pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr = 0;
 
-static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_3_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_18simplex_networks_c___pyx_scope_struct_3_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr)))) {
-    o = (PyObject*)__pyx_freelist_18simplex_networks_c___pyx_scope_struct_3_genexpr[--__pyx_freecount_18simplex_networks_c___pyx_scope_struct_3_genexpr];
-    memset(o, 0, sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr)))) {
+    o = (PyObject*)__pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr[--__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr];
+    memset(o, 0, sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -4424,22 +4424,22 @@ static PyObject *__pyx_tp_new_18simplex_networks_c___pyx_scope_struct_3_genexpr(
   return o;
 }
 
-static void __pyx_tp_dealloc_18simplex_networks_c___pyx_scope_struct_3_genexpr(PyObject *o) {
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *)o;
+static void __pyx_tp_dealloc_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr(PyObject *o) {
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_outer_scope);
   Py_CLEAR(p->__pyx_v_i);
   Py_CLEAR(p->__pyx_t_0);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_18simplex_networks_c___pyx_scope_struct_3_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr)))) {
-    __pyx_freelist_18simplex_networks_c___pyx_scope_struct_3_genexpr[__pyx_freecount_18simplex_networks_c___pyx_scope_struct_3_genexpr++] = ((struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr)))) {
+    __pyx_freelist_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr[__pyx_freecount_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr++] = ((struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct_3_genexpr(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *p = (struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr *)o;
+  struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *p = (struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr *)o;
   if (p->__pyx_outer_scope) {
     e = (*v)(((PyObject *)p->__pyx_outer_scope), a); if (e) return e;
   }
@@ -4452,12 +4452,12 @@ static int __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct_3_genexpr(P
   return 0;
 }
 
-static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr = {
+static PyTypeObject __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplex_networks_c.__pyx_scope_struct_3_genexpr", /*tp_name*/
-  sizeof(struct __pyx_obj_18simplex_networks_c___pyx_scope_struct_3_genexpr), /*tp_basicsize*/
+  "mex.mex_c.simplex_networks_c.__pyx_scope_struct_3_genexpr", /*tp_name*/
+  sizeof(struct __pyx_obj_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_18simplex_networks_c___pyx_scope_struct_3_genexpr, /*tp_dealloc*/
+  __pyx_tp_dealloc_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -4484,7 +4484,7 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_18simplex_networks_c___pyx_scope_struct_3_genexpr, /*tp_traverse*/
+  __pyx_tp_traverse_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr, /*tp_traverse*/
   0, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
@@ -4500,7 +4500,7 @@ static PyTypeObject __pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_18simplex_networks_c___pyx_scope_struct_3_genexpr, /*tp_new*/
+  __pyx_tp_new_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -4593,6 +4593,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_m, __pyx_k_m, sizeof(__pyx_k_m), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_matrix, __pyx_k_matrix, sizeof(__pyx_k_matrix), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_simplex_networks_c, __pyx_k_mex_mex_c_simplex_networks_c, sizeof(__pyx_k_mex_mex_c_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_n_s_min, __pyx_k_min, sizeof(__pyx_k_min), 0, 0, 1, 1},
   {&__pyx_n_s_n, __pyx_k_n, sizeof(__pyx_k_n), 0, 0, 1, 1},
   {&__pyx_n_s_n_col, __pyx_k_n_col, sizeof(__pyx_k_n_col), 0, 0, 1, 1},
@@ -4611,7 +4612,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_row, __pyx_k_row, sizeof(__pyx_k_row), 0, 0, 1, 1},
   {&__pyx_n_s_send, __pyx_k_send, sizeof(__pyx_k_send), 0, 0, 1, 1},
   {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
-  {&__pyx_n_s_simplex_networks_c, __pyx_k_simplex_networks_c, sizeof(__pyx_k_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_kp_s_simplex_networks_c_pyx, __pyx_k_simplex_networks_c_pyx, sizeof(__pyx_k_simplex_networks_c_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_t, __pyx_k_t, sizeof(__pyx_k_t), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
@@ -4628,8 +4628,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 41, __pyx_L1_error)
   __pyx_builtin_zip = __Pyx_GetBuiltinName(__pyx_n_s_zip); if (!__pyx_builtin_zip) __PYX_ERR(0, 149, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 224, __pyx_L1_error)
-  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 233, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 225, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 234, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -4639,7 +4639,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "simplex_networks_c.pyx":41
+  /* "mex/mex_c/simplex_networks_c.pyx":41
  *     cdef double m
  * 
  *     m = min(matrix[:-1, -1])             # <<<<<<<<<<<<<<
@@ -4653,27 +4653,27 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "simplex_networks_c.pyx":217
+  /* "mex/mex_c/simplex_networks_c.pyx":218
  * 
  *     t = np.zeros(matrix.shape)
- *     pr = matrix[row, :]  #original             # <<<<<<<<<<<<<<
+ *     pr = matrix[row, :]             # <<<<<<<<<<<<<<
  *     n_col = len(matrix[:, col])
  *     tmp_matrix = matrix[row, col]
  */
-  __pyx_slice__3 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__3)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_slice__3 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__3)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__3);
   __Pyx_GIVEREF(__pyx_slice__3);
 
-  /* "simplex_networks_c.pyx":233
+  /* "mex/mex_c/simplex_networks_c.pyx":234
  *         return t
  *     else:
  *         print('Cannot pivot on this element')             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_u_Cannot_pivot_on_this_element); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 233, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_u_Cannot_pivot_on_this_element); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "simplex_networks_c.pyx":4
+  /* "mex/mex_c/simplex_networks_c.pyx":4
  * 
  * 
  * def create_matrix(variables, constraints):             # <<<<<<<<<<<<<<
@@ -4685,7 +4685,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__5);
   __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_create_matrix, 4, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 4, __pyx_L1_error)
 
-  /* "simplex_networks_c.pyx":25
+  /* "mex/mex_c/simplex_networks_c.pyx":25
  * 
  * 
  * def pivots_col(matrix):             # <<<<<<<<<<<<<<
@@ -4697,7 +4697,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__7);
   __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_pivots_col, 25, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 25, __pyx_L1_error)
 
-  /* "simplex_networks_c.pyx":48
+  /* "mex/mex_c/simplex_networks_c.pyx":48
  * 
  * 
  * def pivots_row(matrix):             # <<<<<<<<<<<<<<
@@ -4709,7 +4709,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__9);
   __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_pivots_row, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 48, __pyx_L1_error)
 
-  /* "simplex_networks_c.pyx":73
+  /* "mex/mex_c/simplex_networks_c.pyx":73
  * 
  * 
  * def find_negative_col(matrix):             # <<<<<<<<<<<<<<
@@ -4721,7 +4721,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__11);
   __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_find_negative_col, 73, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 73, __pyx_L1_error)
 
-  /* "simplex_networks_c.pyx":99
+  /* "mex/mex_c/simplex_networks_c.pyx":99
  * 
  * 
  * def find_negative_row(matrix):             # <<<<<<<<<<<<<<
@@ -4733,7 +4733,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__13);
   __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_find_negative_row, 99, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 99, __pyx_L1_error)
 
-  /* "simplex_networks_c.pyx":125
+  /* "mex/mex_c/simplex_networks_c.pyx":125
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
@@ -4745,7 +4745,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__15);
   __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_find_pivot_col, 125, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 125, __pyx_L1_error)
 
-  /* "simplex_networks_c.pyx":163
+  /* "mex/mex_c/simplex_networks_c.pyx":163
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
@@ -4757,17 +4757,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__17);
   __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(1, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_find_pivot_row, 163, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 163, __pyx_L1_error)
 
-  /* "simplex_networks_c.pyx":197
+  /* "mex/mex_c/simplex_networks_c.pyx":198
  * 
  * 
  * def pivot(row,col,matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Pivot about a value to remove negative in final column or row.
  */
-  __pyx_tuple__19 = PyTuple_Pack(12, __pyx_n_s_row, __pyx_n_s_col, __pyx_n_s_matrix, __pyx_n_s_i, __pyx_n_s_t, __pyx_n_s_pr, __pyx_n_s_n_col, __pyx_n_s_tmp_matrix, __pyx_n_s_e, __pyx_n_s_r, __pyx_n_s_k, __pyx_n_s_c); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_tuple__19 = PyTuple_Pack(12, __pyx_n_s_row, __pyx_n_s_col, __pyx_n_s_matrix, __pyx_n_s_i, __pyx_n_s_t, __pyx_n_s_pr, __pyx_n_s_n_col, __pyx_n_s_tmp_matrix, __pyx_n_s_e, __pyx_n_s_r, __pyx_n_s_k, __pyx_n_s_c); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
-  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_pivot, 197, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplex_networks_c_pyx, __pyx_n_s_pivot, 198, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -4826,38 +4826,38 @@ static int __Pyx_modinit_type_init_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_18simplex_networks_c___pyx_scope_struct__find_pivot_col) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_18simplex_networks_c___pyx_scope_struct__find_pivot_col.tp_print = 0;
+  __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_18simplex_networks_c___pyx_scope_struct__find_pivot_col.tp_dictoffset && __pyx_type_18simplex_networks_c___pyx_scope_struct__find_pivot_col.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_18simplex_networks_c___pyx_scope_struct__find_pivot_col.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col.tp_dictoffset && __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
-  __pyx_ptype_18simplex_networks_c___pyx_scope_struct__find_pivot_col = &__pyx_type_18simplex_networks_c___pyx_scope_struct__find_pivot_col;
-  if (PyType_Ready(&__pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr) < 0) __PYX_ERR(0, 158, __pyx_L1_error)
+  __pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col = &__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct__find_pivot_col;
+  if (PyType_Ready(&__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr) < 0) __PYX_ERR(0, 158, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr.tp_print = 0;
+  __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr.tp_dictoffset && __pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr.tp_dictoffset && __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
-  __pyx_ptype_18simplex_networks_c___pyx_scope_struct_1_genexpr = &__pyx_type_18simplex_networks_c___pyx_scope_struct_1_genexpr;
-  if (PyType_Ready(&__pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr = &__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_1_genexpr;
+  if (PyType_Ready(&__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row.tp_print = 0;
+  __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row.tp_dictoffset && __pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row.tp_dictoffset && __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
-  __pyx_ptype_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row = &__pyx_type_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row;
-  if (PyType_Ready(&__pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr) < 0) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row = &__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_2_find_pivot_row;
+  if (PyType_Ready(&__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr) < 0) __PYX_ERR(0, 192, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr.tp_print = 0;
+  __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr.tp_dictoffset && __pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr.tp_dictoffset && __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
-  __pyx_ptype_18simplex_networks_c___pyx_scope_struct_3_genexpr = &__pyx_type_18simplex_networks_c___pyx_scope_struct_3_genexpr;
+  __pyx_ptype_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr = &__pyx_type_3mex_5mex_c_18simplex_networks_c___pyx_scope_struct_3_genexpr;
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -5063,14 +5063,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_simplex_networks_c) {
+  if (__pyx_module_is_main_mex__mex_c__simplex_networks_c) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "simplex_networks_c")) {
-      if (unlikely(PyDict_SetItemString(modules, "simplex_networks_c", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "mex.mex_c.simplex_networks_c")) {
+      if (unlikely(PyDict_SetItemString(modules, "mex.mex_c.simplex_networks_c", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -5091,7 +5091,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "simplex_networks_c.pyx":1
+  /* "mex/mex_c/simplex_networks_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * 
  * 
@@ -5101,103 +5101,103 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":4
+  /* "mex/mex_c/simplex_networks_c.pyx":4
  * 
  * 
  * def create_matrix(variables, constraints):             # <<<<<<<<<<<<<<
  *     """
  *     Creates a matrix with enough rows for each constraint plus the objective function
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_c_1create_matrix, NULL, __pyx_n_s_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_18simplex_networks_c_1create_matrix, NULL, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_create_matrix, __pyx_t_1) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":25
+  /* "mex/mex_c/simplex_networks_c.pyx":25
  * 
  * 
  * def pivots_col(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Checks to see if pivots are required due to negative values in right column,
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_c_3pivots_col, NULL, __pyx_n_s_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_18simplex_networks_c_3pivots_col, NULL, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pivots_col, __pyx_t_1) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":48
+  /* "mex/mex_c/simplex_networks_c.pyx":48
  * 
  * 
  * def pivots_row(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Checks to see if pivots are required due to negative values in bottom row,
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_c_5pivots_row, NULL, __pyx_n_s_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_18simplex_networks_c_5pivots_row, NULL, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pivots_row, __pyx_t_1) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":73
+  /* "mex/mex_c/simplex_networks_c.pyx":73
  * 
  * 
  * def find_negative_col(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds location of negative values in right column.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_c_7find_negative_col, NULL, __pyx_n_s_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_18simplex_networks_c_7find_negative_col, NULL, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_negative_col, __pyx_t_1) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":99
+  /* "mex/mex_c/simplex_networks_c.pyx":99
  * 
  * 
  * def find_negative_row(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds location of negative values in bottom row.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_c_9find_negative_row, NULL, __pyx_n_s_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_18simplex_networks_c_9find_negative_row, NULL, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_negative_row, __pyx_t_1) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":125
+  /* "mex/mex_c/simplex_networks_c.pyx":125
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds pivot element corresponding to a negative value in right column.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_c_11find_pivot_col, NULL, __pyx_n_s_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_18simplex_networks_c_11find_pivot_col, NULL, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_pivot_col, __pyx_t_1) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":163
+  /* "mex/mex_c/simplex_networks_c.pyx":163
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds pivot element corresponding to a negative value in bottom row.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_c_13find_pivot_row, NULL, __pyx_n_s_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_18simplex_networks_c_13find_pivot_row, NULL, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_pivot_row, __pyx_t_1) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":197
+  /* "mex/mex_c/simplex_networks_c.pyx":198
  * 
  * 
  * def pivot(row,col,matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Pivot about a value to remove negative in final column or row.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_c_15pivot, NULL, __pyx_n_s_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_18simplex_networks_c_15pivot, NULL, __pyx_n_s_mex_mex_c_simplex_networks_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pivot, __pyx_t_1) < 0) __PYX_ERR(0, 197, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pivot, __pyx_t_1) < 0) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_c.pyx":1
+  /* "mex/mex_c/simplex_networks_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * 
  * 
@@ -5214,11 +5214,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init simplex_networks_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init mex.mex_c.simplex_networks_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init simplex_networks_c");
+    PyErr_SetString(PyExc_ImportError, "init mex.mex_c.simplex_networks_c");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

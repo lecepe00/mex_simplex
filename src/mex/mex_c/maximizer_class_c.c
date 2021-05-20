@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "maximizer_class_c",
+        "name": "mex.mex_c.maximizer_class_c",
         "sources": [
             "maximizer_class_c.pyx"
         ]
     },
-    "module_name": "maximizer_class_c"
+    "module_name": "mex.mex_c.maximizer_class_c"
 }
 END: Cython Metadata */
 
@@ -616,8 +616,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__maximizer_class_c
-#define __PYX_HAVE_API__maximizer_class_c
+#define __PYX_HAVE__mex__mex_c__maximizer_class_c
+#define __PYX_HAVE_API__mex__mex_c__maximizer_class_c
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -908,6 +908,15 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
     PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
     const char* function_name);
 
+/* PyObjectSetAttrStr.proto */
+#if CYTHON_USE_TYPE_SLOTS
+#define __Pyx_PyObject_DelAttrStr(o,n) __Pyx_PyObject_SetAttrStr(o, n, NULL)
+static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value);
+#else
+#define __Pyx_PyObject_DelAttrStr(o,n)   PyObject_DelAttr(o,n)
+#define __Pyx_PyObject_SetAttrStr(o,n,v) PyObject_SetAttr(o,n,v)
+#endif
+
 /* PyObjectGetAttrStr.proto */
 #if CYTHON_USE_TYPE_SLOTS
 static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject* attr_name);
@@ -1000,15 +1009,6 @@ static CYTHON_INLINE PyObject *__Pyx_PyCFunction_FastCall(PyObject *func, PyObje
 static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
 #else
 #define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
-#endif
-
-/* PyObjectSetAttrStr.proto */
-#if CYTHON_USE_TYPE_SLOTS
-#define __Pyx_PyObject_DelAttrStr(o,n) __Pyx_PyObject_SetAttrStr(o, n, NULL)
-static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value);
-#else
-#define __Pyx_PyObject_DelAttrStr(o,n)   PyObject_DelAttr(o,n)
-#define __Pyx_PyObject_SetAttrStr(o,n,v) PyObject_SetAttr(o,n,v)
 #endif
 
 /* PyObjectCall2Args.proto */
@@ -1231,12 +1231,12 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'maximizer_class_c' */
-#define __Pyx_MODULE_NAME "maximizer_class_c"
-extern int __pyx_module_is_main_maximizer_class_c;
-int __pyx_module_is_main_maximizer_class_c = 0;
+/* Module declarations from 'mex.mex_c.maximizer_class_c' */
+#define __Pyx_MODULE_NAME "mex.mex_c.maximizer_class_c"
+extern int __pyx_module_is_main_mex__mex_c__maximizer_class_c;
+int __pyx_module_is_main_mex__mex_c__maximizer_class_c = 0;
 
-/* Implementation of 'maximizer_class_c' */
+/* Implementation of 'mex.mex_c.maximizer_class_c' */
 static const char __pyx_k_A[] = "A";
 static const char __pyx_k_b[] = "b";
 static const char __pyx_k_c[] = "c";
@@ -1252,6 +1252,7 @@ static const char __pyx_k_self[] = "self";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_array[] = "array";
 static const char __pyx_k_coeff[] = "coeff";
+static const char __pyx_k_compr[] = "compr";
 static const char __pyx_k_numpy[] = "numpy";
 static const char __pyx_k_solve[] = "solve";
 static const char __pyx_k_import[] = "__import__";
@@ -1260,16 +1261,22 @@ static const char __pyx_k_module[] = "__module__";
 static const char __pyx_k_values[] = "values";
 static const char __pyx_k_get_max[] = "get_max";
 static const char __pyx_k_prepare[] = "__prepare__";
+static const char __pyx_k_A_matrix[] = "A_matrix";
+static const char __pyx_k_b_vector[] = "b_vector";
+static const char __pyx_k_c_vector[] = "c_vector";
 static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_constrain[] = "constrain";
 static const char __pyx_k_general_c[] = "general_c";
 static const char __pyx_k_get_coeff[] = "get_coeff";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_Maximizer_c[] = "Maximizer_c";
+static const char __pyx_k_lowerbounds[] = "lowerbounds";
+static const char __pyx_k_upperbounds[] = "upperbounds";
 static const char __pyx_k_create_matrix[] = "create_matrix";
+static const char __pyx_k_add_constraints[] = "add_constraints";
+static const char __pyx_k_generate_tableau[] = "generate_tableau";
 static const char __pyx_k_generates_matrix[] = "generates_matrix";
 static const char __pyx_k_Maximizer_c_solve[] = "Maximizer_c.solve";
-static const char __pyx_k_maximizer_class_c[] = "maximizer_class_c";
 static const char __pyx_k_Maximizer_c___init[] = "Maximizer_c.__init__";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_simplex_networks_c[] = "simplex_networks_c";
@@ -1277,36 +1284,46 @@ static const char __pyx_k_Maximizer_c_get_max[] = "Maximizer_c.get_max";
 static const char __pyx_k_problem_definition_c[] = "problem_definition_c";
 static const char __pyx_k_Maximizer_c_get_coeff[] = "Maximizer_c.get_coeff";
 static const char __pyx_k_maximizer_class_c_pyx[] = "maximizer_class_c.pyx";
+static const char __pyx_k_Maximizer_c_add_constraints[] = "Maximizer_c.add_constraints";
+static const char __pyx_k_mex_mex_c_maximizer_class_c[] = "mex.mex_c.maximizer_class_c";
 static const char __pyx_k_Maximize_the_objective_function[] = "\n    Maximize the objective function\n    ";
 static PyObject *__pyx_n_s_A;
+static PyObject *__pyx_n_s_A_matrix;
 static PyObject *__pyx_kp_s_Maximize_the_objective_function;
 static PyObject *__pyx_n_s_Maximizer_c;
 static PyObject *__pyx_n_s_Maximizer_c___init;
+static PyObject *__pyx_n_s_Maximizer_c_add_constraints;
 static PyObject *__pyx_n_s_Maximizer_c_get_coeff;
 static PyObject *__pyx_n_s_Maximizer_c_get_max;
 static PyObject *__pyx_n_s_Maximizer_c_solve;
+static PyObject *__pyx_n_s_add_constraints;
 static PyObject *__pyx_n_s_array;
 static PyObject *__pyx_n_s_b;
+static PyObject *__pyx_n_s_b_vector;
 static PyObject *__pyx_n_s_c;
+static PyObject *__pyx_n_s_c_vector;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_coeff;
+static PyObject *__pyx_n_s_compr;
 static PyObject *__pyx_n_s_constrain;
 static PyObject *__pyx_n_s_create_matrix;
 static PyObject *__pyx_n_s_doc;
 static PyObject *__pyx_n_s_general_c;
+static PyObject *__pyx_n_s_generate_tableau;
 static PyObject *__pyx_n_s_generates_matrix;
 static PyObject *__pyx_n_s_get_coeff;
 static PyObject *__pyx_n_s_get_max;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_init;
+static PyObject *__pyx_n_s_lowerbounds;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_matrix;
 static PyObject *__pyx_n_s_max;
 static PyObject *__pyx_n_u_max;
-static PyObject *__pyx_n_s_maximizer_class_c;
 static PyObject *__pyx_kp_s_maximizer_class_c_pyx;
 static PyObject *__pyx_n_s_maxz;
 static PyObject *__pyx_n_s_metaclass;
+static PyObject *__pyx_n_s_mex_mex_c_maximizer_class_c;
 static PyObject *__pyx_n_s_module;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_np;
@@ -1319,35 +1336,39 @@ static PyObject *__pyx_n_s_self;
 static PyObject *__pyx_n_s_simplex_networks_c;
 static PyObject *__pyx_n_s_solve;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_s_upperbounds;
 static PyObject *__pyx_n_s_values;
-static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_A, PyObject *__pyx_v_b, PyObject *__pyx_v_c); /* proto */
-static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_4get_max(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_6get_coeff(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_A, PyObject *__pyx_v_b, PyObject *__pyx_v_c); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_2add_constraints(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_lowerbounds, PyObject *__pyx_v_upperbounds); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_4solve(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_6get_max(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_8get_coeff(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_int_neg_1;
 static PyObject *__pyx_slice_;
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__8;
+static PyObject *__pyx_tuple__10;
 static PyObject *__pyx_codeobj__3;
 static PyObject *__pyx_codeobj__5;
 static PyObject *__pyx_codeobj__7;
 static PyObject *__pyx_codeobj__9;
+static PyObject *__pyx_codeobj__11;
 /* Late includes */
 
-/* "maximizer_class_c.pyx":12
+/* "mex/mex_c/maximizer_class_c.pyx":12
  *     """
  * 
  *     def __init__(self, A, b, c):             # <<<<<<<<<<<<<<
- *         self.matrix = generates_matrix(A, b, c)
- *         self.max = None
+ *         self.A_matrix = A
+ *         self.b_vector = b
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_17maximizer_class_c_11Maximizer_c_1__init__ = {"__init__", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_17maximizer_class_c_11Maximizer_c_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_1__init__ = {"__init__", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_A = 0;
   PyObject *__pyx_v_b = 0;
@@ -1420,18 +1441,18 @@ static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_1__init__(PyObject *
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__init__", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("maximizer_class_c.Maximizer_c.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.maximizer_class_c.Maximizer_c.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_17maximizer_class_c_11Maximizer_c___init__(__pyx_self, __pyx_v_self, __pyx_v_A, __pyx_v_b, __pyx_v_c);
+  __pyx_r = __pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c___init__(__pyx_self, __pyx_v_self, __pyx_v_A, __pyx_v_b, __pyx_v_c);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_A, PyObject *__pyx_v_b, PyObject *__pyx_v_c) {
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_A, PyObject *__pyx_v_b, PyObject *__pyx_v_c) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1444,14 +1465,41 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUS
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "maximizer_class_c.pyx":13
+  /* "mex/mex_c/maximizer_class_c.pyx":13
  * 
  *     def __init__(self, A, b, c):
+ *         self.A_matrix = A             # <<<<<<<<<<<<<<
+ *         self.b_vector = b
+ *         self.c_vector = c
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_A_matrix, __pyx_v_A) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+
+  /* "mex/mex_c/maximizer_class_c.pyx":14
+ *     def __init__(self, A, b, c):
+ *         self.A_matrix = A
+ *         self.b_vector = b             # <<<<<<<<<<<<<<
+ *         self.c_vector = c
+ *         self.matrix = generates_matrix(A, b, c)
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_b_vector, __pyx_v_b) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+
+  /* "mex/mex_c/maximizer_class_c.pyx":15
+ *         self.A_matrix = A
+ *         self.b_vector = b
+ *         self.c_vector = c             # <<<<<<<<<<<<<<
+ *         self.matrix = generates_matrix(A, b, c)
+ *         self.max = None
+ */
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_c_vector, __pyx_v_c) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+
+  /* "mex/mex_c/maximizer_class_c.pyx":16
+ *         self.b_vector = b
+ *         self.c_vector = c
  *         self.matrix = generates_matrix(A, b, c)             # <<<<<<<<<<<<<<
  *         self.max = None
  *         self.coeff = None
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_generates_matrix); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_generates_matrix); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -1468,7 +1516,7 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUS
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[4] = {__pyx_t_3, __pyx_v_A, __pyx_v_b, __pyx_v_c};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -1476,13 +1524,13 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUS
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[4] = {__pyx_t_3, __pyx_v_A, __pyx_v_b, __pyx_v_c};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(3+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(3+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 16, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_3) {
       __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -1496,38 +1544,38 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUS
     __Pyx_INCREF(__pyx_v_c);
     __Pyx_GIVEREF(__pyx_v_c);
     PyTuple_SET_ITEM(__pyx_t_5, 2+__pyx_t_4, __pyx_v_c);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_matrix, __pyx_t_1) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_matrix, __pyx_t_1) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":14
- *     def __init__(self, A, b, c):
+  /* "mex/mex_c/maximizer_class_c.pyx":17
+ *         self.c_vector = c
  *         self.matrix = generates_matrix(A, b, c)
  *         self.max = None             # <<<<<<<<<<<<<<
  *         self.coeff = None
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_max, Py_None) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_max, Py_None) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
 
-  /* "maximizer_class_c.pyx":15
+  /* "mex/mex_c/maximizer_class_c.pyx":18
  *         self.matrix = generates_matrix(A, b, c)
  *         self.max = None
  *         self.coeff = None             # <<<<<<<<<<<<<<
  * 
- *     def solve(self):
+ *     def add_constraints(self, lowerbounds, upperbounds):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_coeff, Py_None) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_coeff, Py_None) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
 
-  /* "maximizer_class_c.pyx":12
+  /* "mex/mex_c/maximizer_class_c.pyx":12
  *     """
  * 
  *     def __init__(self, A, b, c):             # <<<<<<<<<<<<<<
- *         self.matrix = generates_matrix(A, b, c)
- *         self.max = None
+ *         self.A_matrix = A
+ *         self.b_vector = b
  */
 
   /* function exit code */
@@ -1538,7 +1586,7 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUS
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("maximizer_class_c.Maximizer_c.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.maximizer_class_c.Maximizer_c.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1546,8 +1594,173 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "maximizer_class_c.pyx":17
+/* "mex/mex_c/maximizer_class_c.pyx":20
  *         self.coeff = None
+ * 
+ *     def add_constraints(self, lowerbounds, upperbounds):             # <<<<<<<<<<<<<<
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_3add_constraints(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_3add_constraints = {"add_constraints", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_3add_constraints, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_3add_constraints(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_self = 0;
+  PyObject *__pyx_v_lowerbounds = 0;
+  PyObject *__pyx_v_upperbounds = 0;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("add_constraints (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_lowerbounds,&__pyx_n_s_upperbounds,0};
+    PyObject* values[3] = {0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_self)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_lowerbounds)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("add_constraints", 1, 3, 3, 1); __PYX_ERR(0, 20, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_upperbounds)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("add_constraints", 1, 3, 3, 2); __PYX_ERR(0, 20, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "add_constraints") < 0)) __PYX_ERR(0, 20, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+    }
+    __pyx_v_self = values[0];
+    __pyx_v_lowerbounds = values[1];
+    __pyx_v_upperbounds = values[2];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("add_constraints", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 20, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("mex.mex_c.maximizer_class_c.Maximizer_c.add_constraints", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_2add_constraints(__pyx_self, __pyx_v_self, __pyx_v_lowerbounds, __pyx_v_upperbounds);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_2add_constraints(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_lowerbounds, PyObject *__pyx_v_upperbounds) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("add_constraints", 0);
+
+  /* "mex/mex_c/maximizer_class_c.pyx":21
+ * 
+ *     def add_constraints(self, lowerbounds, upperbounds):
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)             # <<<<<<<<<<<<<<
+ * 
+ *     def solve(self):
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_generate_tableau); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_A_matrix); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_b_vector); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_c_vector); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = PyTuple_New(5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_3);
+  __Pyx_INCREF(__pyx_v_lowerbounds);
+  __Pyx_GIVEREF(__pyx_v_lowerbounds);
+  PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_v_lowerbounds);
+  __Pyx_INCREF(__pyx_v_upperbounds);
+  __Pyx_GIVEREF(__pyx_v_upperbounds);
+  PyTuple_SET_ITEM(__pyx_t_5, 3, __pyx_v_upperbounds);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_5, 4, __pyx_t_4);
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_compr, Py_False) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_matrix, __pyx_t_3) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "mex/mex_c/maximizer_class_c.pyx":20
+ *         self.coeff = None
+ * 
+ *     def add_constraints(self, lowerbounds, upperbounds):             # <<<<<<<<<<<<<<
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("mex.mex_c.maximizer_class_c.Maximizer_c.add_constraints", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "mex/mex_c/maximizer_class_c.pyx":23
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
  *         solve = maxz(self.matrix)
@@ -1555,20 +1768,20 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c___init__(CYTHON_UNUS
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_3solve(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_17maximizer_class_c_11Maximizer_c_3solve = {"solve", (PyCFunction)__pyx_pw_17maximizer_class_c_11Maximizer_c_3solve, METH_O, 0};
-static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_3solve(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_5solve(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_5solve = {"solve", (PyCFunction)__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_5solve, METH_O, 0};
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_5solve(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("solve (wrapper)", 0);
-  __pyx_r = __pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_4solve(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_4solve(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_v_solve = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -1582,16 +1795,16 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("solve", 0);
 
-  /* "maximizer_class_c.pyx":18
+  /* "mex/mex_c/maximizer_class_c.pyx":24
  * 
  *     def solve(self):
  *         solve = maxz(self.matrix)             # <<<<<<<<<<<<<<
  *         self.max = solve['max']
  *         self.coeff = np.array(list(solve.values()))[:-1]
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_maxz); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_maxz); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_matrix); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_matrix); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -1606,37 +1819,37 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_solve = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":19
+  /* "mex/mex_c/maximizer_class_c.pyx":25
  *     def solve(self):
  *         solve = maxz(self.matrix)
  *         self.max = solve['max']             # <<<<<<<<<<<<<<
  *         self.coeff = np.array(list(solve.values()))[:-1]
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_solve, __pyx_n_u_max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_solve, __pyx_n_u_max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_max, __pyx_t_1) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_max, __pyx_t_1) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":20
+  /* "mex/mex_c/maximizer_class_c.pyx":26
  *         solve = maxz(self.matrix)
  *         self.max = solve['max']
  *         self.coeff = np.array(list(solve.values()))[:-1]             # <<<<<<<<<<<<<<
  * 
  *     def get_max(self):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_solve, __pyx_n_s_values); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_solve, __pyx_n_s_values); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -1650,10 +1863,10 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED
   }
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PySequence_List(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_4 = PySequence_List(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -1669,17 +1882,17 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, -1L, NULL, NULL, &__pyx_slice_, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, -1L, NULL, NULL, &__pyx_slice_, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_coeff, __pyx_t_3) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_coeff, __pyx_t_3) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "maximizer_class_c.pyx":17
- *         self.coeff = None
+  /* "mex/mex_c/maximizer_class_c.pyx":23
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
  *         solve = maxz(self.matrix)
@@ -1695,7 +1908,7 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("maximizer_class_c.Maximizer_c.solve", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.maximizer_class_c.Maximizer_c.solve", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_solve);
@@ -1704,7 +1917,7 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "maximizer_class_c.pyx":22
+/* "mex/mex_c/maximizer_class_c.pyx":28
  *         self.coeff = np.array(list(solve.values()))[:-1]
  * 
  *     def get_max(self):             # <<<<<<<<<<<<<<
@@ -1713,20 +1926,20 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_2solve(CYTHON_UNUSED
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_5get_max(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_17maximizer_class_c_11Maximizer_c_5get_max = {"get_max", (PyCFunction)__pyx_pw_17maximizer_class_c_11Maximizer_c_5get_max, METH_O, 0};
-static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_5get_max(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_7get_max(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_7get_max = {"get_max", (PyCFunction)__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_7get_max, METH_O, 0};
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_7get_max(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_max (wrapper)", 0);
-  __pyx_r = __pyx_pf_17maximizer_class_c_11Maximizer_c_4get_max(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_6get_max(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_4get_max(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_6get_max(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1735,7 +1948,7 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_4get_max(CYTHON_UNUS
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_max", 0);
 
-  /* "maximizer_class_c.pyx":23
+  /* "mex/mex_c/maximizer_class_c.pyx":29
  * 
  *     def get_max(self):
  *         return self.max             # <<<<<<<<<<<<<<
@@ -1743,13 +1956,13 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_4get_max(CYTHON_UNUS
  *     def get_coeff(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "maximizer_class_c.pyx":22
+  /* "mex/mex_c/maximizer_class_c.pyx":28
  *         self.coeff = np.array(list(solve.values()))[:-1]
  * 
  *     def get_max(self):             # <<<<<<<<<<<<<<
@@ -1760,7 +1973,7 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_4get_max(CYTHON_UNUS
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("maximizer_class_c.Maximizer_c.get_max", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.maximizer_class_c.Maximizer_c.get_max", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1768,7 +1981,7 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_4get_max(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "maximizer_class_c.pyx":25
+/* "mex/mex_c/maximizer_class_c.pyx":31
  *         return self.max
  * 
  *     def get_coeff(self):             # <<<<<<<<<<<<<<
@@ -1776,20 +1989,20 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_4get_max(CYTHON_UNUS
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_7get_coeff(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_17maximizer_class_c_11Maximizer_c_7get_coeff = {"get_coeff", (PyCFunction)__pyx_pw_17maximizer_class_c_11Maximizer_c_7get_coeff, METH_O, 0};
-static PyObject *__pyx_pw_17maximizer_class_c_11Maximizer_c_7get_coeff(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_9get_coeff(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_9get_coeff = {"get_coeff", (PyCFunction)__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_9get_coeff, METH_O, 0};
+static PyObject *__pyx_pw_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_9get_coeff(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_coeff (wrapper)", 0);
-  __pyx_r = __pyx_pf_17maximizer_class_c_11Maximizer_c_6get_coeff(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_8get_coeff(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_6get_coeff(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_8get_coeff(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1798,19 +2011,19 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_6get_coeff(CYTHON_UN
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_coeff", 0);
 
-  /* "maximizer_class_c.pyx":26
+  /* "mex/mex_c/maximizer_class_c.pyx":32
  * 
  *     def get_coeff(self):
  *         return self.coeff             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_coeff); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_coeff); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "maximizer_class_c.pyx":25
+  /* "mex/mex_c/maximizer_class_c.pyx":31
  *         return self.max
  * 
  *     def get_coeff(self):             # <<<<<<<<<<<<<<
@@ -1820,7 +2033,7 @@ static PyObject *__pyx_pf_17maximizer_class_c_11Maximizer_c_6get_coeff(CYTHON_UN
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("maximizer_class_c.Maximizer_c.get_coeff", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.maximizer_class_c.Maximizer_c.get_coeff", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1875,34 +2088,42 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_A, __pyx_k_A, sizeof(__pyx_k_A), 0, 0, 1, 1},
+  {&__pyx_n_s_A_matrix, __pyx_k_A_matrix, sizeof(__pyx_k_A_matrix), 0, 0, 1, 1},
   {&__pyx_kp_s_Maximize_the_objective_function, __pyx_k_Maximize_the_objective_function, sizeof(__pyx_k_Maximize_the_objective_function), 0, 0, 1, 0},
   {&__pyx_n_s_Maximizer_c, __pyx_k_Maximizer_c, sizeof(__pyx_k_Maximizer_c), 0, 0, 1, 1},
   {&__pyx_n_s_Maximizer_c___init, __pyx_k_Maximizer_c___init, sizeof(__pyx_k_Maximizer_c___init), 0, 0, 1, 1},
+  {&__pyx_n_s_Maximizer_c_add_constraints, __pyx_k_Maximizer_c_add_constraints, sizeof(__pyx_k_Maximizer_c_add_constraints), 0, 0, 1, 1},
   {&__pyx_n_s_Maximizer_c_get_coeff, __pyx_k_Maximizer_c_get_coeff, sizeof(__pyx_k_Maximizer_c_get_coeff), 0, 0, 1, 1},
   {&__pyx_n_s_Maximizer_c_get_max, __pyx_k_Maximizer_c_get_max, sizeof(__pyx_k_Maximizer_c_get_max), 0, 0, 1, 1},
   {&__pyx_n_s_Maximizer_c_solve, __pyx_k_Maximizer_c_solve, sizeof(__pyx_k_Maximizer_c_solve), 0, 0, 1, 1},
+  {&__pyx_n_s_add_constraints, __pyx_k_add_constraints, sizeof(__pyx_k_add_constraints), 0, 0, 1, 1},
   {&__pyx_n_s_array, __pyx_k_array, sizeof(__pyx_k_array), 0, 0, 1, 1},
   {&__pyx_n_s_b, __pyx_k_b, sizeof(__pyx_k_b), 0, 0, 1, 1},
+  {&__pyx_n_s_b_vector, __pyx_k_b_vector, sizeof(__pyx_k_b_vector), 0, 0, 1, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
+  {&__pyx_n_s_c_vector, __pyx_k_c_vector, sizeof(__pyx_k_c_vector), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_coeff, __pyx_k_coeff, sizeof(__pyx_k_coeff), 0, 0, 1, 1},
+  {&__pyx_n_s_compr, __pyx_k_compr, sizeof(__pyx_k_compr), 0, 0, 1, 1},
   {&__pyx_n_s_constrain, __pyx_k_constrain, sizeof(__pyx_k_constrain), 0, 0, 1, 1},
   {&__pyx_n_s_create_matrix, __pyx_k_create_matrix, sizeof(__pyx_k_create_matrix), 0, 0, 1, 1},
   {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
   {&__pyx_n_s_general_c, __pyx_k_general_c, sizeof(__pyx_k_general_c), 0, 0, 1, 1},
+  {&__pyx_n_s_generate_tableau, __pyx_k_generate_tableau, sizeof(__pyx_k_generate_tableau), 0, 0, 1, 1},
   {&__pyx_n_s_generates_matrix, __pyx_k_generates_matrix, sizeof(__pyx_k_generates_matrix), 0, 0, 1, 1},
   {&__pyx_n_s_get_coeff, __pyx_k_get_coeff, sizeof(__pyx_k_get_coeff), 0, 0, 1, 1},
   {&__pyx_n_s_get_max, __pyx_k_get_max, sizeof(__pyx_k_get_max), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_init, __pyx_k_init, sizeof(__pyx_k_init), 0, 0, 1, 1},
+  {&__pyx_n_s_lowerbounds, __pyx_k_lowerbounds, sizeof(__pyx_k_lowerbounds), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_matrix, __pyx_k_matrix, sizeof(__pyx_k_matrix), 0, 0, 1, 1},
   {&__pyx_n_s_max, __pyx_k_max, sizeof(__pyx_k_max), 0, 0, 1, 1},
   {&__pyx_n_u_max, __pyx_k_max, sizeof(__pyx_k_max), 0, 1, 0, 1},
-  {&__pyx_n_s_maximizer_class_c, __pyx_k_maximizer_class_c, sizeof(__pyx_k_maximizer_class_c), 0, 0, 1, 1},
   {&__pyx_kp_s_maximizer_class_c_pyx, __pyx_k_maximizer_class_c_pyx, sizeof(__pyx_k_maximizer_class_c_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_maxz, __pyx_k_maxz, sizeof(__pyx_k_maxz), 0, 0, 1, 1},
   {&__pyx_n_s_metaclass, __pyx_k_metaclass, sizeof(__pyx_k_metaclass), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_maximizer_class_c, __pyx_k_mex_mex_c_maximizer_class_c, sizeof(__pyx_k_mex_mex_c_maximizer_class_c), 0, 0, 1, 1},
   {&__pyx_n_s_module, __pyx_k_module, sizeof(__pyx_k_module), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
@@ -1915,6 +2136,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_simplex_networks_c, __pyx_k_simplex_networks_c, sizeof(__pyx_k_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_n_s_solve, __pyx_k_solve, sizeof(__pyx_k_solve), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_s_upperbounds, __pyx_k_upperbounds, sizeof(__pyx_k_upperbounds), 0, 0, 1, 1},
   {&__pyx_n_s_values, __pyx_k_values, sizeof(__pyx_k_values), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
@@ -1926,63 +2148,75 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "maximizer_class_c.pyx":20
+  /* "mex/mex_c/maximizer_class_c.pyx":26
  *         solve = maxz(self.matrix)
  *         self.max = solve['max']
  *         self.coeff = np.array(list(solve.values()))[:-1]             # <<<<<<<<<<<<<<
  * 
  *     def get_max(self):
  */
-  __pyx_slice_ = PySlice_New(Py_None, __pyx_int_neg_1, Py_None); if (unlikely(!__pyx_slice_)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_slice_ = PySlice_New(Py_None, __pyx_int_neg_1, Py_None); if (unlikely(!__pyx_slice_)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice_);
   __Pyx_GIVEREF(__pyx_slice_);
 
-  /* "maximizer_class_c.pyx":12
+  /* "mex/mex_c/maximizer_class_c.pyx":12
  *     """
  * 
  *     def __init__(self, A, b, c):             # <<<<<<<<<<<<<<
- *         self.matrix = generates_matrix(A, b, c)
- *         self.max = None
+ *         self.A_matrix = A
+ *         self.b_vector = b
  */
   __pyx_tuple__2 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_A, __pyx_n_s_b, __pyx_n_s_c); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
   __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(4, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_maximizer_class_c_pyx, __pyx_n_s_init, 12, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 12, __pyx_L1_error)
 
-  /* "maximizer_class_c.pyx":17
+  /* "mex/mex_c/maximizer_class_c.pyx":20
  *         self.coeff = None
+ * 
+ *     def add_constraints(self, lowerbounds, upperbounds):             # <<<<<<<<<<<<<<
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
+ * 
+ */
+  __pyx_tuple__4 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_lowerbounds, __pyx_n_s_upperbounds); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_maximizer_class_c_pyx, __pyx_n_s_add_constraints, 20, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 20, __pyx_L1_error)
+
+  /* "mex/mex_c/maximizer_class_c.pyx":23
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
  *         solve = maxz(self.matrix)
  *         self.max = solve['max']
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_solve); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
-  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_maximizer_class_c_pyx, __pyx_n_s_solve, 17, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_solve); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_maximizer_class_c_pyx, __pyx_n_s_solve, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 23, __pyx_L1_error)
 
-  /* "maximizer_class_c.pyx":22
+  /* "mex/mex_c/maximizer_class_c.pyx":28
  *         self.coeff = np.array(list(solve.values()))[:-1]
  * 
  *     def get_max(self):             # <<<<<<<<<<<<<<
  *         return self.max
  * 
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 22, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_maximizer_class_c_pyx, __pyx_n_s_get_max, 22, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_maximizer_class_c_pyx, __pyx_n_s_get_max, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 28, __pyx_L1_error)
 
-  /* "maximizer_class_c.pyx":25
+  /* "mex/mex_c/maximizer_class_c.pyx":31
  *         return self.max
  * 
  *     def get_coeff(self):             # <<<<<<<<<<<<<<
  *         return self.coeff
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 25, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_maximizer_class_c_pyx, __pyx_n_s_get_coeff, 25, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_maximizer_class_c_pyx, __pyx_n_s_get_coeff, 31, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2237,14 +2471,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_maximizer_class_c) {
+  if (__pyx_module_is_main_mex__mex_c__maximizer_class_c) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "maximizer_class_c")) {
-      if (unlikely(PyDict_SetItemString(modules, "maximizer_class_c", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "mex.mex_c.maximizer_class_c")) {
+      if (unlikely(PyDict_SetItemString(modules, "mex.mex_c.maximizer_class_c", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2265,7 +2499,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "maximizer_class_c.pyx":1
+  /* "mex/mex_c/maximizer_class_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * from simplex_networks_c import create_matrix
  * from problem_definition_c import constrain, obj, maxz
@@ -2275,11 +2509,11 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":2
+  /* "mex/mex_c/maximizer_class_c.pyx":2
  * import numpy as np
  * from simplex_networks_c import create_matrix             # <<<<<<<<<<<<<<
  * from problem_definition_c import constrain, obj, maxz
- * from general_c import generates_matrix
+ * from general_c import generates_matrix, generate_tableau
  */
   __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2295,11 +2529,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "maximizer_class_c.pyx":3
+  /* "mex/mex_c/maximizer_class_c.pyx":3
  * import numpy as np
  * from simplex_networks_c import create_matrix
  * from problem_definition_c import constrain, obj, maxz             # <<<<<<<<<<<<<<
- * from general_c import generates_matrix
+ * from general_c import generates_matrix, generate_tableau
  * 
  */
   __pyx_t_2 = PyList_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -2330,18 +2564,21 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":4
+  /* "mex/mex_c/maximizer_class_c.pyx":4
  * from simplex_networks_c import create_matrix
  * from problem_definition_c import constrain, obj, maxz
- * from general_c import generates_matrix             # <<<<<<<<<<<<<<
+ * from general_c import generates_matrix, generate_tableau             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_generates_matrix);
   __Pyx_GIVEREF(__pyx_n_s_generates_matrix);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_generates_matrix);
+  __Pyx_INCREF(__pyx_n_s_generate_tableau);
+  __Pyx_GIVEREF(__pyx_n_s_generate_tableau);
+  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_generate_tableau);
   __pyx_t_2 = __Pyx_Import(__pyx_n_s_general_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2349,66 +2586,82 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_generates_matrix, __pyx_t_1) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_generate_tableau); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_generate_tableau, __pyx_t_1) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "maximizer_class_c.pyx":7
+  /* "mex/mex_c/maximizer_class_c.pyx":7
  * 
  * 
  * class Maximizer_c():             # <<<<<<<<<<<<<<
  *     """
  *     Maximize the objective function
  */
-  __pyx_t_2 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Maximizer_c, __pyx_n_s_Maximizer_c, (PyObject *) NULL, __pyx_n_s_maximizer_class_c, __pyx_kp_s_Maximize_the_objective_function); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Maximizer_c, __pyx_n_s_Maximizer_c, (PyObject *) NULL, __pyx_n_s_mex_mex_c_maximizer_class_c, __pyx_kp_s_Maximize_the_objective_function); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "maximizer_class_c.pyx":12
+  /* "mex/mex_c/maximizer_class_c.pyx":12
  *     """
  * 
  *     def __init__(self, A, b, c):             # <<<<<<<<<<<<<<
- *         self.matrix = generates_matrix(A, b, c)
- *         self.max = None
+ *         self.A_matrix = A
+ *         self.b_vector = b
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_17maximizer_class_c_11Maximizer_c_1__init__, 0, __pyx_n_s_Maximizer_c___init, NULL, __pyx_n_s_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_1__init__, 0, __pyx_n_s_Maximizer_c___init, NULL, __pyx_n_s_mex_mex_c_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_init, __pyx_t_1) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":17
+  /* "mex/mex_c/maximizer_class_c.pyx":20
  *         self.coeff = None
+ * 
+ *     def add_constraints(self, lowerbounds, upperbounds):             # <<<<<<<<<<<<<<
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
+ * 
+ */
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_3add_constraints, 0, __pyx_n_s_Maximizer_c_add_constraints, NULL, __pyx_n_s_mex_mex_c_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_add_constraints, __pyx_t_1) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "mex/mex_c/maximizer_class_c.pyx":23
+ *         self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
  *         solve = maxz(self.matrix)
  *         self.max = solve['max']
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_17maximizer_class_c_11Maximizer_c_3solve, 0, __pyx_n_s_Maximizer_c_solve, NULL, __pyx_n_s_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_5solve, 0, __pyx_n_s_Maximizer_c_solve, NULL, __pyx_n_s_mex_mex_c_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_solve, __pyx_t_1) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_solve, __pyx_t_1) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":22
+  /* "mex/mex_c/maximizer_class_c.pyx":28
  *         self.coeff = np.array(list(solve.values()))[:-1]
  * 
  *     def get_max(self):             # <<<<<<<<<<<<<<
  *         return self.max
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_17maximizer_class_c_11Maximizer_c_5get_max, 0, __pyx_n_s_Maximizer_c_get_max, NULL, __pyx_n_s_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_7get_max, 0, __pyx_n_s_Maximizer_c_get_max, NULL, __pyx_n_s_mex_mex_c_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_get_max, __pyx_t_1) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_get_max, __pyx_t_1) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":25
+  /* "mex/mex_c/maximizer_class_c.pyx":31
  *         return self.max
  * 
  *     def get_coeff(self):             # <<<<<<<<<<<<<<
  *         return self.coeff
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_17maximizer_class_c_11Maximizer_c_7get_coeff, 0, __pyx_n_s_Maximizer_c_get_coeff, NULL, __pyx_n_s_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_3mex_5mex_c_17maximizer_class_c_11Maximizer_c_9get_coeff, 0, __pyx_n_s_Maximizer_c_get_coeff, NULL, __pyx_n_s_mex_mex_c_maximizer_class_c, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_get_coeff, __pyx_t_1) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_get_coeff, __pyx_t_1) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "maximizer_class_c.pyx":7
+  /* "mex/mex_c/maximizer_class_c.pyx":7
  * 
  * 
  * class Maximizer_c():             # <<<<<<<<<<<<<<
@@ -2421,7 +2674,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "maximizer_class_c.pyx":1
+  /* "mex/mex_c/maximizer_class_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * from simplex_networks_c import create_matrix
  * from problem_definition_c import constrain, obj, maxz
@@ -2439,11 +2692,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init maximizer_class_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init mex.mex_c.maximizer_class_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init maximizer_class_c");
+    PyErr_SetString(PyExc_ImportError, "init mex.mex_c.maximizer_class_c");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -2615,6 +2868,20 @@ invalid_keyword:
 bad:
     return -1;
 }
+
+/* PyObjectSetAttrStr */
+#if CYTHON_USE_TYPE_SLOTS
+static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value) {
+    PyTypeObject* tp = Py_TYPE(obj);
+    if (likely(tp->tp_setattro))
+        return tp->tp_setattro(obj, attr_name, value);
+#if PY_MAJOR_VERSION < 3
+    if (likely(tp->tp_setattr))
+        return tp->tp_setattr(obj, PyString_AS_STRING(attr_name), value);
+#endif
+    return PyObject_SetAttr(obj, attr_name, value);
+}
+#endif
 
 /* PyObjectGetAttrStr */
 #if CYTHON_USE_TYPE_SLOTS
@@ -2864,20 +3131,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg
             "NULL result without error in PyObject_Call");
     }
     return result;
-}
-#endif
-
-/* PyObjectSetAttrStr */
-#if CYTHON_USE_TYPE_SLOTS
-static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value) {
-    PyTypeObject* tp = Py_TYPE(obj);
-    if (likely(tp->tp_setattro))
-        return tp->tp_setattro(obj, attr_name, value);
-#if PY_MAJOR_VERSION < 3
-    if (likely(tp->tp_setattr))
-        return tp->tp_setattr(obj, PyString_AS_STRING(attr_name), value);
-#endif
-    return PyObject_SetAttr(obj, attr_name, value);
 }
 #endif
 
