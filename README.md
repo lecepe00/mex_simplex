@@ -36,6 +36,7 @@
 
 ## Referencias
 
+- Clavius, Cristopher & Stefan Josef. LP random problem generator. [LP random problem generator](http://web.tecnico.ulisboa.pt/~mcasquilho/compute/or/Fx-LP-generator.php)
 - Méndez, Abel. (2021). [Método Símplex Paso a Paso](https://www.plandemejora.com/metodo-simplex-paso-a-paso-ejemplos-maximizar-minimizar/)
 - Moore, Jacob.  (2018).  [Coding the Simplex Algorithm using Python and Numpy](https://medium.com/@jacob.d.moore1/coding-the-simplex-algorithm-from-scratch-using-python-and-numpy-93e3813e6e70)
 - Palacios M., Erick. (2021). Libro de Optimización 2021. [4.2. Programación lineal (PL) y método símplex](https://itam-ds.github.io/analisis-numerico-computo-cientifico/IV.optimizacion_en_redes_y_prog_lineal/4.2/Programacion_lineal_y_metodo_simplex.html)
