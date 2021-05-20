@@ -13,4 +13,6 @@ General functions
    general.convert_min
    general.gen_var
    general.convert
+   general.generates_matrix
+   general.generate_tableau
    

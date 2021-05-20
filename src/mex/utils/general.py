@@ -111,10 +111,9 @@ def generates_matrix(A_matrix, b_vector, c_vector):
 
 def generate_tableau(A_matrix, b_vector, b_low, b_upp, c_vector, compr=True):
     """
-    Genera la matriz bajo el supuesto de que se tiene ya capturado los datos de entrada. Bajo el problema del tipo:
+    Generates the tableau contemplating lower and upper bounds:
     min/max c^Tx
     Ax = b
-    Concantenando renglones de A y juntando los limites de las restricciones (multiplicando por -1 donde sea necesario)
 
     Args:
 
