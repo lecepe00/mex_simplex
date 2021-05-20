@@ -10,6 +10,8 @@ Compute simplex method functions
 .. autosummary::
    :toctree: ../_autosummary
 
+   maximizer_class.Maximizer
+   minimizer_class.Minimizer
    simplex_networks.create_matrix
    simplex_networks.pivots_col
    simplex_networks.pivots_row

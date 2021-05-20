@@ -31,7 +31,7 @@ RUN jupyter labextension install kubeflow-kale-labextension
 RUN pip install Cython
 RUN pip install --quiet "git+https://github.com/lecepe00/mex_simplex.git#egg=mex&subdirectory=src"
 RUN pip install matplotlib
-RUN pip install scipy
+RUN pip install scipy==1.5.2
 RUN pip install networkx
 RUN pip install pytest
 

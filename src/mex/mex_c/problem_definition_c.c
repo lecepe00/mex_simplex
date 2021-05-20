@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "problem_definition_c",
+        "name": "mex.mex_c.problem_definition_c",
         "sources": [
             "problem_definition_c.pyx"
         ]
     },
-    "module_name": "problem_definition_c"
+    "module_name": "mex.mex_c.problem_definition_c"
 }
 END: Cython Metadata */
 
@@ -616,8 +616,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__problem_definition_c
-#define __PYX_HAVE_API__problem_definition_c
+#define __PYX_HAVE__mex__mex_c__problem_definition_c
+#define __PYX_HAVE_API__mex__mex_c__problem_definition_c
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -1207,12 +1207,12 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'problem_definition_c' */
-#define __Pyx_MODULE_NAME "problem_definition_c"
-extern int __pyx_module_is_main_problem_definition_c;
-int __pyx_module_is_main_problem_definition_c = 0;
+/* Module declarations from 'mex.mex_c.problem_definition_c' */
+#define __Pyx_MODULE_NAME "mex.mex_c.problem_definition_c"
+extern int __pyx_module_is_main_mex__mex_c__problem_definition_c;
+int __pyx_module_is_main_mex__mex_c__problem_definition_c = 0;
 
-/* Implementation of 'problem_definition_c' */
+/* Implementation of 'mex.mex_c.problem_definition_c' */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_sum;
 static PyObject *__pyx_builtin_print;
@@ -1258,7 +1258,6 @@ static const char __pyx_k_convert[] = "convert";
 static const char __pyx_k_gen_var[] = "gen_var";
 static const char __pyx_k_add_cons[] = "add_cons";
 static const char __pyx_k_constrain[] = "constrain";
-static const char __pyx_k_general_c[] = "general_c";
 static const char __pyx_k_pivot_col[] = "pivot_col";
 static const char __pyx_k_pivot_row[] = "pivot_row";
 static const char __pyx_k_row_check[] = "row_check";
@@ -1276,11 +1275,12 @@ static const char __pyx_k_find_pivot_col[] = "find_pivot_col";
 static const char __pyx_k_find_pivot_row[] = "find_pivot_row";
 static const char __pyx_k_constrain_line_38[] = "constrain (line 38)";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_simplex_networks_c[] = "simplex_networks_c";
-static const char __pyx_k_problem_definition_c[] = "problem_definition_c";
+static const char __pyx_k_mex_mex_c_general_c[] = "mex.mex_c.general_c";
 static const char __pyx_k_problem_definition_c_pyx[] = "problem_definition_c.pyx";
+static const char __pyx_k_mex_mex_c_simplex_networks_c[] = "mex.mex_c.simplex_networks_c";
 static const char __pyx_k_Cannot_add_another_constraint[] = "Cannot add another constraint.";
 static const char __pyx_k_Adds_the_objective_function_to[] = "\n    Adds the objective function to the problem matrix.\n    \n    .. note::\n        Objective function must be added **after** constraints have been input.\n    \n    Args:\n    \n        matrix (numpy array): matrix defined with :mod:`create_matrix`.\n        \n        eq (string): coefficients of objective function.\n    \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18\n    >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2\n    ";
+static const char __pyx_k_mex_mex_c_problem_definition_c[] = "mex.mex_c.problem_definition_c";
 static const char __pyx_k_Adds_constraints_to_the_problem[] = "\n    Adds constraints to the problem.\n    \n    Args:\n        matrix (numpy array): matrix defined with :mod:`create_matrix`.\n        eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*,\n        **E** for *equal to*.\n    \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'3,2,G,18')  # 3x_1 + 2x_2 >= 18\n    ";
 static const char __pyx_k_Creates_maximization_function_D[] = "\n    Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,\n    pivots about it and continues the process until all negative elements have been removed from\n    the last column and row.\n    \n    Args:\n    \n        matrix (numpy array): problem matrix with constraints and objective function added.\n    \n    Returns:\n    \n        *(dict)* A dictionary with Max and variables.\n        \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18\n    >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2\n    >>> maxz(problem_matrix)\n    {'x1': 4.0, 'x2': 6.0, 'max': 42.0}\n    ";
 static const char __pyx_k_Creates_minimization_function_D[] = "\n    Creates minimization function. Determines if 1 extra pivot is required, locates the pivot element,\n    pivots about it and continues the process until all negative elements have been removed from \n    the last column and row.\n    \n    Args:\n    \n        matrix (numpy array): problem matrix with constraints and objective function added.\n    \n    Returns:\n    \n        (dict) A dictionary with Min and variables.\n        \n    >>> problem_matrix = create_matrix(2,4)   # 2 variables and 4 constraints\n    >>> constrain(problem_matrix,'1,1,L,6')   # x_1 + x_2 <= 6\n    >>> constrain(problem_matrix,'-1,2,L,8')  # -x_1 + 2x_2 <= 8\n    >>> constrain(problem_matrix,'1,G,0')     # x_1 >= 0\n    >>> constrain(problem_matrix,'0,1,G,0')   # x_2 >= 0\n    >>> obj(problem_matrix,'-1,-3,0')         # -x_1 - 3x_2\n    >>> minz(problem_matrix)\n    {'x1': 1.3333, 'x2': 4.6667}\n    ";
@@ -1308,7 +1308,6 @@ static PyObject *__pyx_n_s_find_pivot_col;
 static PyObject *__pyx_n_s_find_pivot_row;
 static PyObject *__pyx_n_s_gen_var;
 static PyObject *__pyx_n_s_gen_variables;
-static PyObject *__pyx_n_s_general_c;
 static PyObject *__pyx_n_s_i;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_j;
@@ -1323,6 +1322,9 @@ static PyObject *__pyx_n_u_max;
 static PyObject *__pyx_n_s_maxz;
 static PyObject *__pyx_kp_u_maxz_line_187;
 static PyObject *__pyx_n_s_memory_prof;
+static PyObject *__pyx_n_s_mex_mex_c_general_c;
+static PyObject *__pyx_n_s_mex_mex_c_problem_definition_c;
+static PyObject *__pyx_n_s_mex_mex_c_simplex_networks_c;
 static PyObject *__pyx_n_u_min;
 static PyObject *__pyx_n_s_minz;
 static PyObject *__pyx_kp_u_minz_line_242;
@@ -1337,14 +1339,12 @@ static PyObject *__pyx_n_s_pivot_row;
 static PyObject *__pyx_n_s_pivots_col;
 static PyObject *__pyx_n_s_pivots_row;
 static PyObject *__pyx_n_s_print;
-static PyObject *__pyx_n_s_problem_definition_c;
 static PyObject *__pyx_kp_s_problem_definition_c_pyx;
 static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_row;
 static PyObject *__pyx_n_s_row_check;
 static PyObject *__pyx_n_s_s;
 static PyObject *__pyx_n_s_shape;
-static PyObject *__pyx_n_s_simplex_networks_c;
 static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_sum;
 static PyObject *__pyx_n_s_test;
@@ -1354,12 +1354,12 @@ static PyObject *__pyx_n_s_total;
 static PyObject *__pyx_n_s_val;
 static PyObject *__pyx_n_s_var;
 static PyObject *__pyx_n_s_where;
-static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_eq, PyObject *__pyx_v_memory_prof); /* proto */
-static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
-static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_eq, PyObject *__pyx_v_memory_prof); /* proto */
-static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, CYTHON_UNUSED PyObject *__pyx_v_aux); /* proto */
-static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_aux); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_2constrain(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_eq, PyObject *__pyx_v_memory_prof); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_eq, PyObject *__pyx_v_memory_prof); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, CYTHON_UNUSED PyObject *__pyx_v_aux); /* proto */
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_aux); /* proto */
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_neg_1;
@@ -1383,7 +1383,7 @@ static PyObject *__pyx_codeobj__17;
 static PyObject *__pyx_codeobj__19;
 /* Late includes */
 
-/* "problem_definition_c.pyx":7
+/* "mex/mex_c/problem_definition_c.pyx":7
  * 
  * 
  * def add_cons(matrix):             # <<<<<<<<<<<<<<
@@ -1392,21 +1392,21 @@ static PyObject *__pyx_codeobj__19;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_20problem_definition_c_1add_cons(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static char __pyx_doc_20problem_definition_c_add_cons[] = "\n    Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all\n    0 elements. If this condition is not satisfied, our program will not allow the user to add additional constraints.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n    \n    Returns:\n    \n        Flag (bool): True or False indicating whether 1+ constraints can be added.\n    ";
-static PyMethodDef __pyx_mdef_20problem_definition_c_1add_cons = {"add_cons", (PyCFunction)__pyx_pw_20problem_definition_c_1add_cons, METH_O, __pyx_doc_20problem_definition_c_add_cons};
-static PyObject *__pyx_pw_20problem_definition_c_1add_cons(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_1add_cons(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_3mex_5mex_c_20problem_definition_c_add_cons[] = "\n    Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all\n    0 elements. If this condition is not satisfied, our program will not allow the user to add additional constraints.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n    \n    Returns:\n    \n        Flag (bool): True or False indicating whether 1+ constraints can be added.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_20problem_definition_c_1add_cons = {"add_cons", (PyCFunction)__pyx_pw_3mex_5mex_c_20problem_definition_c_1add_cons, METH_O, __pyx_doc_3mex_5mex_c_20problem_definition_c_add_cons};
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_1add_cons(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("add_cons (wrapper)", 0);
-  __pyx_r = __pyx_pf_20problem_definition_c_add_cons(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_3mex_5mex_c_20problem_definition_c_add_cons(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   int __pyx_v_i;
   int __pyx_v_total;
   long __pyx_v_lr;
@@ -1426,7 +1426,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add_cons", 0);
 
-  /* "problem_definition_c.pyx":24
+  /* "mex/mex_c/problem_definition_c.pyx":24
  *     cdef long lr
  * 
  *     add = True             # <<<<<<<<<<<<<<
@@ -1435,7 +1435,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
  */
   __pyx_v_add = 1;
 
-  /* "problem_definition_c.pyx":25
+  /* "mex/mex_c/problem_definition_c.pyx":25
  * 
  *     add = True
  *     lr = matrix.shape[0]             # <<<<<<<<<<<<<<
@@ -1451,7 +1451,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_lr = __pyx_t_3;
 
-  /* "problem_definition_c.pyx":27
+  /* "mex/mex_c/problem_definition_c.pyx":27
  *     lr = matrix.shape[0]
  * 
  *     for i in range(lr):             # <<<<<<<<<<<<<<
@@ -1463,7 +1463,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
   for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_i = __pyx_t_5;
 
-    /* "problem_definition_c.pyx":28
+    /* "mex/mex_c/problem_definition_c.pyx":28
  * 
  *     for i in range(lr):
  *         total = sum(matrix[i, :] * matrix[i, :])             # <<<<<<<<<<<<<<
@@ -1507,7 +1507,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_total = __pyx_t_7;
 
-    /* "problem_definition_c.pyx":29
+    /* "mex/mex_c/problem_definition_c.pyx":29
  *     for i in range(lr):
  *         total = sum(matrix[i, :] * matrix[i, :])
  *         if total == 0:             # <<<<<<<<<<<<<<
@@ -1517,7 +1517,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
     __pyx_t_8 = ((__pyx_v_total == 0) != 0);
     if (__pyx_t_8) {
 
-      /* "problem_definition_c.pyx":30
+      /* "mex/mex_c/problem_definition_c.pyx":30
  *         total = sum(matrix[i, :] * matrix[i, :])
  *         if total == 0:
  *             if i != (lr - 1):             # <<<<<<<<<<<<<<
@@ -1527,7 +1527,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
       __pyx_t_8 = ((__pyx_v_i != (__pyx_v_lr - 1)) != 0);
       if (__pyx_t_8) {
 
-        /* "problem_definition_c.pyx":31
+        /* "mex/mex_c/problem_definition_c.pyx":31
  *         if total == 0:
  *             if i != (lr - 1):
  *                 break             # <<<<<<<<<<<<<<
@@ -1536,7 +1536,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
  */
         goto __pyx_L4_break;
 
-        /* "problem_definition_c.pyx":30
+        /* "mex/mex_c/problem_definition_c.pyx":30
  *         total = sum(matrix[i, :] * matrix[i, :])
  *         if total == 0:
  *             if i != (lr - 1):             # <<<<<<<<<<<<<<
@@ -1545,7 +1545,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
  */
       }
 
-      /* "problem_definition_c.pyx":33
+      /* "mex/mex_c/problem_definition_c.pyx":33
  *                 break
  *             else:
  *                 add = False             # <<<<<<<<<<<<<<
@@ -1556,7 +1556,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
         __pyx_v_add = 0;
       }
 
-      /* "problem_definition_c.pyx":29
+      /* "mex/mex_c/problem_definition_c.pyx":29
  *     for i in range(lr):
  *         total = sum(matrix[i, :] * matrix[i, :])
  *         if total == 0:             # <<<<<<<<<<<<<<
@@ -1567,7 +1567,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
   }
   __pyx_L4_break:;
 
-  /* "problem_definition_c.pyx":35
+  /* "mex/mex_c/problem_definition_c.pyx":35
  *                 add = False
  * 
  *     return add             # <<<<<<<<<<<<<<
@@ -1581,7 +1581,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "problem_definition_c.pyx":7
+  /* "mex/mex_c/problem_definition_c.pyx":7
  * 
  * 
  * def add_cons(matrix):             # <<<<<<<<<<<<<<
@@ -1594,7 +1594,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("problem_definition_c.add_cons", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.add_cons", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1602,7 +1602,7 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "problem_definition_c.pyx":38
+/* "mex/mex_c/problem_definition_c.pyx":38
  * 
  * 
  * def constrain(matrix, eq, memory_prof=False):             # <<<<<<<<<<<<<<
@@ -1611,10 +1611,10 @@ static PyObject *__pyx_pf_20problem_definition_c_add_cons(CYTHON_UNUSED PyObject
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_20problem_definition_c_3constrain(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_20problem_definition_c_2constrain[] = "\n    Adds constraints to the problem.\n    \n    Args:\n        matrix (numpy array): matrix defined with :mod:`create_matrix`.\n        eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*,\n        **E** for *equal to*.\n    \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'3,2,G,18')  # 3x_1 + 2x_2 >= 18\n    ";
-static PyMethodDef __pyx_mdef_20problem_definition_c_3constrain = {"constrain", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_20problem_definition_c_3constrain, METH_VARARGS|METH_KEYWORDS, __pyx_doc_20problem_definition_c_2constrain};
-static PyObject *__pyx_pw_20problem_definition_c_3constrain(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_3constrain(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3mex_5mex_c_20problem_definition_c_2constrain[] = "\n    Adds constraints to the problem.\n    \n    Args:\n        matrix (numpy array): matrix defined with :mod:`create_matrix`.\n        eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*,\n        **E** for *equal to*.\n    \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'3,2,G,18')  # 3x_1 + 2x_2 >= 18\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_20problem_definition_c_3constrain = {"constrain", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_3mex_5mex_c_20problem_definition_c_3constrain, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3mex_5mex_c_20problem_definition_c_2constrain};
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_3constrain(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_matrix = 0;
   PyObject *__pyx_v_eq = 0;
   PyObject *__pyx_v_memory_prof = 0;
@@ -1680,18 +1680,18 @@ static PyObject *__pyx_pw_20problem_definition_c_3constrain(PyObject *__pyx_self
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("constrain", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 38, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("problem_definition_c.constrain", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.constrain", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_20problem_definition_c_2constrain(__pyx_self, __pyx_v_matrix, __pyx_v_eq, __pyx_v_memory_prof);
+  __pyx_r = __pyx_pf_3mex_5mex_c_20problem_definition_c_2constrain(__pyx_self, __pyx_v_matrix, __pyx_v_eq, __pyx_v_memory_prof);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_eq, PyObject *__pyx_v_memory_prof) {
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_2constrain(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_eq, PyObject *__pyx_v_memory_prof) {
   int __pyx_v_i;
   int __pyx_v_j;
   int __pyx_v_var;
@@ -1716,7 +1716,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
   __Pyx_RefNannySetupContext("constrain", 0);
   __Pyx_INCREF(__pyx_v_eq);
 
-  /* "problem_definition_c.pyx":55
+  /* "mex/mex_c/problem_definition_c.pyx":55
  *     cdef int i, j, var, lc, lr
  * 
  *     if 'E' in eq:             # <<<<<<<<<<<<<<
@@ -1727,7 +1727,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "problem_definition_c.pyx":56
+    /* "mex/mex_c/problem_definition_c.pyx":56
  * 
  *     if 'E' in eq:
  *         if add_cons(matrix):             # <<<<<<<<<<<<<<
@@ -1755,7 +1755,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (__pyx_t_2) {
 
-      /* "problem_definition_c.pyx":58
+      /* "mex/mex_c/problem_definition_c.pyx":58
  *         if add_cons(matrix):
  *             #lc = len(matrix[0, :])
  *             lr = len(matrix[:, 0])             # <<<<<<<<<<<<<<
@@ -1768,7 +1768,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_v_lr = __pyx_t_6;
 
-      /* "problem_definition_c.pyx":60
+      /* "mex/mex_c/problem_definition_c.pyx":60
  *             lr = len(matrix[:, 0])
  *             #var = lc - lr - 1
  *             j = 0             # <<<<<<<<<<<<<<
@@ -1777,7 +1777,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
       __pyx_v_j = 0;
 
-      /* "problem_definition_c.pyx":62
+      /* "mex/mex_c/problem_definition_c.pyx":62
  *             j = 0
  * 
  *             while j < lr:             # <<<<<<<<<<<<<<
@@ -1788,7 +1788,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __pyx_t_2 = ((__pyx_v_j < __pyx_v_lr) != 0);
         if (!__pyx_t_2) break;
 
-        /* "problem_definition_c.pyx":63
+        /* "mex/mex_c/problem_definition_c.pyx":63
  * 
  *             while j < lr:
  *                 row_check = matrix[j,:]             # <<<<<<<<<<<<<<
@@ -1811,7 +1811,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __Pyx_XDECREF_SET(__pyx_v_row_check, __pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "problem_definition_c.pyx":64
+        /* "mex/mex_c/problem_definition_c.pyx":64
  *             while j < lr:
  *                 row_check = matrix[j,:]
  *                 total = 0             # <<<<<<<<<<<<<<
@@ -1821,7 +1821,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __Pyx_INCREF(__pyx_int_0);
         __Pyx_XDECREF_SET(__pyx_v_total, __pyx_int_0);
 
-        /* "problem_definition_c.pyx":65
+        /* "mex/mex_c/problem_definition_c.pyx":65
  *                 row_check = matrix[j,:]
  *                 total = 0
  *                 for i in row_check:             # <<<<<<<<<<<<<<
@@ -1871,7 +1871,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __pyx_v_i = __pyx_t_8;
 
-          /* "problem_definition_c.pyx":66
+          /* "mex/mex_c/problem_definition_c.pyx":66
  *                 total = 0
  *                 for i in row_check:
  *                     total += float(i*i) #i**2             # <<<<<<<<<<<<<<
@@ -1886,7 +1886,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
           __Pyx_DECREF_SET(__pyx_v_total, __pyx_t_5);
           __pyx_t_5 = 0;
 
-          /* "problem_definition_c.pyx":65
+          /* "mex/mex_c/problem_definition_c.pyx":65
  *                 row_check = matrix[j,:]
  *                 total = 0
  *                 for i in row_check:             # <<<<<<<<<<<<<<
@@ -1896,7 +1896,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         }
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "problem_definition_c.pyx":67
+        /* "mex/mex_c/problem_definition_c.pyx":67
  *                 for i in row_check:
  *                     total += float(i*i) #i**2
  *                 if total == 0:             # <<<<<<<<<<<<<<
@@ -1909,7 +1909,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         if (__pyx_t_2) {
 
-          /* "problem_definition_c.pyx":68
+          /* "mex/mex_c/problem_definition_c.pyx":68
  *                     total += float(i*i) #i**2
  *                 if total == 0:
  *                     row = row_check             # <<<<<<<<<<<<<<
@@ -1919,7 +1919,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
           __Pyx_INCREF(__pyx_v_row_check);
           __pyx_v_row = __pyx_v_row_check;
 
-          /* "problem_definition_c.pyx":69
+          /* "mex/mex_c/problem_definition_c.pyx":69
  *                 if total == 0:
  *                     row = row_check
  *                     break             # <<<<<<<<<<<<<<
@@ -1928,7 +1928,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
           goto __pyx_L6_break;
 
-          /* "problem_definition_c.pyx":67
+          /* "mex/mex_c/problem_definition_c.pyx":67
  *                 for i in row_check:
  *                     total += float(i*i) #i**2
  *                 if total == 0:             # <<<<<<<<<<<<<<
@@ -1937,7 +1937,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
         }
 
-        /* "problem_definition_c.pyx":70
+        /* "mex/mex_c/problem_definition_c.pyx":70
  *                     row = row_check
  *                     break
  *                 j += 1             # <<<<<<<<<<<<<<
@@ -1948,7 +1948,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       }
       __pyx_L6_break:;
 
-      /* "problem_definition_c.pyx":72
+      /* "mex/mex_c/problem_definition_c.pyx":72
  *                 j += 1
  * 
  *             eq = convert(eq)             # <<<<<<<<<<<<<<
@@ -1975,7 +1975,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       __Pyx_DECREF_SET(__pyx_v_eq, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "problem_definition_c.pyx":73
+      /* "mex/mex_c/problem_definition_c.pyx":73
  * 
  *             eq = convert(eq)
  *             i = 0             # <<<<<<<<<<<<<<
@@ -1984,7 +1984,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
       __pyx_v_i = 0;
 
-      /* "problem_definition_c.pyx":75
+      /* "mex/mex_c/problem_definition_c.pyx":75
  *             i = 0
  * 
  *             while i<len(eq)-1:             # <<<<<<<<<<<<<<
@@ -1996,7 +1996,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __pyx_t_2 = ((__pyx_v_i < (__pyx_t_6 - 1)) != 0);
         if (!__pyx_t_2) break;
 
-        /* "problem_definition_c.pyx":76
+        /* "mex/mex_c/problem_definition_c.pyx":76
  * 
  *             while i<len(eq)-1:
  *                 row[i] = eq[i]             # <<<<<<<<<<<<<<
@@ -2009,7 +2009,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         if (unlikely(__Pyx_SetItemInt(__pyx_v_row, __pyx_v_i, __pyx_t_3, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(0, 76, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "problem_definition_c.pyx":77
+        /* "mex/mex_c/problem_definition_c.pyx":77
  *             while i<len(eq)-1:
  *                 row[i] = eq[i]
  *                 i += 1             # <<<<<<<<<<<<<<
@@ -2019,7 +2019,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __pyx_v_i = (__pyx_v_i + 1);
       }
 
-      /* "problem_definition_c.pyx":79
+      /* "mex/mex_c/problem_definition_c.pyx":79
  *                 i += 1
  * 
  *             row[-1] = eq[-1]             # <<<<<<<<<<<<<<
@@ -2032,7 +2032,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       if (unlikely(__Pyx_SetItemInt(__pyx_v_row, -1L, __pyx_t_3, long, 1, __Pyx_PyInt_From_long, 0, 1, 1) < 0)) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "problem_definition_c.pyx":56
+      /* "mex/mex_c/problem_definition_c.pyx":56
  * 
  *     if 'E' in eq:
  *         if add_cons(matrix):             # <<<<<<<<<<<<<<
@@ -2042,7 +2042,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       goto __pyx_L4;
     }
 
-    /* "problem_definition_c.pyx":83
+    /* "mex/mex_c/problem_definition_c.pyx":83
  * 
  *         else:
  *             print('Cannot add another constraint.')             # <<<<<<<<<<<<<<
@@ -2056,7 +2056,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
     }
     __pyx_L4:;
 
-    /* "problem_definition_c.pyx":55
+    /* "mex/mex_c/problem_definition_c.pyx":55
  *     cdef int i, j, var, lc, lr
  * 
  *     if 'E' in eq:             # <<<<<<<<<<<<<<
@@ -2066,7 +2066,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
     goto __pyx_L3;
   }
 
-  /* "problem_definition_c.pyx":86
+  /* "mex/mex_c/problem_definition_c.pyx":86
  * 
  *     else:
  *         if add_cons(matrix):             # <<<<<<<<<<<<<<
@@ -2095,7 +2095,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (__pyx_t_2) {
 
-      /* "problem_definition_c.pyx":87
+      /* "mex/mex_c/problem_definition_c.pyx":87
  *     else:
  *         if add_cons(matrix):
  *             lc = len(matrix[0, :])             # <<<<<<<<<<<<<<
@@ -2108,7 +2108,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_v_lc = __pyx_t_6;
 
-      /* "problem_definition_c.pyx":88
+      /* "mex/mex_c/problem_definition_c.pyx":88
  *         if add_cons(matrix):
  *             lc = len(matrix[0, :])
  *             lr = len(matrix[:, 0])             # <<<<<<<<<<<<<<
@@ -2121,7 +2121,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_v_lr = __pyx_t_6;
 
-      /* "problem_definition_c.pyx":89
+      /* "mex/mex_c/problem_definition_c.pyx":89
  *             lc = len(matrix[0, :])
  *             lr = len(matrix[:, 0])
  *             var = lc - lr - 1             # <<<<<<<<<<<<<<
@@ -2130,7 +2130,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
       __pyx_v_var = ((__pyx_v_lc - __pyx_v_lr) - 1);
 
-      /* "problem_definition_c.pyx":90
+      /* "mex/mex_c/problem_definition_c.pyx":90
  *             lr = len(matrix[:, 0])
  *             var = lc - lr - 1
  *             j = 0             # <<<<<<<<<<<<<<
@@ -2139,7 +2139,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
       __pyx_v_j = 0;
 
-      /* "problem_definition_c.pyx":92
+      /* "mex/mex_c/problem_definition_c.pyx":92
  *             j = 0
  * 
  *             while j < lr:             # <<<<<<<<<<<<<<
@@ -2150,7 +2150,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __pyx_t_2 = ((__pyx_v_j < __pyx_v_lr) != 0);
         if (!__pyx_t_2) break;
 
-        /* "problem_definition_c.pyx":93
+        /* "mex/mex_c/problem_definition_c.pyx":93
  * 
  *             while j < lr:
  *                 row_check = matrix[j, :]             # <<<<<<<<<<<<<<
@@ -2173,7 +2173,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __Pyx_XDECREF_SET(__pyx_v_row_check, __pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "problem_definition_c.pyx":94
+        /* "mex/mex_c/problem_definition_c.pyx":94
  *             while j < lr:
  *                 row_check = matrix[j, :]
  *                 total = 0             # <<<<<<<<<<<<<<
@@ -2183,7 +2183,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __Pyx_INCREF(__pyx_int_0);
         __Pyx_XDECREF_SET(__pyx_v_total, __pyx_int_0);
 
-        /* "problem_definition_c.pyx":95
+        /* "mex/mex_c/problem_definition_c.pyx":95
  *                 row_check = matrix[j, :]
  *                 total = 0
  *                 for i in row_check:             # <<<<<<<<<<<<<<
@@ -2233,7 +2233,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __pyx_v_i = __pyx_t_8;
 
-          /* "problem_definition_c.pyx":96
+          /* "mex/mex_c/problem_definition_c.pyx":96
  *                 total = 0
  *                 for i in row_check:
  *                     total += float(i*i) #i**2             # <<<<<<<<<<<<<<
@@ -2248,7 +2248,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
           __Pyx_DECREF_SET(__pyx_v_total, __pyx_t_4);
           __pyx_t_4 = 0;
 
-          /* "problem_definition_c.pyx":95
+          /* "mex/mex_c/problem_definition_c.pyx":95
  *                 row_check = matrix[j, :]
  *                 total = 0
  *                 for i in row_check:             # <<<<<<<<<<<<<<
@@ -2258,7 +2258,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         }
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "problem_definition_c.pyx":97
+        /* "mex/mex_c/problem_definition_c.pyx":97
  *                 for i in row_check:
  *                     total += float(i*i) #i**2
  *                 if total == 0:             # <<<<<<<<<<<<<<
@@ -2271,7 +2271,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         if (__pyx_t_2) {
 
-          /* "problem_definition_c.pyx":98
+          /* "mex/mex_c/problem_definition_c.pyx":98
  *                     total += float(i*i) #i**2
  *                 if total == 0:
  *                     row = row_check             # <<<<<<<<<<<<<<
@@ -2281,7 +2281,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
           __Pyx_INCREF(__pyx_v_row_check);
           __pyx_v_row = __pyx_v_row_check;
 
-          /* "problem_definition_c.pyx":99
+          /* "mex/mex_c/problem_definition_c.pyx":99
  *                 if total == 0:
  *                     row = row_check
  *                     break             # <<<<<<<<<<<<<<
@@ -2290,7 +2290,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
           goto __pyx_L14_break;
 
-          /* "problem_definition_c.pyx":97
+          /* "mex/mex_c/problem_definition_c.pyx":97
  *                 for i in row_check:
  *                     total += float(i*i) #i**2
  *                 if total == 0:             # <<<<<<<<<<<<<<
@@ -2299,7 +2299,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
         }
 
-        /* "problem_definition_c.pyx":100
+        /* "mex/mex_c/problem_definition_c.pyx":100
  *                     row = row_check
  *                     break
  *                 j += 1             # <<<<<<<<<<<<<<
@@ -2310,7 +2310,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       }
       __pyx_L14_break:;
 
-      /* "problem_definition_c.pyx":102
+      /* "mex/mex_c/problem_definition_c.pyx":102
  *                 j += 1
  * 
  *             eq = convert(eq)             # <<<<<<<<<<<<<<
@@ -2337,7 +2337,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       __Pyx_DECREF_SET(__pyx_v_eq, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "problem_definition_c.pyx":103
+      /* "mex/mex_c/problem_definition_c.pyx":103
  * 
  *             eq = convert(eq)
  *             i = 0             # <<<<<<<<<<<<<<
@@ -2346,7 +2346,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
       __pyx_v_i = 0;
 
-      /* "problem_definition_c.pyx":105
+      /* "mex/mex_c/problem_definition_c.pyx":105
  *             i = 0
  * 
  *             while i < len(eq)-1:             # <<<<<<<<<<<<<<
@@ -2358,7 +2358,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __pyx_t_2 = ((__pyx_v_i < (__pyx_t_6 - 1)) != 0);
         if (!__pyx_t_2) break;
 
-        /* "problem_definition_c.pyx":106
+        /* "mex/mex_c/problem_definition_c.pyx":106
  * 
  *             while i < len(eq)-1:
  *                 row[i] = eq[i]             # <<<<<<<<<<<<<<
@@ -2371,7 +2371,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         if (unlikely(__Pyx_SetItemInt(__pyx_v_row, __pyx_v_i, __pyx_t_3, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(0, 106, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "problem_definition_c.pyx":107
+        /* "mex/mex_c/problem_definition_c.pyx":107
  *             while i < len(eq)-1:
  *                 row[i] = eq[i]
  *                 i += 1             # <<<<<<<<<<<<<<
@@ -2381,7 +2381,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
         __pyx_v_i = (__pyx_v_i + 1);
       }
 
-      /* "problem_definition_c.pyx":109
+      /* "mex/mex_c/problem_definition_c.pyx":109
  *                 i += 1
  * 
  *             row[-1] = eq[-1]             # <<<<<<<<<<<<<<
@@ -2394,7 +2394,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       if (unlikely(__Pyx_SetItemInt(__pyx_v_row, -1L, __pyx_t_3, long, 1, __Pyx_PyInt_From_long, 0, 1, 1) < 0)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "problem_definition_c.pyx":110
+      /* "mex/mex_c/problem_definition_c.pyx":110
  * 
  *             row[-1] = eq[-1]
  *             row[var+j] = 1             # <<<<<<<<<<<<<<
@@ -2405,7 +2405,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       __pyx_t_8 = (__pyx_v_var + __pyx_v_j);
       if (unlikely(__Pyx_SetItemInt(__pyx_v_row, __pyx_t_8, __pyx_int_1, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(0, 110, __pyx_L1_error)
 
-      /* "problem_definition_c.pyx":86
+      /* "mex/mex_c/problem_definition_c.pyx":86
  * 
  *     else:
  *         if add_cons(matrix):             # <<<<<<<<<<<<<<
@@ -2415,7 +2415,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
       goto __pyx_L12;
     }
 
-    /* "problem_definition_c.pyx":113
+    /* "mex/mex_c/problem_definition_c.pyx":113
  * 
  *         else:
  *             print('Cannot add another constraint.')             # <<<<<<<<<<<<<<
@@ -2431,7 +2431,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
   }
   __pyx_L3:;
 
-  /* "problem_definition_c.pyx":114
+  /* "mex/mex_c/problem_definition_c.pyx":114
  *         else:
  *             print('Cannot add another constraint.')
  *     if memory_prof:             # <<<<<<<<<<<<<<
@@ -2441,7 +2441,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
   __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_memory_prof); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 114, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "problem_definition_c.pyx":115
+    /* "mex/mex_c/problem_definition_c.pyx":115
  *             print('Cannot add another constraint.')
  *     if memory_prof:
  *         return matrix             # <<<<<<<<<<<<<<
@@ -2453,7 +2453,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
     __pyx_r = __pyx_v_matrix;
     goto __pyx_L0;
 
-    /* "problem_definition_c.pyx":114
+    /* "mex/mex_c/problem_definition_c.pyx":114
  *         else:
  *             print('Cannot add another constraint.')
  *     if memory_prof:             # <<<<<<<<<<<<<<
@@ -2462,7 +2462,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
   }
 
-  /* "problem_definition_c.pyx":38
+  /* "mex/mex_c/problem_definition_c.pyx":38
  * 
  * 
  * def constrain(matrix, eq, memory_prof=False):             # <<<<<<<<<<<<<<
@@ -2477,7 +2477,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("problem_definition_c.constrain", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.constrain", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_row_check);
@@ -2489,7 +2489,7 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
   return __pyx_r;
 }
 
-/* "problem_definition_c.pyx":118
+/* "mex/mex_c/problem_definition_c.pyx":118
  * 
  * 
  * def add_obj(matrix):             # <<<<<<<<<<<<<<
@@ -2498,21 +2498,21 @@ static PyObject *__pyx_pf_20problem_definition_c_2constrain(CYTHON_UNUSED PyObje
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_20problem_definition_c_5add_obj(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static char __pyx_doc_20problem_definition_c_4add_obj[] = "\n    Verifies if the objective function can be added.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n    \n    Returns:\n    \n        Flag (bool): True or False indicating whether objective function can be added.\n    ";
-static PyMethodDef __pyx_mdef_20problem_definition_c_5add_obj = {"add_obj", (PyCFunction)__pyx_pw_20problem_definition_c_5add_obj, METH_O, __pyx_doc_20problem_definition_c_4add_obj};
-static PyObject *__pyx_pw_20problem_definition_c_5add_obj(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_5add_obj(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_3mex_5mex_c_20problem_definition_c_4add_obj[] = "\n    Verifies if the objective function can be added.\n    \n    Args:\n    \n        matrix (numpy array): matrix to be reviewed.\n    \n    Returns:\n    \n        Flag (bool): True or False indicating whether objective function can be added.\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_20problem_definition_c_5add_obj = {"add_obj", (PyCFunction)__pyx_pw_3mex_5mex_c_20problem_definition_c_5add_obj, METH_O, __pyx_doc_3mex_5mex_c_20problem_definition_c_4add_obj};
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_5add_obj(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("add_obj (wrapper)", 0);
-  __pyx_r = __pyx_pf_20problem_definition_c_4add_obj(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_3mex_5mex_c_20problem_definition_c_4add_obj(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   int __pyx_v_i;
   long __pyx_v_lr;
   long __pyx_v_total;
@@ -2532,7 +2532,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add_obj", 0);
 
-  /* "problem_definition_c.pyx":134
+  /* "mex/mex_c/problem_definition_c.pyx":134
  *     cdef long lr, total
  * 
  *     add = False             # <<<<<<<<<<<<<<
@@ -2541,7 +2541,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
  */
   __pyx_v_add = 0;
 
-  /* "problem_definition_c.pyx":135
+  /* "mex/mex_c/problem_definition_c.pyx":135
  * 
  *     add = False
  *     lr = matrix.shape[0]             # <<<<<<<<<<<<<<
@@ -2557,7 +2557,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_lr = __pyx_t_3;
 
-  /* "problem_definition_c.pyx":137
+  /* "mex/mex_c/problem_definition_c.pyx":137
  *     lr = matrix.shape[0]
  * 
  *     for i in range(lr):             # <<<<<<<<<<<<<<
@@ -2569,7 +2569,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
   for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_i = __pyx_t_5;
 
-    /* "problem_definition_c.pyx":138
+    /* "mex/mex_c/problem_definition_c.pyx":138
  * 
  *     for i in range(lr):
  *         total = sum(matrix[i, :] * matrix[i, :])             # <<<<<<<<<<<<<<
@@ -2613,7 +2613,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_total = __pyx_t_7;
 
-    /* "problem_definition_c.pyx":139
+    /* "mex/mex_c/problem_definition_c.pyx":139
  *     for i in range(lr):
  *         total = sum(matrix[i, :] * matrix[i, :])
  *         if total == 0:             # <<<<<<<<<<<<<<
@@ -2623,7 +2623,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
     __pyx_t_8 = ((__pyx_v_total == 0) != 0);
     if (__pyx_t_8) {
 
-      /* "problem_definition_c.pyx":140
+      /* "mex/mex_c/problem_definition_c.pyx":140
  *         total = sum(matrix[i, :] * matrix[i, :])
  *         if total == 0:
  *             if i != (lr - 1):             # <<<<<<<<<<<<<<
@@ -2633,7 +2633,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
       __pyx_t_8 = ((__pyx_v_i != (__pyx_v_lr - 1)) != 0);
       if (__pyx_t_8) {
 
-        /* "problem_definition_c.pyx":141
+        /* "mex/mex_c/problem_definition_c.pyx":141
  *         if total == 0:
  *             if i != (lr - 1):
  *                 break             # <<<<<<<<<<<<<<
@@ -2642,7 +2642,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
  */
         goto __pyx_L4_break;
 
-        /* "problem_definition_c.pyx":140
+        /* "mex/mex_c/problem_definition_c.pyx":140
  *         total = sum(matrix[i, :] * matrix[i, :])
  *         if total == 0:
  *             if i != (lr - 1):             # <<<<<<<<<<<<<<
@@ -2651,7 +2651,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
  */
       }
 
-      /* "problem_definition_c.pyx":143
+      /* "mex/mex_c/problem_definition_c.pyx":143
  *                 break
  *             else:
  *                 add = True             # <<<<<<<<<<<<<<
@@ -2662,7 +2662,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
         __pyx_v_add = 1;
       }
 
-      /* "problem_definition_c.pyx":139
+      /* "mex/mex_c/problem_definition_c.pyx":139
  *     for i in range(lr):
  *         total = sum(matrix[i, :] * matrix[i, :])
  *         if total == 0:             # <<<<<<<<<<<<<<
@@ -2673,7 +2673,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
   }
   __pyx_L4_break:;
 
-  /* "problem_definition_c.pyx":145
+  /* "mex/mex_c/problem_definition_c.pyx":145
  *                 add = True
  * 
  *     return add             # <<<<<<<<<<<<<<
@@ -2687,7 +2687,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "problem_definition_c.pyx":118
+  /* "mex/mex_c/problem_definition_c.pyx":118
  * 
  * 
  * def add_obj(matrix):             # <<<<<<<<<<<<<<
@@ -2700,7 +2700,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("problem_definition_c.add_obj", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.add_obj", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2708,7 +2708,7 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "problem_definition_c.pyx":148
+/* "mex/mex_c/problem_definition_c.pyx":148
  * 
  * 
  * def obj(matrix,eq,memory_prof=False):             # <<<<<<<<<<<<<<
@@ -2717,10 +2717,10 @@ static PyObject *__pyx_pf_20problem_definition_c_4add_obj(CYTHON_UNUSED PyObject
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_20problem_definition_c_7obj(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_20problem_definition_c_6obj[] = "\n    Adds the objective function to the problem matrix.\n    \n    .. note::\n        Objective function must be added **after** constraints have been input.\n    \n    Args:\n    \n        matrix (numpy array): matrix defined with :mod:`create_matrix`.\n        \n        eq (string): coefficients of objective function.\n    \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18\n    >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2\n    ";
-static PyMethodDef __pyx_mdef_20problem_definition_c_7obj = {"obj", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_20problem_definition_c_7obj, METH_VARARGS|METH_KEYWORDS, __pyx_doc_20problem_definition_c_6obj};
-static PyObject *__pyx_pw_20problem_definition_c_7obj(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_7obj(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3mex_5mex_c_20problem_definition_c_6obj[] = "\n    Adds the objective function to the problem matrix.\n    \n    .. note::\n        Objective function must be added **after** constraints have been input.\n    \n    Args:\n    \n        matrix (numpy array): matrix defined with :mod:`create_matrix`.\n        \n        eq (string): coefficients of objective function.\n    \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18\n    >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_20problem_definition_c_7obj = {"obj", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_3mex_5mex_c_20problem_definition_c_7obj, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3mex_5mex_c_20problem_definition_c_6obj};
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_7obj(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_matrix = 0;
   PyObject *__pyx_v_eq = 0;
   PyObject *__pyx_v_memory_prof = 0;
@@ -2786,18 +2786,18 @@ static PyObject *__pyx_pw_20problem_definition_c_7obj(PyObject *__pyx_self, PyOb
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("obj", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 148, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("problem_definition_c.obj", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.obj", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_20problem_definition_c_6obj(__pyx_self, __pyx_v_matrix, __pyx_v_eq, __pyx_v_memory_prof);
+  __pyx_r = __pyx_pf_3mex_5mex_c_20problem_definition_c_6obj(__pyx_self, __pyx_v_matrix, __pyx_v_eq, __pyx_v_memory_prof);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_eq, PyObject *__pyx_v_memory_prof) {
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_eq, PyObject *__pyx_v_memory_prof) {
   long __pyx_v_lr;
   PyObject *__pyx_v_row = NULL;
   PyObject *__pyx_v_i = NULL;
@@ -2818,7 +2818,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
   __Pyx_RefNannySetupContext("obj", 0);
   __Pyx_INCREF(__pyx_v_eq);
 
-  /* "problem_definition_c.pyx":170
+  /* "mex/mex_c/problem_definition_c.pyx":170
  *     cdef long lr
  * 
  *     if add_obj(matrix):             # <<<<<<<<<<<<<<
@@ -2846,7 +2846,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "problem_definition_c.pyx":171
+    /* "mex/mex_c/problem_definition_c.pyx":171
  * 
  *     if add_obj(matrix):
  *         eq = [float(i) for i in eq.split(',')]             # <<<<<<<<<<<<<<
@@ -2931,7 +2931,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
     __Pyx_DECREF_SET(__pyx_v_eq, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":172
+    /* "mex/mex_c/problem_definition_c.pyx":172
  *     if add_obj(matrix):
  *         eq = [float(i) for i in eq.split(',')]
  *         lr = matrix.shape[0]  # len(matrix[:,0])             # <<<<<<<<<<<<<<
@@ -2947,7 +2947,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_lr = __pyx_t_8;
 
-    /* "problem_definition_c.pyx":173
+    /* "mex/mex_c/problem_definition_c.pyx":173
  *         eq = [float(i) for i in eq.split(',')]
  *         lr = matrix.shape[0]  # len(matrix[:,0])
  *         row = matrix[lr-1, :]             # <<<<<<<<<<<<<<
@@ -2970,7 +2970,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
     __pyx_v_row = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "problem_definition_c.pyx":174
+    /* "mex/mex_c/problem_definition_c.pyx":174
  *         lr = matrix.shape[0]  # len(matrix[:,0])
  *         row = matrix[lr-1, :]
  *         i = 0             # <<<<<<<<<<<<<<
@@ -2980,7 +2980,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
     __Pyx_INCREF(__pyx_int_0);
     __pyx_v_i = __pyx_int_0;
 
-    /* "problem_definition_c.pyx":175
+    /* "mex/mex_c/problem_definition_c.pyx":175
  *         row = matrix[lr-1, :]
  *         i = 0
  *         while i<len(eq)-1:             # <<<<<<<<<<<<<<
@@ -2997,7 +2997,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (!__pyx_t_4) break;
 
-      /* "problem_definition_c.pyx":176
+      /* "mex/mex_c/problem_definition_c.pyx":176
  *         i = 0
  *         while i<len(eq)-1:
  *             row[i] = eq[i]*-1             # <<<<<<<<<<<<<<
@@ -3012,7 +3012,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
       if (unlikely(PyObject_SetItem(__pyx_v_row, __pyx_v_i, __pyx_t_3) < 0)) __PYX_ERR(0, 176, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "problem_definition_c.pyx":177
+      /* "mex/mex_c/problem_definition_c.pyx":177
  *         while i<len(eq)-1:
  *             row[i] = eq[i]*-1
  *             i += 1             # <<<<<<<<<<<<<<
@@ -3025,7 +3025,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
       __pyx_t_3 = 0;
     }
 
-    /* "problem_definition_c.pyx":178
+    /* "mex/mex_c/problem_definition_c.pyx":178
  *             row[i] = eq[i]*-1
  *             i += 1
  *         row[-2] = 1             # <<<<<<<<<<<<<<
@@ -3034,7 +3034,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
  */
     if (unlikely(__Pyx_SetItemInt(__pyx_v_row, -2L, __pyx_int_1, long, 1, __Pyx_PyInt_From_long, 0, 1, 1) < 0)) __PYX_ERR(0, 178, __pyx_L1_error)
 
-    /* "problem_definition_c.pyx":179
+    /* "mex/mex_c/problem_definition_c.pyx":179
  *             i += 1
  *         row[-2] = 1
  *         row[-1] = eq[-1]             # <<<<<<<<<<<<<<
@@ -3046,7 +3046,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
     if (unlikely(__Pyx_SetItemInt(__pyx_v_row, -1L, __pyx_t_3, long, 1, __Pyx_PyInt_From_long, 0, 1, 1) < 0)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "problem_definition_c.pyx":170
+    /* "mex/mex_c/problem_definition_c.pyx":170
  *     cdef long lr
  * 
  *     if add_obj(matrix):             # <<<<<<<<<<<<<<
@@ -3056,7 +3056,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
     goto __pyx_L3;
   }
 
-  /* "problem_definition_c.pyx":181
+  /* "mex/mex_c/problem_definition_c.pyx":181
  *         row[-1] = eq[-1]
  *     else:
  *         print('You must finish adding constraints before the objective function can be added.')             # <<<<<<<<<<<<<<
@@ -3070,7 +3070,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
   }
   __pyx_L3:;
 
-  /* "problem_definition_c.pyx":183
+  /* "mex/mex_c/problem_definition_c.pyx":183
  *         print('You must finish adding constraints before the objective function can be added.')
  * 
  *     if memory_prof:             # <<<<<<<<<<<<<<
@@ -3080,7 +3080,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_memory_prof); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 183, __pyx_L1_error)
   if (__pyx_t_4) {
 
-    /* "problem_definition_c.pyx":184
+    /* "mex/mex_c/problem_definition_c.pyx":184
  * 
  *     if memory_prof:
  *         return matrix             # <<<<<<<<<<<<<<
@@ -3092,7 +3092,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
     __pyx_r = __pyx_v_matrix;
     goto __pyx_L0;
 
-    /* "problem_definition_c.pyx":183
+    /* "mex/mex_c/problem_definition_c.pyx":183
  *         print('You must finish adding constraints before the objective function can be added.')
  * 
  *     if memory_prof:             # <<<<<<<<<<<<<<
@@ -3101,7 +3101,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
  */
   }
 
-  /* "problem_definition_c.pyx":148
+  /* "mex/mex_c/problem_definition_c.pyx":148
  * 
  * 
  * def obj(matrix,eq,memory_prof=False):             # <<<<<<<<<<<<<<
@@ -3117,7 +3117,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("problem_definition_c.obj", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.obj", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_row);
@@ -3129,7 +3129,7 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "problem_definition_c.pyx":187
+/* "mex/mex_c/problem_definition_c.pyx":187
  * 
  * 
  * def maxz(matrix, aux=True):             # <<<<<<<<<<<<<<
@@ -3138,10 +3138,10 @@ static PyObject *__pyx_pf_20problem_definition_c_6obj(CYTHON_UNUSED PyObject *__
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_20problem_definition_c_9maxz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_20problem_definition_c_8maxz[] = "\n    Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,\n    pivots about it and continues the process until all negative elements have been removed from\n    the last column and row.\n    \n    Args:\n    \n        matrix (numpy array): problem matrix with constraints and objective function added.\n    \n    Returns:\n    \n        *(dict)* A dictionary with Max and variables.\n        \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18\n    >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2\n    >>> maxz(problem_matrix)\n    {'x1': 4.0, 'x2': 6.0, 'max': 42.0}\n    ";
-static PyMethodDef __pyx_mdef_20problem_definition_c_9maxz = {"maxz", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_20problem_definition_c_9maxz, METH_VARARGS|METH_KEYWORDS, __pyx_doc_20problem_definition_c_8maxz};
-static PyObject *__pyx_pw_20problem_definition_c_9maxz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_9maxz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3mex_5mex_c_20problem_definition_c_8maxz[] = "\n    Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,\n    pivots about it and continues the process until all negative elements have been removed from\n    the last column and row.\n    \n    Args:\n    \n        matrix (numpy array): problem matrix with constraints and objective function added.\n    \n    Returns:\n    \n        *(dict)* A dictionary with Max and variables.\n        \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18\n    >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2\n    >>> maxz(problem_matrix)\n    {'x1': 4.0, 'x2': 6.0, 'max': 42.0}\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_20problem_definition_c_9maxz = {"maxz", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_3mex_5mex_c_20problem_definition_c_9maxz, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3mex_5mex_c_20problem_definition_c_8maxz};
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_9maxz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_matrix = 0;
   CYTHON_UNUSED PyObject *__pyx_v_aux = 0;
   int __pyx_lineno = 0;
@@ -3196,18 +3196,18 @@ static PyObject *__pyx_pw_20problem_definition_c_9maxz(PyObject *__pyx_self, PyO
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("maxz", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 187, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("problem_definition_c.maxz", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.maxz", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_20problem_definition_c_8maxz(__pyx_self, __pyx_v_matrix, __pyx_v_aux);
+  __pyx_r = __pyx_pf_3mex_5mex_c_20problem_definition_c_8maxz(__pyx_self, __pyx_v_matrix, __pyx_v_aux);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, CYTHON_UNUSED PyObject *__pyx_v_aux) {
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, CYTHON_UNUSED PyObject *__pyx_v_aux) {
   int __pyx_v_i;
   float __pyx_v_s;
   float __pyx_v_m;
@@ -3240,7 +3240,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   __Pyx_RefNannySetupContext("maxz", 0);
   __Pyx_INCREF(__pyx_v_matrix);
 
-  /* "problem_definition_c.pyx":214
+  /* "mex/mex_c/problem_definition_c.pyx":214
  *     cdef long lc, lr, var
  * 
  *     while pivots_col(matrix):             # <<<<<<<<<<<<<<
@@ -3269,7 +3269,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (!__pyx_t_4) break;
 
-    /* "problem_definition_c.pyx":215
+    /* "mex/mex_c/problem_definition_c.pyx":215
  * 
  *     while pivots_col(matrix):
  *         tmp_pivot_col = find_pivot_col(matrix)             # <<<<<<<<<<<<<<
@@ -3296,7 +3296,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_tmp_pivot_col, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":216
+    /* "mex/mex_c/problem_definition_c.pyx":216
  *     while pivots_col(matrix):
  *         tmp_pivot_col = find_pivot_col(matrix)
  *         matrix = pivot(tmp_pivot_col[0], tmp_pivot_col[1], matrix)             # <<<<<<<<<<<<<<
@@ -3365,7 +3365,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __pyx_t_1 = 0;
   }
 
-  /* "problem_definition_c.pyx":217
+  /* "mex/mex_c/problem_definition_c.pyx":217
  *         tmp_pivot_col = find_pivot_col(matrix)
  *         matrix = pivot(tmp_pivot_col[0], tmp_pivot_col[1], matrix)
  *     while pivots_row(matrix):             # <<<<<<<<<<<<<<
@@ -3394,7 +3394,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (!__pyx_t_4) break;
 
-    /* "problem_definition_c.pyx":218
+    /* "mex/mex_c/problem_definition_c.pyx":218
  *         matrix = pivot(tmp_pivot_col[0], tmp_pivot_col[1], matrix)
  *     while pivots_row(matrix):
  *         tmp_pivot_row = find_pivot_row(matrix)             # <<<<<<<<<<<<<<
@@ -3421,7 +3421,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_tmp_pivot_row, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":219
+    /* "mex/mex_c/problem_definition_c.pyx":219
  *     while pivots_row(matrix):
  *         tmp_pivot_row = find_pivot_row(matrix)
  *         matrix = pivot(tmp_pivot_row[0], tmp_pivot_row[1], matrix)             # <<<<<<<<<<<<<<
@@ -3490,7 +3490,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __pyx_t_1 = 0;
   }
 
-  /* "problem_definition_c.pyx":221
+  /* "mex/mex_c/problem_definition_c.pyx":221
  *         matrix = pivot(tmp_pivot_row[0], tmp_pivot_row[1], matrix)
  * 
  *     lc = len(matrix[0, :])             # <<<<<<<<<<<<<<
@@ -3503,7 +3503,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_lc = __pyx_t_9;
 
-  /* "problem_definition_c.pyx":222
+  /* "mex/mex_c/problem_definition_c.pyx":222
  * 
  *     lc = len(matrix[0, :])
  *     lr = len(matrix[:, 0])             # <<<<<<<<<<<<<<
@@ -3516,7 +3516,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_lr = __pyx_t_9;
 
-  /* "problem_definition_c.pyx":223
+  /* "mex/mex_c/problem_definition_c.pyx":223
  *     lc = len(matrix[0, :])
  *     lr = len(matrix[:, 0])
  *     var = lc - lr - 1             # <<<<<<<<<<<<<<
@@ -3525,7 +3525,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
  */
   __pyx_v_var = ((__pyx_v_lc - __pyx_v_lr) - 1);
 
-  /* "problem_definition_c.pyx":224
+  /* "mex/mex_c/problem_definition_c.pyx":224
  *     lr = len(matrix[:, 0])
  *     var = lc - lr - 1
  *     i = 0             # <<<<<<<<<<<<<<
@@ -3534,7 +3534,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
  */
   __pyx_v_i = 0;
 
-  /* "problem_definition_c.pyx":225
+  /* "mex/mex_c/problem_definition_c.pyx":225
  *     var = lc - lr - 1
  *     i = 0
  *     val = {}             # <<<<<<<<<<<<<<
@@ -3546,7 +3546,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   __pyx_v_val = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":227
+  /* "mex/mex_c/problem_definition_c.pyx":227
  *     val = {}
  * 
  *     gen_variables = gen_var(lc, lr)             # <<<<<<<<<<<<<<
@@ -3611,7 +3611,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   __pyx_v_gen_variables = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":228
+  /* "mex/mex_c/problem_definition_c.pyx":228
  * 
  *     gen_variables = gen_var(lc, lr)
  *     for i in range(var):             # <<<<<<<<<<<<<<
@@ -3623,7 +3623,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_11; __pyx_t_7+=1) {
     __pyx_v_i = __pyx_t_7;
 
-    /* "problem_definition_c.pyx":229
+    /* "mex/mex_c/problem_definition_c.pyx":229
  *     gen_variables = gen_var(lc, lr)
  *     for i in range(var):
  *         col = matrix[:, i]             # <<<<<<<<<<<<<<
@@ -3646,7 +3646,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __Pyx_XDECREF_SET(__pyx_v_col, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":230
+    /* "mex/mex_c/problem_definition_c.pyx":230
  *     for i in range(var):
  *         col = matrix[:, i]
  *         s = sum(col)             # <<<<<<<<<<<<<<
@@ -3659,7 +3659,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_s = __pyx_t_12;
 
-    /* "problem_definition_c.pyx":231
+    /* "mex/mex_c/problem_definition_c.pyx":231
  *         col = matrix[:, i]
  *         s = sum(col)
  *         m = max(col)             # <<<<<<<<<<<<<<
@@ -3672,7 +3672,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_m = __pyx_t_12;
 
-    /* "problem_definition_c.pyx":232
+    /* "mex/mex_c/problem_definition_c.pyx":232
  *         s = sum(col)
  *         m = max(col)
  *         if float(s) == float(m):             # <<<<<<<<<<<<<<
@@ -3682,7 +3682,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __pyx_t_4 = ((((double)__pyx_v_s) == ((double)__pyx_v_m)) != 0);
     if (__pyx_t_4) {
 
-      /* "problem_definition_c.pyx":233
+      /* "mex/mex_c/problem_definition_c.pyx":233
  *         m = max(col)
  *         if float(s) == float(m):
  *             loc = np.where(col == m)[0][0]             # <<<<<<<<<<<<<<
@@ -3723,7 +3723,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
       __Pyx_XDECREF_SET(__pyx_v_loc, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "problem_definition_c.pyx":234
+      /* "mex/mex_c/problem_definition_c.pyx":234
  *         if float(s) == float(m):
  *             loc = np.where(col == m)[0][0]
  *             val[gen_variables[i]] = matrix[loc, -1]             # <<<<<<<<<<<<<<
@@ -3747,7 +3747,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "problem_definition_c.pyx":232
+      /* "mex/mex_c/problem_definition_c.pyx":232
  *         s = sum(col)
  *         m = max(col)
  *         if float(s) == float(m):             # <<<<<<<<<<<<<<
@@ -3757,7 +3757,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
       goto __pyx_L9;
     }
 
-    /* "problem_definition_c.pyx":236
+    /* "mex/mex_c/problem_definition_c.pyx":236
  *             val[gen_variables[i]] = matrix[loc, -1]
  *         else:
  *             val[gen_variables[i]] = 0             # <<<<<<<<<<<<<<
@@ -3773,7 +3773,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
     __pyx_L9:;
   }
 
-  /* "problem_definition_c.pyx":237
+  /* "mex/mex_c/problem_definition_c.pyx":237
  *         else:
  *             val[gen_variables[i]] = 0
  *     val['max'] = matrix[-1, -1]             # <<<<<<<<<<<<<<
@@ -3785,7 +3785,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   if (unlikely(PyDict_SetItem(__pyx_v_val, __pyx_n_u_max, __pyx_t_3) < 0)) __PYX_ERR(0, 237, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "problem_definition_c.pyx":239
+  /* "mex/mex_c/problem_definition_c.pyx":239
  *     val['max'] = matrix[-1, -1]
  * 
  *     return val             # <<<<<<<<<<<<<<
@@ -3797,7 +3797,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   __pyx_r = __pyx_v_val;
   goto __pyx_L0;
 
-  /* "problem_definition_c.pyx":187
+  /* "mex/mex_c/problem_definition_c.pyx":187
  * 
  * 
  * def maxz(matrix, aux=True):             # <<<<<<<<<<<<<<
@@ -3813,7 +3813,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("problem_definition_c.maxz", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.maxz", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_tmp_pivot_col);
@@ -3828,7 +3828,7 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "problem_definition_c.pyx":242
+/* "mex/mex_c/problem_definition_c.pyx":242
  * 
  * 
  * def minz(matrix, aux=True):             # <<<<<<<<<<<<<<
@@ -3837,10 +3837,10 @@ static PyObject *__pyx_pf_20problem_definition_c_8maxz(CYTHON_UNUSED PyObject *_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_20problem_definition_c_11minz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_20problem_definition_c_10minz[] = "\n    Creates minimization function. Determines if 1 extra pivot is required, locates the pivot element,\n    pivots about it and continues the process until all negative elements have been removed from \n    the last column and row.\n    \n    Args:\n    \n        matrix (numpy array): problem matrix with constraints and objective function added.\n    \n    Returns:\n    \n        (dict) A dictionary with Min and variables.\n        \n    >>> problem_matrix = create_matrix(2,4)   # 2 variables and 4 constraints\n    >>> constrain(problem_matrix,'1,1,L,6')   # x_1 + x_2 <= 6\n    >>> constrain(problem_matrix,'-1,2,L,8')  # -x_1 + 2x_2 <= 8\n    >>> constrain(problem_matrix,'1,G,0')     # x_1 >= 0\n    >>> constrain(problem_matrix,'0,1,G,0')   # x_2 >= 0\n    >>> obj(problem_matrix,'-1,-3,0')         # -x_1 - 3x_2\n    >>> minz(problem_matrix)\n    {'x1': 1.3333, 'x2': 4.6667}\n    ";
-static PyMethodDef __pyx_mdef_20problem_definition_c_11minz = {"minz", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_20problem_definition_c_11minz, METH_VARARGS|METH_KEYWORDS, __pyx_doc_20problem_definition_c_10minz};
-static PyObject *__pyx_pw_20problem_definition_c_11minz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_11minz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_3mex_5mex_c_20problem_definition_c_10minz[] = "\n    Creates minimization function. Determines if 1 extra pivot is required, locates the pivot element,\n    pivots about it and continues the process until all negative elements have been removed from \n    the last column and row.\n    \n    Args:\n    \n        matrix (numpy array): problem matrix with constraints and objective function added.\n    \n    Returns:\n    \n        (dict) A dictionary with Min and variables.\n        \n    >>> problem_matrix = create_matrix(2,4)   # 2 variables and 4 constraints\n    >>> constrain(problem_matrix,'1,1,L,6')   # x_1 + x_2 <= 6\n    >>> constrain(problem_matrix,'-1,2,L,8')  # -x_1 + 2x_2 <= 8\n    >>> constrain(problem_matrix,'1,G,0')     # x_1 >= 0\n    >>> constrain(problem_matrix,'0,1,G,0')   # x_2 >= 0\n    >>> obj(problem_matrix,'-1,-3,0')         # -x_1 - 3x_2\n    >>> minz(problem_matrix)\n    {'x1': 1.3333, 'x2': 4.6667}\n    ";
+static PyMethodDef __pyx_mdef_3mex_5mex_c_20problem_definition_c_11minz = {"minz", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_3mex_5mex_c_20problem_definition_c_11minz, METH_VARARGS|METH_KEYWORDS, __pyx_doc_3mex_5mex_c_20problem_definition_c_10minz};
+static PyObject *__pyx_pw_3mex_5mex_c_20problem_definition_c_11minz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_matrix = 0;
   PyObject *__pyx_v_aux = 0;
   int __pyx_lineno = 0;
@@ -3895,18 +3895,18 @@ static PyObject *__pyx_pw_20problem_definition_c_11minz(PyObject *__pyx_self, Py
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("minz", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 242, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("problem_definition_c.minz", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.minz", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_20problem_definition_c_10minz(__pyx_self, __pyx_v_matrix, __pyx_v_aux);
+  __pyx_r = __pyx_pf_3mex_5mex_c_20problem_definition_c_10minz(__pyx_self, __pyx_v_matrix, __pyx_v_aux);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_aux) {
+static PyObject *__pyx_pf_3mex_5mex_c_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix, PyObject *__pyx_v_aux) {
   int __pyx_v_i;
   long __pyx_v_lc;
   long __pyx_v_lr;
@@ -3939,14 +3939,14 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
   __Pyx_RefNannySetupContext("minz", 0);
   __Pyx_INCREF(__pyx_v_matrix);
 
-  /* "problem_definition_c.pyx":270
+  /* "mex/mex_c/problem_definition_c.pyx":269
  *     cdef long lc, lr, var
  * 
  *     matrix = convert_min(matrix)             # <<<<<<<<<<<<<<
  *     while pivots_col(matrix):
  *         pivot_col = find_pivot_col(matrix)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_convert_min); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 270, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_convert_min); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -3960,13 +3960,13 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_matrix) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_matrix);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF_SET(__pyx_v_matrix, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":271
+  /* "mex/mex_c/problem_definition_c.pyx":270
  * 
  *     matrix = convert_min(matrix)
  *     while pivots_col(matrix):             # <<<<<<<<<<<<<<
@@ -3974,7 +3974,35 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
  *         matrix = pivot(pivot_col[0], pivot_col[1], matrix)
  */
   while (1) {
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivots_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 271, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivots_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 270, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = NULL;
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+      if (likely(__pyx_t_3)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_3);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_2, function);
+      }
+    }
+    __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_matrix) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_matrix);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 270, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (!__pyx_t_4) break;
+
+    /* "mex/mex_c/problem_definition_c.pyx":271
+ *     matrix = convert_min(matrix)
+ *     while pivots_col(matrix):
+ *         pivot_col = find_pivot_col(matrix)             # <<<<<<<<<<<<<<
+ *         matrix = pivot(pivot_col[0], pivot_col[1], matrix)
+ * 
+ */
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_find_pivot_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -3991,49 +4019,21 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 271, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 271, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (!__pyx_t_4) break;
-
-    /* "problem_definition_c.pyx":272
- *     matrix = convert_min(matrix)
- *     while pivots_col(matrix):
- *         pivot_col = find_pivot_col(matrix)             # <<<<<<<<<<<<<<
- *         matrix = pivot(pivot_col[0], pivot_col[1], matrix)
- * 
- */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_find_pivot_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = NULL;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_matrix) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_matrix);
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF_SET(__pyx_v_pivot_col, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":273
+    /* "mex/mex_c/problem_definition_c.pyx":272
  *     while pivots_col(matrix):
  *         pivot_col = find_pivot_col(matrix)
  *         matrix = pivot(pivot_col[0], pivot_col[1], matrix)             # <<<<<<<<<<<<<<
  * 
  *     while pivots_row(matrix):
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivot); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 273, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivot); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_pivot_col, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 273, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_pivot_col, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_pivot_col, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_pivot_col, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     __pyx_t_7 = 0;
@@ -4050,7 +4050,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_t_3, __pyx_t_5, __pyx_v_matrix};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -4060,7 +4060,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_t_3, __pyx_t_5, __pyx_v_matrix};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -4068,7 +4068,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 273, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 272, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -4082,7 +4082,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
       PyTuple_SET_ITEM(__pyx_t_8, 2+__pyx_t_7, __pyx_v_matrix);
       __pyx_t_3 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
@@ -4091,7 +4091,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     __pyx_t_1 = 0;
   }
 
-  /* "problem_definition_c.pyx":275
+  /* "mex/mex_c/problem_definition_c.pyx":274
  *         matrix = pivot(pivot_col[0], pivot_col[1], matrix)
  * 
  *     while pivots_row(matrix):             # <<<<<<<<<<<<<<
@@ -4099,7 +4099,35 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
  *         matrix = pivot(pivot_row[0], pivot_row[1], matrix)
  */
   while (1) {
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivots_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivots_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_8 = NULL;
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+      __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_2);
+      if (likely(__pyx_t_8)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_8);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_2, function);
+      }
+    }
+    __pyx_t_1 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_8, __pyx_v_matrix) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_matrix);
+    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 274, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 274, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (!__pyx_t_4) break;
+
+    /* "mex/mex_c/problem_definition_c.pyx":275
+ * 
+ *     while pivots_row(matrix):
+ *         pivot_row = find_pivot_row(matrix)             # <<<<<<<<<<<<<<
+ *         matrix = pivot(pivot_row[0], pivot_row[1], matrix)
+ * 
+ */
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_find_pivot_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_8 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -4116,49 +4144,21 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 275, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (!__pyx_t_4) break;
-
-    /* "problem_definition_c.pyx":276
- * 
- *     while pivots_row(matrix):
- *         pivot_row = find_pivot_row(matrix)             # <<<<<<<<<<<<<<
- *         matrix = pivot(pivot_row[0], pivot_row[1], matrix)
- * 
- */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_find_pivot_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 276, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = NULL;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_8)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_8);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    __pyx_t_1 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_8, __pyx_v_matrix) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_matrix);
-    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 276, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF_SET(__pyx_v_pivot_row, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":277
+    /* "mex/mex_c/problem_definition_c.pyx":276
  *     while pivots_row(matrix):
  *         pivot_row = find_pivot_row(matrix)
  *         matrix = pivot(pivot_row[0], pivot_row[1], matrix)             # <<<<<<<<<<<<<<
  * 
  *     lc = matrix.shape[1]
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivot); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 277, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivot); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_pivot_row, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 277, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_pivot_row, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_pivot_row, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 277, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_pivot_row, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_3 = NULL;
     __pyx_t_7 = 0;
@@ -4175,7 +4175,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_3, __pyx_t_8, __pyx_t_5, __pyx_v_matrix};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 277, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -4185,7 +4185,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_3, __pyx_t_8, __pyx_t_5, __pyx_v_matrix};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 277, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -4193,7 +4193,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 277, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -4207,7 +4207,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
       PyTuple_SET_ITEM(__pyx_t_6, 2+__pyx_t_7, __pyx_v_matrix);
       __pyx_t_8 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 277, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
@@ -4216,39 +4216,39 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     __pyx_t_1 = 0;
   }
 
-  /* "problem_definition_c.pyx":279
+  /* "mex/mex_c/problem_definition_c.pyx":278
  *         matrix = pivot(pivot_row[0], pivot_row[1], matrix)
  * 
  *     lc = matrix.shape[1]             # <<<<<<<<<<<<<<
  *     lr = matrix.shape[0]
  *     var = lc - lr - 1
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_9 = __Pyx_PyInt_As_long(__pyx_t_2); if (unlikely((__pyx_t_9 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyInt_As_long(__pyx_t_2); if (unlikely((__pyx_t_9 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 278, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_lc = __pyx_t_9;
 
-  /* "problem_definition_c.pyx":280
+  /* "mex/mex_c/problem_definition_c.pyx":279
  * 
  *     lc = matrix.shape[1]
  *     lr = matrix.shape[0]             # <<<<<<<<<<<<<<
  *     var = lc - lr - 1
  *     i = 0
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 280, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 280, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_9 = __Pyx_PyInt_As_long(__pyx_t_1); if (unlikely((__pyx_t_9 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 280, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyInt_As_long(__pyx_t_1); if (unlikely((__pyx_t_9 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_lr = __pyx_t_9;
 
-  /* "problem_definition_c.pyx":281
+  /* "mex/mex_c/problem_definition_c.pyx":280
  *     lc = matrix.shape[1]
  *     lr = matrix.shape[0]
  *     var = lc - lr - 1             # <<<<<<<<<<<<<<
@@ -4257,7 +4257,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
  */
   __pyx_v_var = ((__pyx_v_lc - __pyx_v_lr) - 1);
 
-  /* "problem_definition_c.pyx":282
+  /* "mex/mex_c/problem_definition_c.pyx":281
  *     lr = matrix.shape[0]
  *     var = lc - lr - 1
  *     i = 0             # <<<<<<<<<<<<<<
@@ -4266,30 +4266,30 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
  */
   __pyx_v_i = 0;
 
-  /* "problem_definition_c.pyx":283
+  /* "mex/mex_c/problem_definition_c.pyx":282
  *     var = lc - lr - 1
  *     i = 0
  *     val = {}             # <<<<<<<<<<<<<<
  *     gen_variables = gen_var(lc, lr)
  * 
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_val = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":284
+  /* "mex/mex_c/problem_definition_c.pyx":283
  *     i = 0
  *     val = {}
  *     gen_variables = gen_var(lc, lr)             # <<<<<<<<<<<<<<
  * 
  *     for i in range(var):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_gen_var); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 284, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_gen_var); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyInt_From_long(__pyx_v_lc); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 284, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_From_long(__pyx_v_lc); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_v_lr); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 284, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_v_lr); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_8 = NULL;
   __pyx_t_7 = 0;
@@ -4306,7 +4306,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_6, __pyx_t_5};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -4316,7 +4316,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_6, __pyx_t_5};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -4324,7 +4324,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
   } else
   #endif
   {
-    __pyx_t_3 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 283, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     if (__pyx_t_8) {
       __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -4335,7 +4335,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_7, __pyx_t_5);
     __pyx_t_6 = 0;
     __pyx_t_5 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -4343,7 +4343,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
   __pyx_v_gen_variables = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":286
+  /* "mex/mex_c/problem_definition_c.pyx":285
  *     gen_variables = gen_var(lc, lr)
  * 
  *     for i in range(var):             # <<<<<<<<<<<<<<
@@ -4355,16 +4355,16 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
   for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_10; __pyx_t_7+=1) {
     __pyx_v_i = __pyx_t_7;
 
-    /* "problem_definition_c.pyx":287
+    /* "mex/mex_c/problem_definition_c.pyx":286
  * 
  *     for i in range(var):
  *         col = matrix[:, i]             # <<<<<<<<<<<<<<
  *         s = sum(col)
  *         m = max(col)
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_slice_);
     __Pyx_GIVEREF(__pyx_slice_);
@@ -4372,61 +4372,61 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     __Pyx_GIVEREF(__pyx_t_1);
     PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_1);
     __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF_SET(__pyx_v_col, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":288
+    /* "mex/mex_c/problem_definition_c.pyx":287
  *     for i in range(var):
  *         col = matrix[:, i]
  *         s = sum(col)             # <<<<<<<<<<<<<<
  *         m = max(col)
  *         if float(s) == float(m):
  */
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_col); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_col); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":289
+    /* "mex/mex_c/problem_definition_c.pyx":288
  *         col = matrix[:, i]
  *         s = sum(col)
  *         m = max(col)             # <<<<<<<<<<<<<<
  *         if float(s) == float(m):
  *             loc = np.where(col == m)[0][0]
  */
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_v_col); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_v_col); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_XDECREF_SET(__pyx_v_m, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "problem_definition_c.pyx":290
+    /* "mex/mex_c/problem_definition_c.pyx":289
  *         s = sum(col)
  *         m = max(col)
  *         if float(s) == float(m):             # <<<<<<<<<<<<<<
  *             loc = np.where(col == m)[0][0]
  *             val[gen_variables[i]] = matrix[loc, -1]
  */
-    __pyx_t_11 = __Pyx_PyObject_AsDouble(__pyx_v_s); if (unlikely(__pyx_t_11 == ((double)((double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 290, __pyx_L1_error)
-    __pyx_t_12 = __Pyx_PyObject_AsDouble(__pyx_v_m); if (unlikely(__pyx_t_12 == ((double)((double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 290, __pyx_L1_error)
+    __pyx_t_11 = __Pyx_PyObject_AsDouble(__pyx_v_s); if (unlikely(__pyx_t_11 == ((double)((double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 289, __pyx_L1_error)
+    __pyx_t_12 = __Pyx_PyObject_AsDouble(__pyx_v_m); if (unlikely(__pyx_t_12 == ((double)((double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 289, __pyx_L1_error)
     __pyx_t_4 = ((__pyx_t_11 == __pyx_t_12) != 0);
     if (__pyx_t_4) {
 
-      /* "problem_definition_c.pyx":291
+      /* "mex/mex_c/problem_definition_c.pyx":290
  *         m = max(col)
  *         if float(s) == float(m):
  *             loc = np.where(col == m)[0][0]             # <<<<<<<<<<<<<<
  *             val[gen_variables[i]] = matrix[loc, -1]
  *         else:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_where); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 291, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_where); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyObject_RichCompare(__pyx_v_col, __pyx_v_m, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_v_col, __pyx_v_m, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 290, __pyx_L1_error)
       __pyx_t_5 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
         __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
@@ -4440,26 +4440,26 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
       __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 291, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_XDECREF_SET(__pyx_v_loc, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "problem_definition_c.pyx":292
+      /* "mex/mex_c/problem_definition_c.pyx":291
  *         if float(s) == float(m):
  *             loc = np.where(col == m)[0][0]
  *             val[gen_variables[i]] = matrix[loc, -1]             # <<<<<<<<<<<<<<
  *         else:
  *             val[gen_variables[i]] = 0
  */
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
+      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_v_loc);
       __Pyx_GIVEREF(__pyx_v_loc);
@@ -4467,16 +4467,16 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
       __Pyx_INCREF(__pyx_int_neg_1);
       __Pyx_GIVEREF(__pyx_int_neg_1);
       PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_neg_1);
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 292, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 291, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_gen_variables, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_gen_variables, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (unlikely(PyDict_SetItem(__pyx_v_val, __pyx_t_1, __pyx_t_3) < 0)) __PYX_ERR(0, 292, __pyx_L1_error)
+      if (unlikely(PyDict_SetItem(__pyx_v_val, __pyx_t_1, __pyx_t_3) < 0)) __PYX_ERR(0, 291, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "problem_definition_c.pyx":290
+      /* "mex/mex_c/problem_definition_c.pyx":289
  *         s = sum(col)
  *         m = max(col)
  *         if float(s) == float(m):             # <<<<<<<<<<<<<<
@@ -4486,7 +4486,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
       goto __pyx_L9;
     }
 
-    /* "problem_definition_c.pyx":294
+    /* "mex/mex_c/problem_definition_c.pyx":293
  *             val[gen_variables[i]] = matrix[loc, -1]
  *         else:
  *             val[gen_variables[i]] = 0             # <<<<<<<<<<<<<<
@@ -4494,39 +4494,39 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
  * 
  */
     /*else*/ {
-      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_gen_variables, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_gen_variables, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(PyDict_SetItem(__pyx_v_val, __pyx_t_3, __pyx_int_0) < 0)) __PYX_ERR(0, 294, __pyx_L1_error)
+      if (unlikely(PyDict_SetItem(__pyx_v_val, __pyx_t_3, __pyx_int_0) < 0)) __PYX_ERR(0, 293, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __pyx_L9:;
   }
 
-  /* "problem_definition_c.pyx":295
+  /* "mex/mex_c/problem_definition_c.pyx":294
  *         else:
  *             val[gen_variables[i]] = 0
  *     val['min'] = matrix[-1, -1]*-1             # <<<<<<<<<<<<<<
  * 
  *     if aux:
  */
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = PyNumber_Multiply(__pyx_t_3, __pyx_int_neg_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_t_3, __pyx_int_neg_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(PyDict_SetItem(__pyx_v_val, __pyx_n_u_min, __pyx_t_1) < 0)) __PYX_ERR(0, 295, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_val, __pyx_n_u_min, __pyx_t_1) < 0)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":297
+  /* "mex/mex_c/problem_definition_c.pyx":296
  *     val['min'] = matrix[-1, -1]*-1
  * 
  *     if aux:             # <<<<<<<<<<<<<<
  *         return val
  */
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_aux); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_aux); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 296, __pyx_L1_error)
   if (__pyx_t_4) {
 
-    /* "problem_definition_c.pyx":298
+    /* "mex/mex_c/problem_definition_c.pyx":297
  * 
  *     if aux:
  *         return val             # <<<<<<<<<<<<<<
@@ -4536,7 +4536,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
     __pyx_r = __pyx_v_val;
     goto __pyx_L0;
 
-    /* "problem_definition_c.pyx":297
+    /* "mex/mex_c/problem_definition_c.pyx":296
  *     val['min'] = matrix[-1, -1]*-1
  * 
  *     if aux:             # <<<<<<<<<<<<<<
@@ -4544,7 +4544,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
  */
   }
 
-  /* "problem_definition_c.pyx":242
+  /* "mex/mex_c/problem_definition_c.pyx":242
  * 
  * 
  * def minz(matrix, aux=True):             # <<<<<<<<<<<<<<
@@ -4562,7 +4562,7 @@ static PyObject *__pyx_pf_20problem_definition_c_10minz(CYTHON_UNUSED PyObject *
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("problem_definition_c.minz", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("mex.mex_c.problem_definition_c.minz", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_pivot_col);
@@ -4648,7 +4648,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_find_pivot_row, __pyx_k_find_pivot_row, sizeof(__pyx_k_find_pivot_row), 0, 0, 1, 1},
   {&__pyx_n_s_gen_var, __pyx_k_gen_var, sizeof(__pyx_k_gen_var), 0, 0, 1, 1},
   {&__pyx_n_s_gen_variables, __pyx_k_gen_variables, sizeof(__pyx_k_gen_variables), 0, 0, 1, 1},
-  {&__pyx_n_s_general_c, __pyx_k_general_c, sizeof(__pyx_k_general_c), 0, 0, 1, 1},
   {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_j, __pyx_k_j, sizeof(__pyx_k_j), 0, 0, 1, 1},
@@ -4663,6 +4662,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_maxz, __pyx_k_maxz, sizeof(__pyx_k_maxz), 0, 0, 1, 1},
   {&__pyx_kp_u_maxz_line_187, __pyx_k_maxz_line_187, sizeof(__pyx_k_maxz_line_187), 0, 1, 0, 0},
   {&__pyx_n_s_memory_prof, __pyx_k_memory_prof, sizeof(__pyx_k_memory_prof), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_general_c, __pyx_k_mex_mex_c_general_c, sizeof(__pyx_k_mex_mex_c_general_c), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_problem_definition_c, __pyx_k_mex_mex_c_problem_definition_c, sizeof(__pyx_k_mex_mex_c_problem_definition_c), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_simplex_networks_c, __pyx_k_mex_mex_c_simplex_networks_c, sizeof(__pyx_k_mex_mex_c_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_n_u_min, __pyx_k_min, sizeof(__pyx_k_min), 0, 1, 0, 1},
   {&__pyx_n_s_minz, __pyx_k_minz, sizeof(__pyx_k_minz), 0, 0, 1, 1},
   {&__pyx_kp_u_minz_line_242, __pyx_k_minz_line_242, sizeof(__pyx_k_minz_line_242), 0, 1, 0, 0},
@@ -4677,14 +4679,12 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pivots_col, __pyx_k_pivots_col, sizeof(__pyx_k_pivots_col), 0, 0, 1, 1},
   {&__pyx_n_s_pivots_row, __pyx_k_pivots_row, sizeof(__pyx_k_pivots_row), 0, 0, 1, 1},
   {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
-  {&__pyx_n_s_problem_definition_c, __pyx_k_problem_definition_c, sizeof(__pyx_k_problem_definition_c), 0, 0, 1, 1},
   {&__pyx_kp_s_problem_definition_c_pyx, __pyx_k_problem_definition_c_pyx, sizeof(__pyx_k_problem_definition_c_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
   {&__pyx_n_s_row, __pyx_k_row, sizeof(__pyx_k_row), 0, 0, 1, 1},
   {&__pyx_n_s_row_check, __pyx_k_row_check, sizeof(__pyx_k_row_check), 0, 0, 1, 1},
   {&__pyx_n_s_s, __pyx_k_s, sizeof(__pyx_k_s), 0, 0, 1, 1},
   {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
-  {&__pyx_n_s_simplex_networks_c, __pyx_k_simplex_networks_c, sizeof(__pyx_k_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
   {&__pyx_n_s_sum, __pyx_k_sum, sizeof(__pyx_k_sum), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
@@ -4710,7 +4710,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "problem_definition_c.pyx":28
+  /* "mex/mex_c/problem_definition_c.pyx":28
  * 
  *     for i in range(lr):
  *         total = sum(matrix[i, :] * matrix[i, :])             # <<<<<<<<<<<<<<
@@ -4721,7 +4721,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_slice_);
   __Pyx_GIVEREF(__pyx_slice_);
 
-  /* "problem_definition_c.pyx":58
+  /* "mex/mex_c/problem_definition_c.pyx":58
  *         if add_cons(matrix):
  *             #lc = len(matrix[0, :])
  *             lr = len(matrix[:, 0])             # <<<<<<<<<<<<<<
@@ -4732,7 +4732,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "problem_definition_c.pyx":83
+  /* "mex/mex_c/problem_definition_c.pyx":83
  * 
  *         else:
  *             print('Cannot add another constraint.')             # <<<<<<<<<<<<<<
@@ -4743,7 +4743,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "problem_definition_c.pyx":87
+  /* "mex/mex_c/problem_definition_c.pyx":87
  *     else:
  *         if add_cons(matrix):
  *             lc = len(matrix[0, :])             # <<<<<<<<<<<<<<
@@ -4754,7 +4754,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "problem_definition_c.pyx":181
+  /* "mex/mex_c/problem_definition_c.pyx":181
  *         row[-1] = eq[-1]
  *     else:
  *         print('You must finish adding constraints before the objective function can be added.')             # <<<<<<<<<<<<<<
@@ -4765,7 +4765,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "problem_definition_c.pyx":237
+  /* "mex/mex_c/problem_definition_c.pyx":237
  *         else:
  *             val[gen_variables[i]] = 0
  *     val['max'] = matrix[-1, -1]             # <<<<<<<<<<<<<<
@@ -4776,7 +4776,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "problem_definition_c.pyx":7
+  /* "mex/mex_c/problem_definition_c.pyx":7
  * 
  * 
  * def add_cons(matrix):             # <<<<<<<<<<<<<<
@@ -4788,7 +4788,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__8);
   __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_problem_definition_c_pyx, __pyx_n_s_add_cons, 7, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 7, __pyx_L1_error)
 
-  /* "problem_definition_c.pyx":38
+  /* "mex/mex_c/problem_definition_c.pyx":38
  * 
  * 
  * def constrain(matrix, eq, memory_prof=False):             # <<<<<<<<<<<<<<
@@ -4800,7 +4800,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__10);
   __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(3, 0, 11, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_problem_definition_c_pyx, __pyx_n_s_constrain, 38, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 38, __pyx_L1_error)
 
-  /* "problem_definition_c.pyx":118
+  /* "mex/mex_c/problem_definition_c.pyx":118
  * 
  * 
  * def add_obj(matrix):             # <<<<<<<<<<<<<<
@@ -4812,7 +4812,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__12);
   __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_problem_definition_c_pyx, __pyx_n_s_add_obj, 118, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 118, __pyx_L1_error)
 
-  /* "problem_definition_c.pyx":148
+  /* "mex/mex_c/problem_definition_c.pyx":148
  * 
  * 
  * def obj(matrix,eq,memory_prof=False):             # <<<<<<<<<<<<<<
@@ -4824,7 +4824,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__14);
   __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(3, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_problem_definition_c_pyx, __pyx_n_s_obj, 148, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 148, __pyx_L1_error)
 
-  /* "problem_definition_c.pyx":187
+  /* "mex/mex_c/problem_definition_c.pyx":187
  * 
  * 
  * def maxz(matrix, aux=True):             # <<<<<<<<<<<<<<
@@ -4836,7 +4836,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__16);
   __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(2, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_problem_definition_c_pyx, __pyx_n_s_maxz, 187, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 187, __pyx_L1_error)
 
-  /* "problem_definition_c.pyx":242
+  /* "mex/mex_c/problem_definition_c.pyx":242
  * 
  * 
  * def minz(matrix, aux=True):             # <<<<<<<<<<<<<<
@@ -5103,14 +5103,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_problem_definition_c) {
+  if (__pyx_module_is_main_mex__mex_c__problem_definition_c) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "problem_definition_c")) {
-      if (unlikely(PyDict_SetItemString(modules, "problem_definition_c", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "mex.mex_c.problem_definition_c")) {
+      if (unlikely(PyDict_SetItemString(modules, "mex.mex_c.problem_definition_c", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -5131,21 +5131,21 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "problem_definition_c.pyx":1
+  /* "mex/mex_c/problem_definition_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * 
- * from general_c import gen_var, convert_min, convert
+ * from mex.mex_c.general_c import gen_var, convert_min, convert
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":3
+  /* "mex/mex_c/problem_definition_c.pyx":3
  * import numpy as np
  * 
- * from general_c import gen_var, convert_min, convert             # <<<<<<<<<<<<<<
- * from simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
+ * from mex.mex_c.general_c import gen_var, convert_min, convert             # <<<<<<<<<<<<<<
+ * from mex.mex_c.simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
  * 
  */
   __pyx_t_1 = PyList_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -5159,7 +5159,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_convert);
   __Pyx_GIVEREF(__pyx_n_s_convert);
   PyList_SET_ITEM(__pyx_t_1, 2, __pyx_n_s_convert);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_general_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_mex_mex_c_general_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_gen_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -5176,10 +5176,10 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "problem_definition_c.pyx":4
+  /* "mex/mex_c/problem_definition_c.pyx":4
  * 
- * from general_c import gen_var, convert_min, convert
- * from simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row             # <<<<<<<<<<<<<<
+ * from mex.mex_c.general_c import gen_var, convert_min, convert
+ * from mex.mex_c.simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row             # <<<<<<<<<<<<<<
  * 
  * 
  */
@@ -5200,7 +5200,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_find_pivot_row);
   __Pyx_GIVEREF(__pyx_n_s_find_pivot_row);
   PyList_SET_ITEM(__pyx_t_2, 4, __pyx_n_s_find_pivot_row);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_simplex_networks_c, __pyx_t_2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_mex_mex_c_simplex_networks_c, __pyx_t_2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_pivots_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
@@ -5225,82 +5225,82 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":7
+  /* "mex/mex_c/problem_definition_c.pyx":7
  * 
  * 
  * def add_cons(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_20problem_definition_c_1add_cons, NULL, __pyx_n_s_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_20problem_definition_c_1add_cons, NULL, __pyx_n_s_mex_mex_c_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_add_cons, __pyx_t_1) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":38
+  /* "mex/mex_c/problem_definition_c.pyx":38
  * 
  * 
  * def constrain(matrix, eq, memory_prof=False):             # <<<<<<<<<<<<<<
  *     """
  *     Adds constraints to the problem.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_20problem_definition_c_3constrain, NULL, __pyx_n_s_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_20problem_definition_c_3constrain, NULL, __pyx_n_s_mex_mex_c_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_constrain, __pyx_t_1) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":118
+  /* "mex/mex_c/problem_definition_c.pyx":118
  * 
  * 
  * def add_obj(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Verifies if the objective function can be added.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_20problem_definition_c_5add_obj, NULL, __pyx_n_s_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_20problem_definition_c_5add_obj, NULL, __pyx_n_s_mex_mex_c_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_add_obj, __pyx_t_1) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":148
+  /* "mex/mex_c/problem_definition_c.pyx":148
  * 
  * 
  * def obj(matrix,eq,memory_prof=False):             # <<<<<<<<<<<<<<
  *     """
  *     Adds the objective function to the problem matrix.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_20problem_definition_c_7obj, NULL, __pyx_n_s_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_20problem_definition_c_7obj, NULL, __pyx_n_s_mex_mex_c_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_obj, __pyx_t_1) < 0) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":187
+  /* "mex/mex_c/problem_definition_c.pyx":187
  * 
  * 
  * def maxz(matrix, aux=True):             # <<<<<<<<<<<<<<
  *     """
  *     Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_20problem_definition_c_9maxz, NULL, __pyx_n_s_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_20problem_definition_c_9maxz, NULL, __pyx_n_s_mex_mex_c_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_maxz, __pyx_t_1) < 0) __PYX_ERR(0, 187, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":242
+  /* "mex/mex_c/problem_definition_c.pyx":242
  * 
  * 
  * def minz(matrix, aux=True):             # <<<<<<<<<<<<<<
  *     """
  *     Creates minimization function. Determines if 1 extra pivot is required, locates the pivot element,
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_20problem_definition_c_11minz, NULL, __pyx_n_s_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_3mex_5mex_c_20problem_definition_c_11minz, NULL, __pyx_n_s_mex_mex_c_problem_definition_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_minz, __pyx_t_1) < 0) __PYX_ERR(0, 242, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "problem_definition_c.pyx":1
+  /* "mex/mex_c/problem_definition_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * 
- * from general_c import gen_var, convert_min, convert
+ * from mex.mex_c.general_c import gen_var, convert_min, convert
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5319,11 +5319,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init problem_definition_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init mex.mex_c.problem_definition_c", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init problem_definition_c");
+    PyErr_SetString(PyExc_ImportError, "init mex.mex_c.problem_definition_c");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
