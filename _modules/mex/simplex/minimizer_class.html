@@ -47,6 +47,7 @@
 <div class="viewcode-block" id="Minimizer"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.minimizer_class.Minimizer.html#mex.simplex.minimizer_class.Minimizer">[docs]</a><span class="k">class</span> <span class="nc">Minimizer</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Minimize the objective function</span>
+
 <span class="sd">    Args:</span>
 
 <span class="sd">        A (matrix):</span>
@@ -78,7 +79,7 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">              lowerbounds (vector): lower bounds of the problem.</span>
-<span class="sd">              </span>
+
 <span class="sd">              upperbounds (vector): upper bounds of the problem.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">matrix</span> <span class="o">=</span> <span class="n">generate_tableau</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A_matrix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_vector</span><span class="p">,</span> <span class="n">lowerbounds</span><span class="p">,</span> <span class="n">upperbounds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_vector</span><span class="p">,</span> <span class="n">compr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
