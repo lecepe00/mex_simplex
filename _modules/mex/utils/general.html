@@ -118,7 +118,7 @@
         <span class="k">return</span> <span class="n">eq</span></div>
 
 
-<span class="k">def</span> <span class="nf">generates_matrix</span><span class="p">(</span><span class="n">A_matrix</span><span class="p">,</span> <span class="n">b_vector</span><span class="p">,</span> <span class="n">c_vector</span><span class="p">):</span>
+<div class="viewcode-block" id="generates_matrix"><a class="viewcode-back" href="../../../_autosummary/mex.utils.general.generates_matrix.html#mex.simplex.problem_definition.generates_matrix">[docs]</a><span class="k">def</span> <span class="nf">generates_matrix</span><span class="p">(</span><span class="n">A_matrix</span><span class="p">,</span> <span class="n">b_vector</span><span class="p">,</span> <span class="n">c_vector</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate matrix of a problem:</span>
 <span class="sd">    Ax &lt;= b</span>
@@ -146,15 +146,14 @@
     <span class="c1"># Concatenar A_new, b_new de forma cbind</span>
     <span class="n">A_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">A_new</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">b_new</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">A_new</span>
+    <span class="k">return</span> <span class="n">A_new</span></div>
 
 
-<span class="k">def</span> <span class="nf">generate_tableau</span><span class="p">(</span><span class="n">A_matrix</span><span class="p">,</span> <span class="n">b_vector</span><span class="p">,</span> <span class="n">b_low</span><span class="p">,</span> <span class="n">b_upp</span><span class="p">,</span> <span class="n">c_vector</span><span class="p">,</span> <span class="n">compr</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="generate_tableau"><a class="viewcode-back" href="../../../_autosummary/mex.utils.general.generate_tableau.html#mex.simplex.problem_definition.generate_tableau">[docs]</a><span class="k">def</span> <span class="nf">generate_tableau</span><span class="p">(</span><span class="n">A_matrix</span><span class="p">,</span> <span class="n">b_vector</span><span class="p">,</span> <span class="n">b_low</span><span class="p">,</span> <span class="n">b_upp</span><span class="p">,</span> <span class="n">c_vector</span><span class="p">,</span> <span class="n">compr</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Genera la matriz bajo el supuesto de que se tiene ya capturado los datos de entrada. Bajo el problema del tipo:</span>
+<span class="sd">    Generates the tableau contemplating lower and upper bounds:</span>
 <span class="sd">    min/max c^Tx</span>
 <span class="sd">    Ax = b</span>
-<span class="sd">    Concantenando renglones de A y juntando los limites de las restricciones (multiplicando por -1 donde sea necesario)</span>
 
 <span class="sd">    Args:</span>
 
@@ -194,7 +193,7 @@
     <span class="c1"># Concatenar A_new, b_new de forma cbind</span>
     <span class="n">A_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">A_new</span><span class="p">,</span> <span class="n">b_new</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">A_new</span>
+    <span class="k">return</span> <span class="n">A_new</span></div>
 </pre></div>
 
             <div class="clearer"></div>

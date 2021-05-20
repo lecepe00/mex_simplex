@@ -1,0 +1,26 @@
+﻿mex.simplex.minimizer\_class.Minimizer
+======================================
+
+.. currentmodule:: mex.simplex.minimizer_class
+
+.. autoclass:: Minimizer
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Minimizer.__init__
+      ~Minimizer.add_constraints
+      ~Minimizer.get_coeff
+      ~Minimizer.get_min
+      ~Minimizer.solve
+   
+   
+
+   
+   
+   

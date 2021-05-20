@@ -1,0 +1,26 @@
+﻿mex.simplex.maximizer\_class.Maximizer
+======================================
+
+.. currentmodule:: mex.simplex.maximizer_class
+
+.. autoclass:: Maximizer
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Maximizer.__init__
+      ~Maximizer.add_constraints
+      ~Maximizer.get_coeff
+      ~Maximizer.get_max
+      ~Maximizer.solve
+   
+   
+
+   
+   
+   

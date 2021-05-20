@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mex.simplex.simplex_networks.create_matrix &#8212; mex 0.1 documentation</title>
+    <title>mex.utils.general.generates_matrix &#8212; mex 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     
@@ -16,8 +16,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mex.simplex.simplex_networks.pivots_col" href="mex.simplex.simplex_networks.pivots_col.html" />
-    <link rel="prev" title="mex.simplex.minimizer_class.Minimizer" href="mex.simplex.minimizer_class.Minimizer.html" /> 
+    <link rel="next" title="mex.utils.general.generate_tableau" href="mex.utils.general.generate_tableau.html" />
+    <link rel="prev" title="mex.utils.general.convert" href="mex.utils.general.convert.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,14 +29,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mex.simplex.simplex_networks.pivots_col.html" title="mex.simplex.simplex_networks.pivots_col"
+          <a href="mex.utils.general.generate_tableau.html" title="mex.utils.general.generate_tableau"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="mex.simplex.minimizer_class.Minimizer.html" title="mex.simplex.minimizer_class.Minimizer"
+          <a href="mex.utils.general.convert.html" title="mex.utils.general.convert"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../simplex/modules_autosummary.html" accesskey="U">Simplex method Modules</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">mex.simplex.simplex_networks.create_matrix</a></li> 
+          <li class="nav-item nav-item-1"><a href="../utils/modules_autosummary.html" accesskey="U">General Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.utils.general.generates_matrix</a></li> 
       </ul>
     </div>  
 
@@ -45,25 +45,26 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="mex-simplex-simplex-networks-create-matrix">
-<h1>mex.simplex.simplex_networks.create_matrix<a class="headerlink" href="#mex-simplex-simplex-networks-create-matrix" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mex-utils-general-generates-matrix">
+<h1>mex.utils.general.generates_matrix<a class="headerlink" href="#mex-utils-general-generates-matrix" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="mex.simplex.simplex_networks.create_matrix">
-<code class="sig-prename descclassname">mex.simplex.simplex_networks.</code><code class="sig-name descname">create_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variables</span></em>, <em class="sig-param"><span class="n">constraints</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mex/simplex/simplex_networks.html#create_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mex.simplex.simplex_networks.create_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a matrix with enough rows for each constraint plus the objective function
-and enough columns for all the variables.</p>
+<dt id="mex.utils.general.generates_matrix">
+<code class="sig-prename descclassname">mex.utils.general.</code><code class="sig-name descname">generates_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">A_matrix</span></em>, <em class="sig-param"><span class="n">b_vector</span></em>, <em class="sig-param"><span class="n">c_vector</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mex/utils/general.html#generates_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mex.utils.general.generates_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate matrix of a problem:
+Ax &lt;= b</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>variables</strong> (<em>int</em>) – number of variables.</p></li>
-<li><p><strong>constraints</strong> (<em>int</em>) – number of constraints.</p></li>
+<li><p><strong>A_matrix</strong> (<em>matrix</em>) – </p></li>
+<li><p><strong>b_vector</strong> (<em>vector</em>) – </p></li>
+<li><p><strong>c_vector</strong> (<em>vector</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>zero matrix.</p>
+<dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>matrix (numpy array)</p>
+<dd class="field-odd"><p>A_new (matrix)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -78,15 +79,15 @@ and enough columns for all the variables.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="mex.simplex.minimizer_class.Minimizer.html"
-                        title="previous chapter">mex.simplex.minimizer_class.Minimizer</a></p>
+  <p class="topless"><a href="mex.utils.general.convert.html"
+                        title="previous chapter">mex.utils.general.convert</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="mex.simplex.simplex_networks.pivots_col.html"
-                        title="next chapter">mex.simplex.simplex_networks.pivots_col</a></p>
+  <p class="topless"><a href="mex.utils.general.generate_tableau.html"
+                        title="next chapter">mex.utils.general.generate_tableau</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/_autosummary/mex.simplex.simplex_networks.create_matrix.rst.txt"
+      <li><a href="../_sources/_autosummary/mex.utils.general.generates_matrix.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -114,14 +115,14 @@ and enough columns for all the variables.</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mex.simplex.simplex_networks.pivots_col.html" title="mex.simplex.simplex_networks.pivots_col"
+          <a href="mex.utils.general.generate_tableau.html" title="mex.utils.general.generate_tableau"
              >next</a> |</li>
         <li class="right" >
-          <a href="mex.simplex.minimizer_class.Minimizer.html" title="mex.simplex.minimizer_class.Minimizer"
+          <a href="mex.utils.general.convert.html" title="mex.utils.general.convert"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../simplex/modules_autosummary.html" >Simplex method Modules</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">mex.simplex.simplex_networks.create_matrix</a></li> 
+          <li class="nav-item nav-item-1"><a href="../utils/modules_autosummary.html" >General Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.utils.general.generates_matrix</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

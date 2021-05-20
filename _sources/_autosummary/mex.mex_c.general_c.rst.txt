@@ -9,6 +9,16 @@ mex.mex\_c.general\_c
 
    
    
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      convert
+      convert_min
+      gen_var
+      generate_tableau
+      generates_matrix
+   
    
 
    

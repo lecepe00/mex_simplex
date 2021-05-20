@@ -1,0 +1,6 @@
+﻿mex.utils.general.generates\_matrix
+===================================
+
+.. currentmodule:: mex.utils.general
+
+.. autofunction:: generates_matrix

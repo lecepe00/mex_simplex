@@ -1,0 +1,6 @@
+﻿mex.utils.general.generate\_tableau
+===================================
+
+.. currentmodule:: mex.utils.general
+
+.. autofunction:: generate_tableau
