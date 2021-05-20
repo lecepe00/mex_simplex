@@ -1,0 +1,6 @@
+﻿mex.mex\_c.problem\_definition\_c.minz
+======================================
+
+.. currentmodule:: mex.mex_c.problem_definition_c
+
+.. autofunction:: minz

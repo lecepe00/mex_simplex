@@ -1,0 +1,6 @@
+﻿mex.mex\_c.problem\_definition\_c.convert\_min
+==============================================
+
+.. currentmodule:: mex.mex_c.problem_definition_c
+
+.. autofunction:: convert_min

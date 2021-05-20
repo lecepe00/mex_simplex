@@ -1,0 +1,29 @@
+mex.mex\_c.minimizer\_class\_c
+==============================
+
+.. automodule:: mex.mex_c.minimizer_class_c
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Minimizer_c
+   
+   
+
+   
+   
+   
+
+
+

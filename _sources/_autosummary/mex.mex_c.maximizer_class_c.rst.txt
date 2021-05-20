@@ -1,0 +1,29 @@
+mex.mex\_c.maximizer\_class\_c
+==============================
+
+.. automodule:: mex.mex_c.maximizer_class_c
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Maximizer_c
+   
+   
+
+   
+   
+   
+
+
+

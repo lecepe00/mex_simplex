@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mex.mex_c.simplex_networks_c.pivot &#8212; mex 1.0 documentation</title>
+    <title>mex.mex_c.problem_definition_c.constrain &#8212; mex 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     
@@ -16,8 +16,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mex.mex_c.problem_definition_c.add_cons" href="mex.mex_c.problem_definition_c.add_cons.html" />
-    <link rel="prev" title="mex.mex_c.simplex_networks_c.find_pivot_row" href="mex.mex_c.simplex_networks_c.find_pivot_row.html" /> 
+    <link rel="next" title="mex.mex_c.problem_definition_c.add_obj" href="mex.mex_c.problem_definition_c.add_obj.html" />
+    <link rel="prev" title="mex.mex_c.problem_definition_c.add_cons" href="mex.mex_c.problem_definition_c.add_cons.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,14 +29,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mex.mex_c.problem_definition_c.add_cons.html" title="mex.mex_c.problem_definition_c.add_cons"
+          <a href="mex.mex_c.problem_definition_c.add_obj.html" title="mex.mex_c.problem_definition_c.add_obj"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="mex.mex_c.simplex_networks_c.find_pivot_row.html" title="mex.mex_c.simplex_networks_c.find_pivot_row"
+          <a href="mex.mex_c.problem_definition_c.add_cons.html" title="mex.mex_c.problem_definition_c.add_cons"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mex 1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../mex_c/modules_autosummary.html" accesskey="U">Simplex method with C reimplementation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">mex.mex_c.simplex_networks_c.pivot</a></li> 
+        <li class="nav-item nav-item-this"><a href="">mex.mex_c.problem_definition_c.constrain</a></li> 
       </ul>
     </div>  
 
@@ -45,27 +45,27 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="mex-mex-c-simplex-networks-c-pivot">
-<h1>mex.mex_c.simplex_networks_c.pivot<a class="headerlink" href="#mex-mex-c-simplex-networks-c-pivot" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mex-mex-c-problem-definition-c-constrain">
+<h1>mex.mex_c.problem_definition_c.constrain<a class="headerlink" href="#mex-mex-c-problem-definition-c-constrain" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="mex.mex_c.simplex_networks_c.pivot">
-<code class="sig-prename descclassname">mex.mex_c.simplex_networks_c.</code><code class="sig-name descname">pivot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mex.mex_c.simplex_networks_c.pivot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pivot about a value to remove negative in final column or row.</p>
+<dt id="mex.mex_c.problem_definition_c.constrain">
+<code class="sig-prename descclassname">mex.mex_c.problem_definition_c.</code><code class="sig-name descname">constrain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mex.mex_c.problem_definition_c.constrain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds constraints to the problem.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>row</strong> (<em>int</em>) – position to pivot.</p></li>
-<li><p><strong>col</strong> (<em>int</em>) – position to pivot.</p></li>
-<li><p><strong>matrix</strong> (<em>numpy array</em>) – matrix to be reviewed.</p></li>
+<li><p><strong>matrix</strong> (<em>numpy array</em>) – matrix defined with <code class="xref py py-mod docutils literal notranslate"><span class="pre">create_matrix</span></code>.</p></li>
+<li><p><strong>eq</strong> (<em>string</em>) – coefficients of constraints expressions. Use <strong>L</strong> for <em>less than</em>, <strong>G</strong> for <em>greater than</em>,</p></li>
+<li><p><strong>for equal to.</strong> (<em>**E**</em>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>updated matrix.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>t (numpy array)</p>
-</dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">problem_matrix</span> <span class="o">=</span> <span class="n">create_matrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># 2 variables and 3 constraints</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">constrain</span><span class="p">(</span><span class="n">problem_matrix</span><span class="p">,</span><span class="s1">&#39;1,L,4&#39;</span><span class="p">)</span>     <span class="c1"># x_1 &lt;= 4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">constrain</span><span class="p">(</span><span class="n">problem_matrix</span><span class="p">,</span><span class="s1">&#39;0,2,L,12&#39;</span><span class="p">)</span>  <span class="c1"># 2x_2 &lt;= 12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">constrain</span><span class="p">(</span><span class="n">problem_matrix</span><span class="p">,</span><span class="s1">&#39;3,2,G,18&#39;</span><span class="p">)</span>  <span class="c1"># 3x_1 + 2x_2 &gt;= 18</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -78,15 +78,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="mex.mex_c.simplex_networks_c.find_pivot_row.html"
-                        title="previous chapter">mex.mex_c.simplex_networks_c.find_pivot_row</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="mex.mex_c.problem_definition_c.add_cons.html"
-                        title="next chapter">mex.mex_c.problem_definition_c.add_cons</a></p>
+                        title="previous chapter">mex.mex_c.problem_definition_c.add_cons</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mex.mex_c.problem_definition_c.add_obj.html"
+                        title="next chapter">mex.mex_c.problem_definition_c.add_obj</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/_autosummary/mex.mex_c.simplex_networks_c.pivot.rst.txt"
+      <li><a href="../_sources/_autosummary/mex.mex_c.problem_definition_c.constrain.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -114,14 +114,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="mex.mex_c.problem_definition_c.add_cons.html" title="mex.mex_c.problem_definition_c.add_cons"
+          <a href="mex.mex_c.problem_definition_c.add_obj.html" title="mex.mex_c.problem_definition_c.add_obj"
              >next</a> |</li>
         <li class="right" >
-          <a href="mex.mex_c.simplex_networks_c.find_pivot_row.html" title="mex.mex_c.simplex_networks_c.find_pivot_row"
+          <a href="mex.mex_c.problem_definition_c.add_cons.html" title="mex.mex_c.problem_definition_c.add_cons"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mex 1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../mex_c/modules_autosummary.html" >Simplex method with C reimplementation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">mex.mex_c.simplex_networks_c.pivot</a></li> 
+        <li class="nav-item nav-item-this"><a href="">mex.mex_c.problem_definition_c.constrain</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
