@@ -4,12 +4,12 @@
 
 ## Equipo 1
 
-| Nombre | Usuario Github |
-|:---:|:---:|
-| Carolina Acosta | [@caroacostatovany](https://github.com/caroacostatovany) |
-| Cecilia Avilés | [@cecyar](https://github.com/cecyar) |
-| Eduardo Moreno | [@Eduardo-Moreno](https://github.com/Eduardo-Moreno) |
-| Leonardo Ceja | [@lecepe00](https://github.com/lecepe00) |
+| Nombre | Usuario Github | Rol | 
+|:---:|:---:|:---:|
+| Carolina Acosta | [@caroacostatovany](https://github.com/caroacostatovany) | Reviewer
+| Cecilia Avilés | [@cecyar](https://github.com/cecyar) | Programming
+| Eduardo Moreno | [@Eduardo-Moreno](https://github.com/Eduardo-Moreno) | Programming
+| Leonardo Ceja | [@lecepe00](https://github.com/lecepe00) | Project Manager / Reviewer
 
 - La documentación de nuestro paquete ***`mex`*** la puedes encontrar aquí: [![Documentation](https://img.shields.io/badge/sphinx-documentation-blue)](https://lecepe00.github.io/mex_simplex/)
 
