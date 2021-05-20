@@ -9,10 +9,10 @@
 
 
 <style type="text/css">
-    pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14278,7 +14278,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="1.-Programaci&#243;n-lineal">1. Programaci&#243;n lineal<a class="anchor-link" href="#1.-Programaci&#243;n-lineal">&#182;</a></h2><p>La <strong>Programación Lineal</strong> es una sección de una de las ramas de las matemáticas que se ha consolidado a lo largo del Siglo XX con el nombre de Optimización. En general, esta última rama trata de varias técnicas matemáticas que buscan obtener el mayor provecho en sistemas biológicos, económicos, tecnológicos, etc. Dichas técnicas se basaron en la idea de construir un <strong>programa</strong> que ayudase a encontrar la solución <em>óptima</em>. Según las caracteríticas de las funciones del problema y de las variables, se tienen diversos tipos de problemas de Programación Matemática; en el caso particular, en donde todas las funciones del problema, objetivo y restricciones son lineales, se tiene un problema de <strong>Programación Lineal</strong>.</p>
 <p>La Programación Lineal estudia el problema de optimizar (ya sea minimizar o maximizar) una función lineal en la presencia de restricciones de la forma de desigualdades lineales. Unas de las principales ventajas de la Programación Lineal son la habilidad de modelar problemas grandes y complejos, así como la habilidad para resolver tales problemas (inclusive de grande escala) en un intervalo de tiempo razonable mediante el uso del <strong>método símplex</strong> y de computadoras.</p>
-<p>El auge de la Programación Lineal se dio en fechas previas al fin de la Segunda Guerra Mundial, que fue una época en donde se hizo evidente que era fundamental la planificación y coordinación entre varios proyectos y, más aún, el uso <strong>eficaz de los recursos disponibles</strong>. En este tiempo, la programación lineal se planteó como un modelo matemático desarrollado para tener una mejor planificación en cuanto a gastos y retornos, pero sobretodo para reducir los costos del ejército y aumentar las pérdidas del enemigo. En particular, el auge se da en junio de $1947$ cuando inicia un proyecto de la Fuerza Aérea de los EE.UU conocido como <strong>SCOOP (Scientific Computation of Optimun Programs)</strong>. Como resultado de éste se tuvo el <strong>método símplex</strong>, desarrollado por el matemático George B. Dantzig para el final del verano de dicho año. El interés de la Programación Lineal se difundió muy rápido entre economistas, matemáticos, estadísticos, instituciones gubernamentales, entre otros.</p>
+<p>El auge de la Programación Lineal se dio en fechas previas al fin de la Segunda Guerra Mundial, que fue una época en donde se hizo evidente que era fundamental la planificación y coordinación entre varios proyectos y, más aún, el uso <strong>eficaz de los recursos disponibles</strong>. En este tiempo, la programación lineal se planteó como un modelo matemático desarrollado para tener una mejor planificación en cuanto a gastos y retornos, pero sobretodo para reducir los costos del ejército y aumentar las pérdidas del enemigo. En particular, el auge se da en junio de $1947$ cuando inicia un proyecto de la Fuerza Aérea de los EE.UU conocido como <strong>SCOOP (Scientific Computation of Optimum Programs)</strong>. Como resultado de éste se tuvo el <strong>método símplex</strong>, desarrollado por el matemático George B. Dantzig para el final del verano de dicho año. El interés de la Programación Lineal se difundió muy rápido entre economistas, matemáticos, estadísticos, instituciones gubernamentales, entre otros.</p>
 <p><img src="../images/progr_lineal_1.png" alt="George Dantinzg"></p>
 <p>Los elementos de un problema de Programación Lineal son:</p>
 <ul>
@@ -14289,13 +14289,98 @@ $$ f(x) = c_1x_1 + c_2x_2 + ... + c_nx_n $$<p>Por lo general, $c$ es conocido co
 <li>Restricciones del tipo de desigualdad, bajo la restricción de que sean lineales respecto a $x$. Esto es para la función $h(x)$ y la cota superior $b$:</li>
 </ul>
 $$ h(x) = a_1x_1 + a_2x_2 + ... + a_nx_n \leq b $$<p>Se pueden tener tantas restricciones como sea necesario:</p>
-$$ h_1(x) = a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n \leq b_1 $$$$ h_2(x) = a_{21}x_1 + a_{22}x_2 + ... + a_{2n}x_n \leq b_2 $$$$ \vdots  $$$$ h_m(x) = a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n \leq b_m $$<ul>
+$$ h_1(x) = a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n \leq b_1 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$h_2(x) = a_{21}x_1 + a_{22}x_2 + ... + a_{2n}x_n \leq b_2 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ \vdots $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ h_m(x) = a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n \leq b_m $$<ul>
 <li>Variables no negativas: se tiene la restricción de que la variable que conforme la solución del problema esté conformada por valores no negativos, esto es:</li>
 </ul>
 $$ x_1, x_2, ..., x_n \geq 0$$<p>Así pues, un problema de Programación Lineal tiene la siguiente forma:</p>
-$$\min_{x_1,x_2,...,x_n \in \mathbb{R}} c_1x_1 + c_2x_2 + ... + c_nx_n $$$$\text{sujeto a}$$$$ h_1(x) = a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n \leq b_1 $$$$ h_2(x) = a_{21}x_1 + a_{22}x_2 + ... + a_{2n}x_n \leq b_2 $$$$ \vdots  $$$$ h_m(x) = a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n \leq b_m $$$$ x_1, x_2, ..., x_n \geq 0 $$<p>Si utilizamos álgebra matricial para representar el problema de una forma más compacta, entonces se tiene la siguiente forma:</p>
-$$\min_{x \in \mathbb{R}^n} c^Tx $$$$\text{sujeto a}$$$$ h(x) = Ax \leq b $$$$ x \geq 0 $$<p>En donde:</p>
-$$ x = (x_1, x_2, ..., x_n)^T $$$$ c = (c_1, c_2, ..., c_n)^T $$$$ b = (b_1, b_2, ..., b_m)^T $$$$
+$$\min_{x_1,x_2,...,x_n \in \mathbb{R}} c_1x_1 + c_2x_2 + ... + c_nx_n $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$\text{sujeto a}$$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ h_1(x) = a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n \leq b_1 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ h_2(x) = a_{21}x_1 + a_{22}x_2 + ... + a_{2n}x_n \leq b_2 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ \vdots  $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ h_m(x) = a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n \leq b_m $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ x_1, x_2, ..., x_n \geq 0 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Si utilizamos álgebra matricial para representar el problema de una forma más compacta, entonces se tiene la siguiente forma:</p>
+$$\min_{x \in \mathbb{R}^n} c^Tx $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$\text{sujeto a}$$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ h(x) = Ax \leq b $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ x \geq 0 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>En donde:</p>
+$$ x = (x_1, x_2, ..., x_n)^T $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ c = (c_1, c_2, ..., c_n)^T $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ b = (b_1, b_2, ..., b_m)^T $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$
   A=
   \left[ {\begin{array}{cc}
    a11 &amp; a12 &amp; ... &amp; a1n\\
@@ -14319,8 +14404,23 @@ $$
 <p>Intuitivamente, el método inicia en uno de los vértices del problema y verifica si éste es óptimo. Si no lo es, entonces busca un vértice adyacente que mejore el valor de la función objetivo, y así sucesivamente hasta llegar al vértice que no permita una mejora en la función objetivo, siendo ahí donde se encuentra la solución óptima. En la siguiente imagen se representa un gráfico que ayuda a imaginarse esta última descripción.</p>
 <p><img src="../images/repr_graf_met_simp.png"></p>
 <p>Cabe mencionar que el método símplex trabaja bajo el supuesto de que el problema a optimizar se encuentra en su forma estándar, la cual es la siguiente:</p>
-$$ \min_{x \in \mathbb{R}^n} c^Tx $$$$ \text{sujeto a} $$$$ Ax = b $$$$ x \geq 0 $$<p>En donde $ A \in \mathbb{R}^{m \text{x} n}, b \in \mathbb{R}^m $.</p>
-<p>Los pasos para resolver un <em>LP</em> utilizando el método símplex son los siguintes:</p>
+$$ \min_{x \in \mathbb{R}^n} c^Tx $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ \text{sujeto a} $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ Ax = b $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ x \geq 0 $$<p>En donde $ A \in \mathbb{R}^{m \text{x} n}, b \in \mathbb{R}^m, c \in \mathbb{R}^n$.</p>
+<p>Los pasos para resolver un <em>LP</em> utilizando el método símplex son los siguientes:</p>
 <ol>
 <li>El primer paso es transformar el problema a su versión estándar y crear el <em>tableu</em>. En caso de que el lector tenga duda sobre cómo realizar este paso sugerimos visitar la siguiente <a href="http://www.phpsimplex.com/teoria_metodo_simplex.htm">liga</a>.</li>
 <li>Determinar la solución básica inicial.</li>
@@ -14328,11 +14428,86 @@ $$ \min_{x \in \mathbb{R}^n} c^Tx $$$$ \text{sujeto a} $$$$ Ax = b $$$$ x \geq 0
 <li>Mediante la <strong>condición de factibilidad</strong> se selecciona la variable de salida.</li>
 <li>Se actualiza el <em>tableau</em> mediante las operaciones de Gauss-Jordan y se regresa al paso $3$.</li>
 </ol>
-<p>A continuación se realizará una expliación más profunda del método símplex basándonos en un ejemplo de pequeña escala, que ayudará (o eso se espera) a entender con mayor facilidad.</p>
+<p>A continuación se realizará una explicación más profunda del método símplex basándonos en un ejemplo de pequeña escala, que ayudará (o eso se espera) a entender con mayor facilidad.</p>
 <p>El ejemplo a explicar se encontró en la <a href="https://www.plandemejora.com/metodo-simplex-paso-a-paso-ejemplos-maximizar-minimizar/">siguiente liga</a>, donde el <em>LP</em> a resolver es el siguiente:</p>
-$$ \max_{x \in \mathbb{R}^2} 3x_1 + 2x_2 $$$$ \text{sujeto a} $$$$ 2x_1 + 5x_2 \leq 35 $$$$ -3x_1 + +2x_2 \geq -18 $$$$ 2x_1 + 4x_2 \leq 26 $$$$ x_1,x_2 \geq 0 $$<h4 id="1.-Transformar-el-problema-a-su-versi&#243;n-est&#225;ndar-y-crear-tableau">1. Transformar el problema a su versi&#243;n est&#225;ndar y crear <em>tableau</em><a class="anchor-link" href="#1.-Transformar-el-problema-a-su-versi&#243;n-est&#225;ndar-y-crear-tableau">&#182;</a></h4><p>Transformemos el siguiente problema a su versión estándar:</p>
-$$ \max_{x \in \mathbb{R}^2} 3x_1 + 2x_2 $$$$ \text{sujeto a} $$$$ 2x_1 + 5x_2 \leq 35 $$$$ -3x_1 + +2x_2 \geq -18 $$$$ 2x_1 + 4x_2 \leq 26 $$$$ x_1,x_2 \geq 0 $$<p>Versión estándar del problema:</p>
-$$ \max_{x \in \mathbb{R}^2} 3x_1 + 2x_2 + 0s_1 + 0s_2 + 0s_3 $$$$ \text{sujeto a}$$$$ 2x_1 + 5x_2 + 1s_1 + 0s_2 +0s_3 = 35 $$$$ 3x_1 - 2x_2 + 0s_1 + 1s_2 +0s_3 = 18 $$$$ 2x_1 + 4x_2 + 0s_1 + 0s_2 +1s_3= 26 $$$$ x_1, x_2, s_1, s_2, s_3 \geq 0 $$<p>Ahora se crea el <em>tableau</em>:</p>
+$$ \max_{x \in \mathbb{R}^2} 3x_1 + 2x_2 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ \text{sujeto a} $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ 2x_1 + 5x_2 \leq 35 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ -3x_1 + +2x_2 \geq -18 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ 2x_1 + 4x_2 \leq 26 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ x_1,x_2 \geq 0 $$<h4 id="1.-Transformar-el-problema-a-su-versi&#243;n-est&#225;ndar-y-crear-tableau">1. Transformar el problema a su versi&#243;n est&#225;ndar y crear <em>tableau</em><a class="anchor-link" href="#1.-Transformar-el-problema-a-su-versi&#243;n-est&#225;ndar-y-crear-tableau">&#182;</a></h4><p>Transformemos el siguiente problema a su versión estándar:</p>
+$$ \max_{x \in \mathbb{R}^2} 3x_1 + 2x_2 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ \text{sujeto a} $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ 2x_1 + 5x_2 \leq 35 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ -3x_1 + +2x_2 \geq -18 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ 2x_1 + 4x_2 \leq 26 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ x_1,x_2 \geq 0 $$<p>Versión estándar del problema:</p>
+$$ \max_{x \in \mathbb{R}^2} 3x_1 + 2x_2 + 0s_1 + 0s_2 + 0s_3 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ \text{sujeto a}$$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ 2x_1 + 5x_2 + 1s_1 + 0s_2 +0s_3 = 35 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ 3x_1 - 2x_2 + 0s_1 + 1s_2 +0s_3 = 18 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ 2x_1 + 4x_2 + 0s_1 + 0s_2 +1s_3= 26 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ x_1, x_2, s_1, s_2, s_3 \geq 0 $$<p>Ahora se crea el <em>tableau</em>:</p>
 <p><img src="../images/simplex_1.png"></p>
 <h4 id="2.-Determinar-la-soluci&#243;n-b&#225;sica-inicial">2. Determinar la soluci&#243;n b&#225;sica inicial<a class="anchor-link" href="#2.-Determinar-la-soluci&#243;n-b&#225;sica-inicial">&#182;</a></h4><p>En este caso en específico la solución básica inical sería:</p>
 $$ s_1=35, s_2=18, s_3=26 $$<p>que corresponden al conjunto de variables básicas iniciales (es decir, que conforman la <em>base</em>) con valores iguales al vector $b$. Las variables que no se encuentran en la base se denominan variables no básicas; en este caso serían $x_1$ y $x_2$, las cuales tienen valor de $0$. Cabe mencionar que en todos los pasos las variables no básicas son iguales a $0$.</p>
@@ -14378,7 +14553,7 @@ $$\text{Nuevo valor} = \text{Valor actual} - \text{Elemento renglón columna piv
 <p><img src = "../images/simplex_4_3.png"></p>
 <p>Finalmente, la matriz resultante que contiene estos pasos es la siguiente:</p>
 <p><img src = "../images/simplex_4_4.png"></p>
-<p>Una vez llegado a este punto se vuelve al paso 3, se verifica la condición de optimalidad y se repite el proceso hasta que no se cumplea esta condición o la de factibilidad.</p>
+<p>Una vez llegado a este punto se vuelve al paso 3, se verifica la condición de optimalidad y se repite el proceso hasta que no se cumpla esta condición o la de factibilidad.</p>
 
 </div>
 </div>
@@ -14398,36 +14573,56 @@ $$\text{Nuevo valor} = \text{Valor actual} - \text{Elemento renglón columna piv
 <p><code>mex</code> es un paquete desarrollado por los siguientes alumnos de la <strong>Maestría en Ciencia de Datos</strong> impartida por el ITAM:</p>
 <ul>
 <li>Carolina Acosta Tovany</li>
-<li>Leonarco Ceja Pérez</li>
+<li>Leonardo Ceja Pérez</li>
 <li>Cecilia Avilés Robles</li>
 <li>Eduardo Moreno Ortiz</li>
 </ul>
-<p>Este paquete resuelve problemas de Programación Lineal basándose en el método símplex. En el presente documento se explicarán las principales funciones del paquete y se resolverá un ejercicio de pequeña escala con el fin de ilustrar la funcionalidad del mismo.</p>
-<p>Para una mayor descripción del paquete se recomienda visitar la documentación presente en la siguiente <a href="https://optimizacion-2-2021-1-gh-classroom.github.io/practica-2-segunda-parte-caroacostatovany/">liga</a>.</p>
+<p>Este paquete resuelve problemas de Programación Lineal basándose en el método símplex. En la siguiente sección del documento se explicarán las principales funciones del paquete y se resolverá $1$ ejercicio con el fin de ilustrar la funcionalidad del mismo.</p>
+<p>Para una mayor descripción del paquete se recomienda visitar la documentación presente en la siguiente <a href="https://lecepe00.github.io/mex_simplex/">liga</a>.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Supongamos que se quiere resolver el siguiente problema de Programación Lineal:</p>
-$$ \max_{x \in \mathbb{R}^2} 3x_1 + 5x_2 $$$$ \text{sujeto a}  $$$$  x_1 \leq 4 $$$$  x_2 \leq 12 $$$$  3x_1 + 2x_2 \leq 18 $$<ol>
+<p>Supongamos que se quiere resolver el <em>LP</em>:</p>
+$$ \max_{x \in \mathbb{R}^2} 3x_1 + 5x_2 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$ \text{sujeto a}  $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$  x_1 \leq 4 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$  x_2 \leq 12 $$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$  3x_1 + 2x_2 \leq 18 $$<ol>
 <li>El primer paso es crear el <em>tableau</em>; para ello se utilizarán las siguientes funciones:</li>
 </ol>
 <ul>
 <li><code>create_matrix</code>: genera una matriz de ceros de las dimensiones neceasarias para el <em>tableau</em>.</li>
-<li><code>add_constrain</code>: agrega las restricciones del problema de tal forma que crea variables sintéticas en el <em>tableau</em> de acuerdo a si es una desigualdad del tipo menor o igual que $(\leq)$, mayor o iqual que $(\geq)$ o una igualdad (en este último caso no agrega variable sintética).</li>
+<li><code>constrain</code>: agrega las restricciones del problema de tal forma que crea variables sintéticas en el <em>tableau</em> de acuerdo a si es una desigualdad del tipo menor o igual que $(\leq)$, mayor o iqual que $(\geq)$ o una igualdad (en este último caso no agrega variable sintética).</li>
 <li><code>obj</code>: agrega la función objetivo del problema multiplicado por $-1$ (siempre se agrega un cero al final del argumento).</li>
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Instalación del paquete</span>
-<span class="c1"># pip install &quot;git+https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git#egg=mex&amp;subdirectory=src&quot;</span>
+<span class="o">!</span>pip install --quiet <span class="s2">&quot;git+https://github.com/lecepe00/mex_simplex.git#egg=mex&amp;subdirectory=src&quot;</span>
 </pre></div>
 
      </div>
@@ -14435,14 +14630,35 @@ $$ \max_{x \in \mathbb{R}^2} 3x_1 + 5x_2 $$$$ \text{sujeto a}  $$$$  x_1 \leq 4 
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><span class="ansi-yellow-fg">WARNING: You are using pip version 20.2.1; however, version 21.1.1 is available.
+You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upgrade pip&#39; command.</span>
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">precision</span> %.4f
-<span class="kn">from</span> <span class="nn">mex.simplex.simplex_networks</span> <span class="kn">import</span> <span class="n">create_matrix</span><span class="p">,</span> <span class="n">find_pivot_col</span><span class="p">,</span> <span class="n">find_pivot_row</span><span class="p">,</span> <span class="n">find_negative_col</span><span class="p">,</span> <span class="n">pivots_col</span><span class="p">,</span> <span class="n">pivots_row</span><span class="p">,</span> <span class="n">find_negative_row</span><span class="p">,</span> <span class="n">pivot</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">mex.simplex.simplex_networks</span> <span class="kn">import</span> <span class="n">create_matrix</span><span class="p">,</span> <span class="n">find_pivot_col</span><span class="p">,</span> <span class="n">find_pivot_row</span><span class="p">,</span> <span class="n">find_negative_col</span><span class="p">,</span> <span class="n">pivots_col</span><span class="p">,</span> <span class="n">pivots_row</span><span class="p">,</span> <span class="n">find_negative_row</span><span class="p">,</span> <span class="n">pivot</span>
 <span class="kn">from</span> <span class="nn">mex.simplex.problem_definition</span> <span class="kn">import</span> <span class="n">constrain</span><span class="p">,</span> <span class="n">add_obj</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">maxz</span>
 </pre></div>
 
@@ -14539,7 +14755,7 @@ $$ \max_{x \in \mathbb{R}^2} 3x_1 + 5x_2 $$$$ \text{sujeto a}  $$$$  x_1 \leq 4 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Dado que todas las restricciones son del tipo menor o igual que $(\leq)$, entonces se agregan tantas variables sintéticas como restricciones. Esto lo podemos ver en la matriz identidad que se encuentra entre las columnas $3-6$ del arreglo <code>numpy</code> previo.</p>
+<p>Dado que todas las restricciones son del tipo menor o igual que $(\leq)$, entonces se agregan tantas variables sintéticas como restricciones. Esto lo podemos ver en la matriz identidad que se encuentra entre las columnas $3-5$ del arreglo <code>numpy</code> previo.</p>
 
 </div>
 </div>
@@ -14631,21 +14847,6 @@ $$ \max_{x \in \mathbb{R}^2} 3x_1 + 5x_2 $$$$ \text{sujeto a}  $$$$  x_1 \leq 4 
 </div>
 </div>
 
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/home/miuser/.local/lib/python3.7/site-packages/mex/simplex/simplex_networks.py:166: RuntimeWarning: divide by zero encountered in double_scalars
-  tmp = j/i
-/home/ubuntu/.local/lib/python3.8/site-packages/mex/simplex/simplex_networks.py:166: RuntimeWarning: divide by zero encountered in double_scalars
-  tmp = j/i
-</pre>
-</div>
-</div>
-
 </div>
 
 </div>
@@ -14653,21 +14854,21 @@ $$ \max_{x \in \mathbb{R}^2} 3x_1 + 5x_2 $$$$ \text{sujeto a}  $$$$  x_1 \leq 4 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>El vector de costos es $(-3,-5)$ (en <code>python</code> la enumaración inicia en 0), por lo que la posición $1$ es $-5$, la cual es la más negativa. Por lo que la variable de entrada será $x_2$.</p>
+<p>El vector de costos es $(-3,-5)$ (en <code>python</code> la enumaración inicia en $0$), por lo que la posición $1$ es $-5$, la cual es la más negativa. Por lo que la variable de entrada será $x_2$.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Para la variable de entrada se realizan se elige la posición correspondiente al mínimo del siguiente vector:</p>
-$$ \Big( 10,000, \frac{12}{2}, \frac{-18}{-2} \Big) = \Big( 10,000, 6, 9 \Big)  $$<p>que corresponde a la posición 2, ya que el mínimo es $6$. Dado que en <code>python</code> la enumeración inicia en $0$, entonces la posición que regresa el algoritmo es $1=2-1$. Por lo que la variable de salida será $s_2$.</p>
+$$ \Big( 10000, \frac{12}{2}, \frac{-18}{-2} \Big) = \Big( 10000, 6, 9 \Big)  $$<p>que corresponde a la posición 2, ya que el mínimo es $6$. Dado que en <code>python</code> la enumeración inicia en $0$, entonces la posición que regresa el algoritmo es $1=2-1$. Por lo que la variable de salida será $s_2$.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol>
-<li>Actualización del <em>tableau</em> mediante las operaciones de Gauss-Jordan: para ello se utiliza la siguiente función:</li>
+<li>Actualización del <em>tableau</em> mediante las operaciones de Gauss-Jordan. Para ello se utiliza la siguiente función:</li>
 </ol>
 <ul>
 <li><code>pivot</code>: realiza las operaciones de Gauss-Jordan para meter una variable no básica al conjunto base y sacar una variable básica del conjunto base. Este proceso se hace para las columnas del <em>tableau</em> y después para los renglones del mismo.</li>
@@ -14749,20 +14950,6 @@ $$ \Big( 10,000, \frac{12}{2}, \frac{-18}{-2} \Big) = \Big( 10,000, 6, 9 \Big)  
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/home/miuser/.local/lib/python3.7/site-packages/mex/simplex/simplex_networks.py:137: RuntimeWarning: divide by zero encountered in double_scalars
-/home/ubuntu/.local/lib/python3.8/site-packages/mex/simplex/simplex_networks.py:137: RuntimeWarning: divide by zero encountered in double_scalars
-  tmp = j/i
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
@@ -14786,16 +14973,17 @@ $$ \Big( 10,000, \frac{12}{2}, \frac{-18}{-2} \Big) = \Big( 10,000, 6, 9 \Big)  
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>De manera análoga, veamos ahora la implementación de nuestro paquete en un dataset de mediana escala.</p>
+<p>Para probar nuestro paquete utilizamos una instancia <strong>m5.2xlarge</strong>, que entra en el programa de AWS Educate y hemos ocupado en prácticas anteriores. Esta instancia tiene las siguientes características:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip uninstall mex -y
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+lscpu
 </pre></div>
 
      </div>
@@ -14815,9 +15003,30 @@ $$ \Big( 10,000, \frac{12}{2}, \frac{-18}{-2} \Big) = \Big( 10,000, 6, 9 \Big)  
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Found existing installation: mex 0.2
-Uninstalling mex-0.2:
-  Successfully uninstalled mex-0.2
+<pre>Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              8
+On-line CPU(s) list: 0-7
+Thread(s) per core:  2
+Core(s) per socket:  4
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+Stepping:            7
+CPU MHz:             3181.930
+BogoMIPS:            4999.96
+Hypervisor vendor:   KVM
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            36608K
+NUMA node0 CPU(s):   0-7
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
 </pre>
 </div>
 </div>
@@ -14826,53 +15035,24 @@ Uninstalling mex-0.2:
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install --quiet <span class="s2">&quot;git+https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git#egg=mex&amp;subdirectory=src&quot;</span>
-</pre></div>
-
-     </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Primera-implementaci&#243;n">Primera implementaci&#243;n<a class="anchor-link" href="#Primera-implementaci&#243;n">&#182;</a></h3>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre><span class="ansi-yellow-fg">  WARNING: The script kernprof is installed in &#39;/home/miuser/.local/bin&#39; which is not on PATH.
-  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span>
-<span class="ansi-yellow-fg">  WARNING: The script mprof is installed in &#39;/home/miuser/.local/bin&#39; which is not on PATH.
-  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span>
-<span class="ansi-yellow-fg">WARNING: You are using pip version 20.2.1; however, version 21.1.1 is available.
-You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upgrade pip&#39; command.</span>
-</pre>
-</div>
-</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para mostrar una primera implementación con un dataset más grande, se utilizó un <a href="http://web.tecnico.ulisboa.pt/~mcasquilho/compute/or/Fx-LP-generator.php">LP random problem generator</a> para crear el dataset siguiente. Se eligió un tamaño de 20 variables con 30 restricciones.</p>
 
 </div>
-
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">timeit</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">linprog</span>
 <span class="kn">from</span> <span class="nn">pytest</span> <span class="kn">import</span> <span class="n">approx</span>
@@ -14886,7 +15066,7 @@ You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upg
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">mex.simplex</span> <span class="kn">import</span> <span class="n">simplex_networks</span> <span class="k">as</span> <span class="n">mex_sn</span>
@@ -14902,7 +15082,7 @@ You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upg
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c_max_obj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">52.16</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.51</span><span class="p">,</span> <span class="o">-</span><span class="mf">69.09</span><span class="p">,</span> <span class="o">-</span><span class="mf">84.88</span><span class="p">,</span> <span class="o">-</span><span class="mf">38.73</span><span class="p">,</span>
@@ -15063,6 +15243,8 @@ You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upg
 <span class="n">b_max_obj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">79.72</span><span class="p">,</span> <span class="mf">68.64</span><span class="p">,</span> <span class="mf">1.240</span><span class="p">,</span> <span class="mf">34.53</span><span class="p">,</span> <span class="mf">43.64</span><span class="p">,</span> <span class="mf">3.692</span><span class="p">,</span> <span class="mf">44.21</span><span class="p">,</span> <span class="mf">94.85</span><span class="p">,</span> <span class="mf">39.16</span><span class="p">,</span> <span class="mf">38.43</span><span class="p">,</span>
                <span class="mf">57.08</span><span class="p">,</span> <span class="mf">19.63</span><span class="p">,</span> <span class="mf">70.07</span><span class="p">,</span> <span class="mf">32.45</span><span class="p">,</span> <span class="mf">15.32</span><span class="p">,</span> <span class="mf">49.46</span><span class="p">,</span> <span class="mf">54.54</span><span class="p">,</span> <span class="mf">24.96</span><span class="p">,</span> <span class="mf">11.98</span><span class="p">,</span> <span class="mf">1.772</span><span class="p">,</span>
                <span class="mf">50.61</span><span class="p">,</span> <span class="mf">94.20</span><span class="p">,</span> <span class="mf">97.49</span><span class="p">,</span> <span class="mf">34.16</span><span class="p">,</span> <span class="mf">6.26</span><span class="p">,</span> <span class="mf">70.31</span><span class="p">,</span> <span class="mf">79.18</span><span class="p">,</span> <span class="mf">44.51</span><span class="p">,</span> <span class="mf">53.22</span><span class="p">,</span> <span class="mf">50.65</span><span class="p">])</span>
+<span class="n">b_max_obj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">b_max_obj</span><span class="p">])</span>
+<span class="n">c_max_obj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c_max_obj</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -15070,14 +15252,20 @@ You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upg
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Dimensiones del problema:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">max_obj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">linprog</span><span class="p">(</span><span class="n">c_max_obj</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_max_obj</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_max_obj</span><span class="p">)</span><span class="o">.</span><span class="n">fun</span>
-<span class="n">coeff_obj</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c_max_obj</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_max_obj</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_max_obj</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número de restricciones:&quot;</span><span class="p">,</span> <span class="n">A_max_obj</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número de variables:&quot;</span><span class="p">,</span> <span class="n">A_max_obj</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -15085,13 +15273,42 @@ You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upg
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Número de restricciones: 30
+Número de variables: 20
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Valores-objetivo">Valores objetivo<a class="anchor-link" href="#Valores-objetivo">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matrix_max_approx</span> <span class="o">=</span> <span class="n">mex_g</span><span class="o">.</span><span class="n">generates_matrix</span><span class="p">(</span><span class="n">A_max_obj</span><span class="p">,</span> <span class="n">b_max_obj</span><span class="p">,</span> <span class="n">c_max_obj</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="n">max_obj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">linprog</span><span class="p">(</span><span class="n">c_max_obj</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_max_obj</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_max_obj</span><span class="p">)</span><span class="o">.</span><span class="n">fun</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15099,10 +15316,87 @@ You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upg
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0.050434800003131386
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">coeff_obj</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c_max_obj</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_max_obj</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_max_obj</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Valores-aproximados">Valores aproximados<a class="anchor-link" href="#Valores-aproximados">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="n">matrix_max_approx</span> <span class="o">=</span> <span class="n">mex_g</span><span class="o">.</span><span class="n">generates_matrix</span><span class="p">(</span><span class="n">A_max_obj</span><span class="p">,</span> <span class="n">b_max_obj</span><span class="p">,</span> <span class="n">c_max_obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0.00040779999835649505
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">problem_approx</span> <span class="o">=</span> <span class="n">mex_pd</span><span class="o">.</span><span class="n">maxz</span><span class="p">(</span><span class="n">matrix_max_approx</span><span class="p">)</span>
@@ -15124,7 +15418,7 @@ You should consider upgrading via the &#39;/usr/bin/python3 -m pip install --upg
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">max_obj</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="n">max_approx</span><span class="p">),</span> <span class="s2">&quot;El valor aproximado es incorrecto&quot;</span>
@@ -15175,21 +15469,568 @@ Los coeficientes aproximados obtenidos con mex son:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Segunda-implementaci&#243;n">Segunda implementaci&#243;n<a class="anchor-link" href="#Segunda-implementaci&#243;n">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Como segunda implementación, se realizará una prueba de nuestro paquete pero con un problema más grande. Cabe mencionar que aunque se tendrán mayor número de variables y restricciones nos mantendremos en el mismo tamaño de problema, el cual es un problema de <strong>pequeña escala</strong> (cientos a miles de variables y/o restricciones).</p>
+<p>Se trabajará con un problema implementado por <a href="http://www.netlib.org/">Netlib</a>, que es un repositorio de bases de datos, papers y software de índole matemática. En específico, se trabajará con los datasets de problemas de programación lineal, disponibles en el repositorio <a href="http://netlib.org/lp/data/index.html">LP</a>. Dichos problemas se encuentrán en formato <strong>MPS</strong>, el cual es una manera de almacenar información. A continuación un esbozo de dicho formato:</p>
+<p><img src="../images/mps_format.png"></p>
+<p>En particular, se trabajará con el dataset <strong>AGG</strong>, creado por Robert C. Leachman y proporcionado a NETLIB por Mauricio Resende. Dicho dataset se clasifica como LLR2-AN bajo la clasifición <a href="https://www.cuter.rl.ac.uk//Problems/classification.shtml">CUTE</a>. Esto implica:</p>
+<ul>
+<li>L: La función objetivo es lineal.</li>
+<li>L: Las restricciones del problema son lineales.</li>
+<li>R: El problema es regular, es decir, su primera y segunda derivadas existen y son continuas.</li>
+<li>2: grado de las derivadas más grandes proporcionadas analíticamente dentro de la descripción del problema.</li>
+<li>A: El problema es académico.</li>
+<li>N: La descripción del poblema no contiene variables internas explícitas.</li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.io</span> <span class="k">as</span> <span class="nn">sio</span>
+
+<span class="c1"># mex</span>
+<span class="kn">from</span> <span class="nn">mex.simplex.minimizer_class</span> <span class="kn">import</span> <span class="n">Minimizer</span>
+<span class="kn">from</span> <span class="nn">mex.simplex.maximizer_class</span> <span class="kn">import</span> <span class="n">Maximizer</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">sio</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="s1">&#39;../data/AGG.mat&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">mat</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">mat</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">mat</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">lbounds</span> <span class="o">=</span> <span class="n">mat</span><span class="p">[</span><span class="s1">&#39;lbounds&#39;</span><span class="p">]</span>
+<span class="n">ubounds</span> <span class="o">=</span> <span class="n">mat</span><span class="p">[</span><span class="s1">&#39;ubounds&#39;</span><span class="p">]</span>
+<span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(488, 615)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Las dimensiones del problema son:</p>
+<ul>
+<li>$488$ restricciones</li>
+<li>$615$ variables</li>
+</ul>
+<p>A continuación se implementará la prueba del paquete <strong><code>mex</code></strong>:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minim</span> <span class="o">=</span> <span class="n">Minimizer</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minim</span><span class="o">.</span><span class="n">add_constraints</span><span class="p">(</span><span class="n">lbounds</span><span class="p">,</span><span class="n">ubounds</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tableau_obj</span> <span class="o">=</span> <span class="n">minim</span><span class="o">.</span><span class="n">matrix</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="n">minim</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>93.05156120000174
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Valores-aproximados">Valores aproximados<a class="anchor-link" href="#Valores-aproximados">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">min_approx</span> <span class="o">=</span> <span class="n">minim</span><span class="o">.</span><span class="n">get_min</span><span class="p">()</span>
+<span class="n">coeff_approx</span> <span class="o">=</span> <span class="n">minim</span><span class="o">.</span><span class="n">get_coeff</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Valores-objetivos">Valores objetivos<a class="anchor-link" href="#Valores-objetivos">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tableau_obj</span> <span class="o">=</span> <span class="n">minim</span><span class="o">.</span><span class="n">matrix</span>
+
+<span class="c1"># Dimensiones originales del problema</span>
+<span class="n">n_restr</span> <span class="o">=</span> <span class="n">tableau_obj</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">n_vars</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Variables sin restricciones de cotas superiores ni inferiores</span>
+<span class="n">c_min_obj</span> <span class="o">=</span> <span class="n">tableau_obj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">n_vars</span><span class="p">]</span>
+<span class="n">A_min_obj</span> <span class="o">=</span> <span class="n">tableau_obj</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_restr</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">n_vars</span><span class="p">]</span>
+<span class="n">b_min_obj</span> <span class="o">=</span> <span class="n">tableau_obj</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_restr</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="n">min_obj</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c_min_obj</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_min_obj</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_min_obj</span><span class="p">)</span><span class="o">.</span><span class="n">fun</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>72.93183499999577
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">coeff_obj</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c_min_obj</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_min_obj</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_min_obj</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Aproximaci&#243;n-de-resultados">Aproximaci&#243;n de resultados<a class="anchor-link" href="#Aproximaci&#243;n-de-resultados">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">min_obj</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="n">min_approx</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">),</span> <span class="s2">&quot;El valor aproximado es incorrecto&quot;</span>
+<span class="c1">#assert np.round(coeff_obj,3) == approx(coeff_approx, abs=1e+40), &quot;El valor de los coeficientes aproximados es incorrecto&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor objetivo obtenido con scipy es: &quot;</span><span class="p">,</span> <span class="n">min_obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor aproximado obtenido con mex es: &quot;</span><span class="p">,</span> <span class="n">min_approx</span><span class="p">)</span>
+<span class="c1">#print(&quot;Los coeficientes objetivos obtenidos con scipy son: &quot;, coeff_obj)</span>
+<span class="c1">#print(&quot;Los coeficientes aproximados obtenidos con mex son: &quot;, coeff_approx)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>El valor objetivo obtenido con scipy es:  -3.553890952290583e+35
+El valor aproximado obtenido con mex es:  -3.602879999999999e+35
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Tercera-implementaci&#243;n">Tercera implementaci&#243;n<a class="anchor-link" href="#Tercera-implementaci&#243;n">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Por último, se mostrará la implementación que se hizo con compilación a C para reducir tiempos de ejecución. Esta última iteración también considera el uso de clases. Para comparación, se trabajará con el dataset <strong><code>AGG</code></strong> usado en la implementación anterior.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#mex_c</span>
+<span class="kn">from</span> <span class="nn">mex.mex_c</span> <span class="kn">import</span> <span class="n">general_c</span> <span class="k">as</span> <span class="n">mex_c_g</span>
+<span class="kn">from</span> <span class="nn">mex.mex_c</span> <span class="kn">import</span> <span class="n">simplex_networks_c</span> <span class="k">as</span> <span class="n">mex_c_sn</span>
+<span class="kn">from</span> <span class="nn">mex.mex_c</span> <span class="kn">import</span> <span class="n">problem_definition_c</span> <span class="k">as</span> <span class="n">mex_c_pd</span>
+<span class="kn">from</span> <span class="nn">mex.mex_c.minimizer_class_c</span> <span class="kn">import</span> <span class="n">Minimizer_c</span>
+<span class="kn">from</span> <span class="nn">mex.mex_c.maximizer_class_c</span> <span class="kn">import</span> <span class="n">Maximizer_c</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minim_c</span> <span class="o">=</span> <span class="n">Minimizer_c</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minim_c</span><span class="o">.</span><span class="n">add_constraints</span><span class="p">(</span><span class="n">lbounds</span><span class="p">,</span><span class="n">ubounds</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minim_c</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(1719, 2335)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="n">minim_c</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>33.99296740000136
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Valores aproximados</strong></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">min_approx_c</span> <span class="o">=</span> <span class="n">minim_c</span><span class="o">.</span><span class="n">get_min</span><span class="p">()</span>
+<span class="n">coeff_approx_c</span> <span class="o">=</span> <span class="n">minim_c</span><span class="o">.</span><span class="n">get_coeff</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Comprobación</strong></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">min_obj</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="n">min_approx_c</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">),</span> <span class="s2">&quot;El valor aproximado es incorrecto&quot;</span>
+<span class="c1">#assert np.round(coeff_obj,5) == approx(coeff_approx_c, abs=1e+8), &quot;El valor de los coeficientes aproximados es incorrecto&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor objetivo obtenido con scipy es: &quot;</span><span class="p">,</span> <span class="n">min_obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor aproximado obtenido con mex es: &quot;</span><span class="p">,</span> <span class="n">min_approx_c</span><span class="p">)</span>
+<span class="c1">#print(&quot;Los coeficientes objetivos obtenidos con scipy son: &quot;, coeff_obj)</span>
+<span class="c1">#print(&quot;Los coeficientes aproximados obtenidos con mex son: &quot;, coeff_approx)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>El valor objetivo obtenido con scipy es:  -3.553890952290583e+35
+El valor aproximado obtenido con mex es:  -3.602879999999999e+35
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="5.--Comentarios-y-conclusiones">5.  Comentarios y conclusiones<a class="anchor-link" href="#5.--Comentarios-y-conclusiones">&#182;</a></h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>En éste proyecto se ha estudiado el uso del método símplex para la resolución de problemas de programación lineal (<em>LP</em>), por medio del desarrollo y la implementación del paquete <code>mex</code>.</p>
-<p>Como alternativas para la resolución de problemas de programación lineal, similares a los estudiados en éste proyecto, se tienen por ejemplo los métodos por puntos interiores, como el método primal-dual de barrera logarítmica, también estudiado en la materia de Optimización Avanzada.</p>
-<p>La principal diferencia entre los métodos de puntos interiores y el método símplex es que, como su nombre lo indica, comienzan en un punto interior de la región factible, y en cada iteración se van aproximando a los puntos óptimos en el límite.  Cada iteración de los métodos de puntos interiores es costosa de calcular (más costosa de calcular que en el método símplex), sin embargo, para problemas de gran escala no se requieren muchas más iteraciones respecto a un problema de pequeña escala.  Cabe aclarar que los métodos de puntos interiores quedan fuera del alcance de este proyecto.</p>
-<p>Hasta el momento se ha implementado exitosamente el paquete <code>mex</code> en problemas de pequeña y mediana escala (de hasta 20 variables y 30 restricciones).  Se está trabajando en la ingesta y creación automática de matrices, para implementar el paquete en problemas de gran escala (de cientos o miles de variables y restricciones).  Esta será la última iteración de la implementación del paquete <code>mex</code>, a reportarse en la presentación final del proyecto.</p>
+<p>En este proyecto se ha estudiado el uso del método símplex para la resolución de problemas de programación lineal (<em>LP</em>), por medio del desarrollo y la implementación del paquete <code>mex</code>.</p>
+<p>Como alternativas para la resolución de problemas de programación lineal, similares a los estudiados en este proyecto, se tienen por ejemplo los métodos por puntos interiores, como el método primal-dual de barrera logarítmica, también estudiado en la materia de Optimización Avanzada.</p>
+<p>La principal diferencia entre los métodos de puntos interiores y el método símplex es que, como su nombre lo indica, comienzan en un punto interior de la región factible, y en cada iteración se van aproximando a los puntos óptimos en el límite. Cada iteración de los métodos de puntos interiores es costosa de calcular (más costosa de calcular que en el método símplex), sin embargo, para problemas de gran escala no se requieren muchas más iteraciones respecto a un problema de pequeña escala. Cabe aclarar que los métodos de puntos interiores quedan fuera del alcance de este proyecto.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Referencias">Referencias<a class="anchor-link" href="#Referencias">&#182;</a></h3><ul>
+<li>Clavius, Cristopher &amp; Stefan Josef. LP random problem generator. <a href="http://web.tecnico.ulisboa.pt/~mcasquilho/compute/or/Fx-LP-generator.php">LP random problem generator</a></li>
 <li>Méndez, Abel. (2021). <a href="https://www.plandemejora.com/metodo-simplex-paso-a-paso-ejemplos-maximizar-minimizar/">Método Símplex Paso a Paso</a></li>
 <li>Palacios M., Erick. (2021). Libro de Optimización 2021. <a href="https://itam-ds.github.io/analisis-numerico-computo-cientifico/IV.optimizacion_en_redes_y_prog_lineal/4.2/Programacion_lineal_y_metodo_simplex.html">4.2. Programación lineal (PL) y método símplex</a></li>
 <li>Palacios M., Erick. (2021). Libro de Optimización 2021. <a href="https://itam-ds.github.io/analisis-numerico-computo-cientifico/IV.optimizacion_en_redes_y_prog_lineal/4.3/Ejemplo_metodo_simplex_de_redes.html">4.3. Ejemplo del método símplex de redes</a> </li>
