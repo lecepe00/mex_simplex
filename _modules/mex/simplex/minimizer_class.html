@@ -50,13 +50,15 @@
 <span class="sd">    Args:</span>
 
 <span class="sd">        A (matrix):</span>
+
 <span class="sd">        b (vector):</span>
+
 <span class="sd">        c (vector):</span>
 
 <span class="sd">    &gt;&gt;&gt; A_min = [[1, 1], [-1, 2]]</span>
 <span class="sd">    &gt;&gt;&gt; b_min = [[6], [8]]</span>
 <span class="sd">    &gt;&gt;&gt; c_min = [[-1], [-3]]</span>
-
+<span class="sd">    &gt;&gt;&gt;</span>
 <span class="sd">    &gt;&gt;&gt; minim = Minimizer(A_min_obj, b_min_obj, c_min_obj)</span>
 <span class="sd">    &gt;&gt;&gt; minim.solve()</span>
 <span class="sd">    &gt;&gt;&gt; min_approx = minim.get_min()</span>
@@ -76,6 +78,7 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">              lowerbounds (vector): lower bounds of the problem.</span>
+<span class="sd">              </span>
 <span class="sd">              upperbounds (vector): upper bounds of the problem.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">matrix</span> <span class="o">=</span> <span class="n">generate_tableau</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A_matrix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_vector</span><span class="p">,</span> <span class="n">lowerbounds</span><span class="p">,</span> <span class="n">upperbounds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_vector</span><span class="p">,</span> <span class="n">compr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>

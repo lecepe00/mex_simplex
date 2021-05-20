@@ -50,13 +50,15 @@
 <span class="sd">    Args:</span>
 
 <span class="sd">        A (matrix):</span>
+
 <span class="sd">        b (vector):</span>
+
 <span class="sd">        c (vector):</span>
 
 <span class="sd">    &gt;&gt;&gt; A_max = [[1, 0], [0, 2], [3, 2]]</span>
 <span class="sd">    &gt;&gt;&gt; b_max = [[4], [12], [18]]</span>
 <span class="sd">    &gt;&gt;&gt; c_max = [[-3], [-5]]</span>
-
+<span class="sd">    &gt;&gt;&gt;</span>
 <span class="sd">    &gt;&gt;&gt; maxim = Maximizer(A_max, b_max, c_max)</span>
 <span class="sd">    &gt;&gt;&gt; maxim.solve()</span>
 <span class="sd">    &gt;&gt;&gt; max_approx = maxim.get_max()</span>
@@ -76,6 +78,7 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">              lowerbounds (vector): lower bounds of the problem.</span>
+
 <span class="sd">              upperbounds (vector): upper bounds of the problem.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">matrix</span> <span class="o">=</span> <span class="n">generate_tableau</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A_matrix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_vector</span><span class="p">,</span> <span class="n">lowerbounds</span><span class="p">,</span> <span class="n">upperbounds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_vector</span><span class="p">,</span> <span class="n">compr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
