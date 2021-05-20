@@ -1,7 +1,7 @@
 import numpy as np
-from general_c import generates_matrix, generate_tableau
-from simplex_networks_c import create_matrix
-from problem_definition_c import constrain, obj, maxz
+from mex.mex_c.general_c import generates_matrix, generate_tableau
+from mex.mex_c.simplex_networks_c import create_matrix
+from mex.mex_c.problem_definition_c import constrain, obj, maxz
 
 
 class Maximizer_c():

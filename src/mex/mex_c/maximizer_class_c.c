@@ -1266,7 +1266,6 @@ static const char __pyx_k_b_vector[] = "b_vector";
 static const char __pyx_k_c_vector[] = "c_vector";
 static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_constrain[] = "constrain";
-static const char __pyx_k_general_c[] = "general_c";
 static const char __pyx_k_get_coeff[] = "get_coeff";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_Maximizer_c[] = "Maximizer_c";
@@ -1279,13 +1278,14 @@ static const char __pyx_k_generates_matrix[] = "generates_matrix";
 static const char __pyx_k_Maximizer_c_solve[] = "Maximizer_c.solve";
 static const char __pyx_k_Maximizer_c___init[] = "Maximizer_c.__init__";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_simplex_networks_c[] = "simplex_networks_c";
 static const char __pyx_k_Maximizer_c_get_max[] = "Maximizer_c.get_max";
-static const char __pyx_k_problem_definition_c[] = "problem_definition_c";
+static const char __pyx_k_mex_mex_c_general_c[] = "mex.mex_c.general_c";
 static const char __pyx_k_Maximizer_c_get_coeff[] = "Maximizer_c.get_coeff";
 static const char __pyx_k_maximizer_class_c_pyx[] = "maximizer_class_c.pyx";
 static const char __pyx_k_Maximizer_c_add_constraints[] = "Maximizer_c.add_constraints";
 static const char __pyx_k_mex_mex_c_maximizer_class_c[] = "mex.mex_c.maximizer_class_c";
+static const char __pyx_k_mex_mex_c_simplex_networks_c[] = "mex.mex_c.simplex_networks_c";
+static const char __pyx_k_mex_mex_c_problem_definition_c[] = "mex.mex_c.problem_definition_c";
 static const char __pyx_k_Maximize_the_objective_function[] = "\n    Maximize the objective function.\n    \n    Args:\n    \n        A (matrix):\n        \n        b (vector):\n        \n        c (vector):\n        \n    >>> A_max = [[1, 0], [0, 2], [3, 2]]\n    >>> b_max = [[4], [12], [18]]\n    >>> c_max = [[-3], [-5]]\n    >>>\n    >>> maxim = Maximizer(A_max, b_max, c_max)\n    >>> maxim.solve()\n    >>> max_approx = maxim.get_max()\n    >>> coeff_approx = maxim.get_coeff()\n    ";
 static PyObject *__pyx_n_s_A;
 static PyObject *__pyx_n_s_A_matrix;
@@ -1308,7 +1308,6 @@ static PyObject *__pyx_n_s_compr;
 static PyObject *__pyx_n_s_constrain;
 static PyObject *__pyx_n_s_create_matrix;
 static PyObject *__pyx_n_s_doc;
-static PyObject *__pyx_n_s_general_c;
 static PyObject *__pyx_n_s_generate_tableau;
 static PyObject *__pyx_n_s_generates_matrix;
 static PyObject *__pyx_n_s_get_coeff;
@@ -1323,17 +1322,18 @@ static PyObject *__pyx_n_u_max;
 static PyObject *__pyx_kp_s_maximizer_class_c_pyx;
 static PyObject *__pyx_n_s_maxz;
 static PyObject *__pyx_n_s_metaclass;
+static PyObject *__pyx_n_s_mex_mex_c_general_c;
 static PyObject *__pyx_n_s_mex_mex_c_maximizer_class_c;
+static PyObject *__pyx_n_s_mex_mex_c_problem_definition_c;
+static PyObject *__pyx_n_s_mex_mex_c_simplex_networks_c;
 static PyObject *__pyx_n_s_module;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_n_s_obj;
 static PyObject *__pyx_n_s_prepare;
-static PyObject *__pyx_n_s_problem_definition_c;
 static PyObject *__pyx_n_s_qualname;
 static PyObject *__pyx_n_s_self;
-static PyObject *__pyx_n_s_simplex_networks_c;
 static PyObject *__pyx_n_s_solve;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_upperbounds;
@@ -2114,7 +2114,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_constrain, __pyx_k_constrain, sizeof(__pyx_k_constrain), 0, 0, 1, 1},
   {&__pyx_n_s_create_matrix, __pyx_k_create_matrix, sizeof(__pyx_k_create_matrix), 0, 0, 1, 1},
   {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
-  {&__pyx_n_s_general_c, __pyx_k_general_c, sizeof(__pyx_k_general_c), 0, 0, 1, 1},
   {&__pyx_n_s_generate_tableau, __pyx_k_generate_tableau, sizeof(__pyx_k_generate_tableau), 0, 0, 1, 1},
   {&__pyx_n_s_generates_matrix, __pyx_k_generates_matrix, sizeof(__pyx_k_generates_matrix), 0, 0, 1, 1},
   {&__pyx_n_s_get_coeff, __pyx_k_get_coeff, sizeof(__pyx_k_get_coeff), 0, 0, 1, 1},
@@ -2129,17 +2128,18 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_maximizer_class_c_pyx, __pyx_k_maximizer_class_c_pyx, sizeof(__pyx_k_maximizer_class_c_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_maxz, __pyx_k_maxz, sizeof(__pyx_k_maxz), 0, 0, 1, 1},
   {&__pyx_n_s_metaclass, __pyx_k_metaclass, sizeof(__pyx_k_metaclass), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_general_c, __pyx_k_mex_mex_c_general_c, sizeof(__pyx_k_mex_mex_c_general_c), 0, 0, 1, 1},
   {&__pyx_n_s_mex_mex_c_maximizer_class_c, __pyx_k_mex_mex_c_maximizer_class_c, sizeof(__pyx_k_mex_mex_c_maximizer_class_c), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_problem_definition_c, __pyx_k_mex_mex_c_problem_definition_c, sizeof(__pyx_k_mex_mex_c_problem_definition_c), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_simplex_networks_c, __pyx_k_mex_mex_c_simplex_networks_c, sizeof(__pyx_k_mex_mex_c_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_n_s_module, __pyx_k_module, sizeof(__pyx_k_module), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
-  {&__pyx_n_s_problem_definition_c, __pyx_k_problem_definition_c, sizeof(__pyx_k_problem_definition_c), 0, 0, 1, 1},
   {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
   {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
-  {&__pyx_n_s_simplex_networks_c, __pyx_k_simplex_networks_c, sizeof(__pyx_k_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_n_s_solve, __pyx_k_solve, sizeof(__pyx_k_solve), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_upperbounds, __pyx_k_upperbounds, sizeof(__pyx_k_upperbounds), 0, 0, 1, 1},
@@ -2508,8 +2508,8 @@ if (!__Pyx_RefNanny) {
 
   /* "mex/mex_c/maximizer_class_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
- * from general_c import generates_matrix, generate_tableau
- * from simplex_networks_c import create_matrix
+ * from mex.mex_c.general_c import generates_matrix, generate_tableau
+ * from mex.mex_c.simplex_networks_c import create_matrix
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2518,9 +2518,9 @@ if (!__Pyx_RefNanny) {
 
   /* "mex/mex_c/maximizer_class_c.pyx":2
  * import numpy as np
- * from general_c import generates_matrix, generate_tableau             # <<<<<<<<<<<<<<
- * from simplex_networks_c import create_matrix
- * from problem_definition_c import constrain, obj, maxz
+ * from mex.mex_c.general_c import generates_matrix, generate_tableau             # <<<<<<<<<<<<<<
+ * from mex.mex_c.simplex_networks_c import create_matrix
+ * from mex.mex_c.problem_definition_c import constrain, obj, maxz
  */
   __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2530,7 +2530,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_generate_tableau);
   __Pyx_GIVEREF(__pyx_n_s_generate_tableau);
   PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_generate_tableau);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_general_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_mex_mex_c_general_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_generates_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
@@ -2545,9 +2545,9 @@ if (!__Pyx_RefNanny) {
 
   /* "mex/mex_c/maximizer_class_c.pyx":3
  * import numpy as np
- * from general_c import generates_matrix, generate_tableau
- * from simplex_networks_c import create_matrix             # <<<<<<<<<<<<<<
- * from problem_definition_c import constrain, obj, maxz
+ * from mex.mex_c.general_c import generates_matrix, generate_tableau
+ * from mex.mex_c.simplex_networks_c import create_matrix             # <<<<<<<<<<<<<<
+ * from mex.mex_c.problem_definition_c import constrain, obj, maxz
  * 
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -2555,7 +2555,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_create_matrix);
   __Pyx_GIVEREF(__pyx_n_s_create_matrix);
   PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_create_matrix);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_simplex_networks_c, __pyx_t_2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_mex_mex_c_simplex_networks_c, __pyx_t_2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_create_matrix); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -2565,9 +2565,9 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "mex/mex_c/maximizer_class_c.pyx":4
- * from general_c import generates_matrix, generate_tableau
- * from simplex_networks_c import create_matrix
- * from problem_definition_c import constrain, obj, maxz             # <<<<<<<<<<<<<<
+ * from mex.mex_c.general_c import generates_matrix, generate_tableau
+ * from mex.mex_c.simplex_networks_c import create_matrix
+ * from mex.mex_c.problem_definition_c import constrain, obj, maxz             # <<<<<<<<<<<<<<
  * 
  * 
  */
@@ -2582,7 +2582,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_maxz);
   __Pyx_GIVEREF(__pyx_n_s_maxz);
   PyList_SET_ITEM(__pyx_t_1, 2, __pyx_n_s_maxz);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_problem_definition_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_mex_mex_c_problem_definition_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_constrain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
@@ -2684,8 +2684,8 @@ if (!__Pyx_RefNanny) {
 
   /* "mex/mex_c/maximizer_class_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
- * from general_c import generates_matrix, generate_tableau
- * from simplex_networks_c import create_matrix
+ * from mex.mex_c.general_c import generates_matrix, generate_tableau
+ * from mex.mex_c.simplex_networks_c import create_matrix
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);

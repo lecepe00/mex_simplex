@@ -1258,7 +1258,6 @@ static const char __pyx_k_convert[] = "convert";
 static const char __pyx_k_gen_var[] = "gen_var";
 static const char __pyx_k_add_cons[] = "add_cons";
 static const char __pyx_k_constrain[] = "constrain";
-static const char __pyx_k_general_c[] = "general_c";
 static const char __pyx_k_pivot_col[] = "pivot_col";
 static const char __pyx_k_pivot_row[] = "pivot_row";
 static const char __pyx_k_row_check[] = "row_check";
@@ -1276,8 +1275,9 @@ static const char __pyx_k_find_pivot_col[] = "find_pivot_col";
 static const char __pyx_k_find_pivot_row[] = "find_pivot_row";
 static const char __pyx_k_constrain_line_38[] = "constrain (line 38)";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_simplex_networks_c[] = "simplex_networks_c";
+static const char __pyx_k_mex_mex_c_general_c[] = "mex.mex_c.general_c";
 static const char __pyx_k_problem_definition_c_pyx[] = "problem_definition_c.pyx";
+static const char __pyx_k_mex_mex_c_simplex_networks_c[] = "mex.mex_c.simplex_networks_c";
 static const char __pyx_k_Cannot_add_another_constraint[] = "Cannot add another constraint.";
 static const char __pyx_k_Adds_the_objective_function_to[] = "\n    Adds the objective function to the problem matrix.\n    \n    .. note::\n        Objective function must be added **after** constraints have been input.\n    \n    Args:\n    \n        matrix (numpy array): matrix defined with :mod:`create_matrix`.\n        \n        eq (string): coefficients of objective function.\n    \n    >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints\n    >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4\n    >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12\n    >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18\n    >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2\n    ";
 static const char __pyx_k_mex_mex_c_problem_definition_c[] = "mex.mex_c.problem_definition_c";
@@ -1308,7 +1308,6 @@ static PyObject *__pyx_n_s_find_pivot_col;
 static PyObject *__pyx_n_s_find_pivot_row;
 static PyObject *__pyx_n_s_gen_var;
 static PyObject *__pyx_n_s_gen_variables;
-static PyObject *__pyx_n_s_general_c;
 static PyObject *__pyx_n_s_i;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_j;
@@ -1323,7 +1322,9 @@ static PyObject *__pyx_n_u_max;
 static PyObject *__pyx_n_s_maxz;
 static PyObject *__pyx_kp_u_maxz_line_187;
 static PyObject *__pyx_n_s_memory_prof;
+static PyObject *__pyx_n_s_mex_mex_c_general_c;
 static PyObject *__pyx_n_s_mex_mex_c_problem_definition_c;
+static PyObject *__pyx_n_s_mex_mex_c_simplex_networks_c;
 static PyObject *__pyx_n_u_min;
 static PyObject *__pyx_n_s_minz;
 static PyObject *__pyx_kp_u_minz_line_242;
@@ -1344,7 +1345,6 @@ static PyObject *__pyx_n_s_row;
 static PyObject *__pyx_n_s_row_check;
 static PyObject *__pyx_n_s_s;
 static PyObject *__pyx_n_s_shape;
-static PyObject *__pyx_n_s_simplex_networks_c;
 static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_sum;
 static PyObject *__pyx_n_s_test;
@@ -4648,7 +4648,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_find_pivot_row, __pyx_k_find_pivot_row, sizeof(__pyx_k_find_pivot_row), 0, 0, 1, 1},
   {&__pyx_n_s_gen_var, __pyx_k_gen_var, sizeof(__pyx_k_gen_var), 0, 0, 1, 1},
   {&__pyx_n_s_gen_variables, __pyx_k_gen_variables, sizeof(__pyx_k_gen_variables), 0, 0, 1, 1},
-  {&__pyx_n_s_general_c, __pyx_k_general_c, sizeof(__pyx_k_general_c), 0, 0, 1, 1},
   {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_j, __pyx_k_j, sizeof(__pyx_k_j), 0, 0, 1, 1},
@@ -4663,7 +4662,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_maxz, __pyx_k_maxz, sizeof(__pyx_k_maxz), 0, 0, 1, 1},
   {&__pyx_kp_u_maxz_line_187, __pyx_k_maxz_line_187, sizeof(__pyx_k_maxz_line_187), 0, 1, 0, 0},
   {&__pyx_n_s_memory_prof, __pyx_k_memory_prof, sizeof(__pyx_k_memory_prof), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_general_c, __pyx_k_mex_mex_c_general_c, sizeof(__pyx_k_mex_mex_c_general_c), 0, 0, 1, 1},
   {&__pyx_n_s_mex_mex_c_problem_definition_c, __pyx_k_mex_mex_c_problem_definition_c, sizeof(__pyx_k_mex_mex_c_problem_definition_c), 0, 0, 1, 1},
+  {&__pyx_n_s_mex_mex_c_simplex_networks_c, __pyx_k_mex_mex_c_simplex_networks_c, sizeof(__pyx_k_mex_mex_c_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_n_u_min, __pyx_k_min, sizeof(__pyx_k_min), 0, 1, 0, 1},
   {&__pyx_n_s_minz, __pyx_k_minz, sizeof(__pyx_k_minz), 0, 0, 1, 1},
   {&__pyx_kp_u_minz_line_242, __pyx_k_minz_line_242, sizeof(__pyx_k_minz_line_242), 0, 1, 0, 0},
@@ -4684,7 +4685,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_row_check, __pyx_k_row_check, sizeof(__pyx_k_row_check), 0, 0, 1, 1},
   {&__pyx_n_s_s, __pyx_k_s, sizeof(__pyx_k_s), 0, 0, 1, 1},
   {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
-  {&__pyx_n_s_simplex_networks_c, __pyx_k_simplex_networks_c, sizeof(__pyx_k_simplex_networks_c), 0, 0, 1, 1},
   {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
   {&__pyx_n_s_sum, __pyx_k_sum, sizeof(__pyx_k_sum), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
@@ -5134,7 +5134,7 @@ if (!__Pyx_RefNanny) {
   /* "mex/mex_c/problem_definition_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * 
- * from general_c import gen_var, convert_min, convert
+ * from mex.mex_c.general_c import gen_var, convert_min, convert
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5144,8 +5144,8 @@ if (!__Pyx_RefNanny) {
   /* "mex/mex_c/problem_definition_c.pyx":3
  * import numpy as np
  * 
- * from general_c import gen_var, convert_min, convert             # <<<<<<<<<<<<<<
- * from simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
+ * from mex.mex_c.general_c import gen_var, convert_min, convert             # <<<<<<<<<<<<<<
+ * from mex.mex_c.simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
  * 
  */
   __pyx_t_1 = PyList_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -5159,7 +5159,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_convert);
   __Pyx_GIVEREF(__pyx_n_s_convert);
   PyList_SET_ITEM(__pyx_t_1, 2, __pyx_n_s_convert);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_general_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_mex_mex_c_general_c, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_gen_var); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -5178,8 +5178,8 @@ if (!__Pyx_RefNanny) {
 
   /* "mex/mex_c/problem_definition_c.pyx":4
  * 
- * from general_c import gen_var, convert_min, convert
- * from simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row             # <<<<<<<<<<<<<<
+ * from mex.mex_c.general_c import gen_var, convert_min, convert
+ * from mex.mex_c.simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row             # <<<<<<<<<<<<<<
  * 
  * 
  */
@@ -5200,7 +5200,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_find_pivot_row);
   __Pyx_GIVEREF(__pyx_n_s_find_pivot_row);
   PyList_SET_ITEM(__pyx_t_2, 4, __pyx_n_s_find_pivot_row);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_simplex_networks_c, __pyx_t_2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_mex_mex_c_simplex_networks_c, __pyx_t_2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_pivots_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
@@ -5300,7 +5300,7 @@ if (!__Pyx_RefNanny) {
   /* "mex/mex_c/problem_definition_c.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * 
- * from general_c import gen_var, convert_min, convert
+ * from mex.mex_c.general_c import gen_var, convert_min, convert
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

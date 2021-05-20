@@ -1,7 +1,7 @@
 import numpy as np
 
-from general_c import gen_var, convert_min, convert
-from simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
+from mex.mex_c.general_c import gen_var, convert_min, convert
+from mex.mex_c.simplex_networks_c import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
 
 
 def add_cons(matrix):
