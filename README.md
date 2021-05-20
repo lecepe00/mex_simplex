@@ -4,12 +4,12 @@
 
 ## Equipo 1
 
-| Nombre | User Github | Clave única |
-|:---:|:---:|:---|
-| Carolina Acosta | caroacostatovany| 000197627 |
-| Cecilia Avilés | cecyar| 000197817 |
-| Eduardo Moreno | Eduardo-Moreno| 000151280 |
-| Leonardo Ceja | lecepe00| 000197818 |
+| Nombre | Usuario Github |
+|:---:|:---:|
+| Carolina Acosta | [@caroacostatovany](https://github.com/caroacostatovany) |
+| Cecilia Avilés | [@cecyar](https://github.com/cecyar) |
+| Eduardo Moreno | [@Eduardo-Moreno](https://github.com/Eduardo-Moreno) |
+| Leonardo Ceja | [@lecepe00](https://github.com/lecepe00) |
 
 - La documentación de nuestro paquete ***`mex`*** la puedes encontrar aquí: [![Documentation](https://img.shields.io/badge/sphinx-documentation-blue)](https://lecepe00.github.io/mex_simplex/)
 
