@@ -24,7 +24,7 @@
 
 ## Trabajo Escrito:
 
-- [Trabajo Escrito](https://htmlpreview.github.io/?https://github.com/lecepe00/mex_simplex/blob/main/documentation/Reporte_equipo_1_proyecto_final.html)
+- [Trabajo Escrito](https://github.com/lecepe00/mex_simplex/blob/main/documentation/Reporte_equipo_1_proyecto_final.ipynb)
 
 ## Presentación:
 
